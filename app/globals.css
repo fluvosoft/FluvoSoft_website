@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-foreground overflow-x-hidden font-sans antialiased;
+    background-color: #0A0A0A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    @apply bg-brand text-background;
+  }
+}
+
+/* Custom IDE Scrollbar */
+.ide-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.ide-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.ide-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ide-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease;
+}
+
+.ide-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ide-scrollbar::-webkit-scrollbar-thumb:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ide-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Testimonials infinite scroll animations */
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-right-to-left {
+  animation: scroll-right-to-left 30s linear infinite;
+}
+
+.animate-scroll-left-to-right {
+  animation: scroll-left-to-right 30s linear infinite;
+}
+
+/* Logos marquee: two identical groups, move by exactly one group width so loop is seamless */
+.animate-logos-marquee {
+  animation: logos-marquee 25s linear infinite;
+}
+
+@keyframes logos-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
