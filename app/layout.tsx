@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    type: siteConfig.openGraph.type,
+    type: "website",
     locale: siteConfig.openGraph.locale,
     url: siteConfig.url,
     siteName: siteConfig.openGraph.siteName,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   twitter: {
-    card: siteConfig.twitter.card,
+    card: "summary_large_image",
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,
   },

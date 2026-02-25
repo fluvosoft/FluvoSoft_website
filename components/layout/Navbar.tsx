@@ -98,7 +98,7 @@ export default function Navbar() {
                     className="min-w-[220px] rounded-b-2xl bg-[#1A1A1A] py-2 shadow-xl md:rounded-b-3xl"
                     role="menu"
                   >
-                    {item.dropdown.map((sub) => (
+                    {(item.dropdown ?? []).map((sub) => (
                       <li key={sub.label} role="none">
                         <Link
                           href={sub.href}

@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 
 type AlertVariant = "default" | "success" | "warning" | "destructive";
 
-export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AlertProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   variant?: AlertVariant;
   title?: React.ReactNode;
   className?: string;
