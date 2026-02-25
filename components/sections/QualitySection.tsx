@@ -4,7 +4,7 @@ export default function QualitySection() {
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         <h2
           id="quality-heading"
-          className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl"
+          className="text-3xl font-medium tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
           Our focus is progressing markets
         </h2>

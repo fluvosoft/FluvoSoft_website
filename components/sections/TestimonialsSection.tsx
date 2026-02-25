@@ -56,11 +56,11 @@ function TestimonialCard({ testimonial, className = "" }: { testimonial: typeof 
       style={{ width: "400px" }}
     >
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-sm font-semibold text-foreground">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-sm font-medium text-foreground">
           {testimonial.initial}
         </div>
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-foreground">{testimonial.name}</p>
+          <p className="truncate text-sm font-medium text-foreground">{testimonial.name}</p>
           <p className="truncate text-xs text-accent">{testimonial.handle}</p>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function TestimonialsSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="testimonials-heading"
-            className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl"
+            className="text-3xl font-medium tracking-tight text-foreground md:text-4xl lg:text-5xl"
           >
             Loved by designers and
             <br />

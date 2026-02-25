@@ -53,7 +53,7 @@ export default function LunaFeaturesSection() {
   return (
     <section className="bg-background px-6 py-20 lg:px-8">
       <div className="mx-auto max-w-container">
-        <h2 className="text-center text-2xl font-semibold text-foreground md:text-3xl">
+        <h2 className="text-center text-2xl font-medium text-foreground md:text-3xl">
           Advanced MCP server features
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-accent">
@@ -65,7 +65,7 @@ export default function LunaFeaturesSection() {
               key={f.title}
               className="flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-6"
             >
-              <h3 className="text-lg font-semibold text-foreground">{f.title}</h3>
+              <h3 className="text-lg font-medium text-foreground">{f.title}</h3>
               <p className="text-sm text-accent">{f.description}</p>
               <FeatureIllustration name={f.illustration} />
             </div>

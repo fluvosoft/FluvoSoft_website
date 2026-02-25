@@ -4,7 +4,7 @@ const partners = ["Dolby", "Nike", "Zoom", "Adept", "TIME", "Character.ai"];
 
 function LogoItem({ name }: { name: string }) {
   return (
-    <span className="flex min-w-[220px] shrink-0 items-center justify-center text-2xl font-semibold text-accent transition hover:text-foreground md:min-w-[240px] md:text-3xl lg:text-4xl">
+    <span className="flex min-w-[220px] shrink-0 items-center justify-center text-2xl font-medium text-accent transition hover:text-foreground md:min-w-[240px] md:text-3xl lg:text-4xl">
       {name}
     </span>
   );

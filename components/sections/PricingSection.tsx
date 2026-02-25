@@ -38,7 +38,7 @@ export default function PricingSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="pricing-heading"
-            className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl"
+            className="text-3xl font-medium tracking-tight text-foreground md:text-4xl lg:text-5xl"
           >
             Enterprise Blockchain Solutions
           </h2>

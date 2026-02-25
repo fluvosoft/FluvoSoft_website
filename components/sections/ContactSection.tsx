@@ -12,7 +12,7 @@ export default function ContactSection() {
           {/* Left Column - Contact Details */}
           <div className="flex flex-col gap-6">
             <div>
-              <h3 className="text-lg font-semibold text-foreground">
+              <h3 className="text-lg font-medium text-foreground">
                 Let&apos;s Start a Conversation
               </h3>
 
@@ -26,7 +26,7 @@ export default function ContactSection() {
                       </svg>
                     </div>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-foreground">Email</p>
+                      <p className="text-sm font-medium text-foreground">Email</p>
                       <a href="mailto:support@fluvosoft.com" className="mt-0.5 text-xs text-accent hover:text-foreground">support@fluvosoft.com</a>
                     </div>
                   </div>
@@ -40,7 +40,7 @@ export default function ContactSection() {
                       </svg>
                     </div>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-foreground">Phone</p>
+                      <p className="text-sm font-medium text-foreground">Phone</p>
                       <a href="tel:01762746646" className="mt-0.5 text-xs text-accent hover:text-foreground">01762746646</a>
                     </div>
                   </div>
@@ -55,7 +55,7 @@ export default function ContactSection() {
                       </svg>
                     </div>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-foreground">Address</p>
+                      <p className="text-sm font-medium text-foreground">Address</p>
                       <p className="mt-0.5 text-xs text-accent">FluvoSoft Ltd.<br />Dhaka, Bangladesh</p>
                     </div>
                   </div>
@@ -65,7 +65,7 @@ export default function ContactSection() {
 
             {/* CONNECT Section */}
             <div className="mt-4">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              <h3 className="text-sm font-medium uppercase tracking-wider text-foreground">
                 Connect with us
               </h3>
               <div className="mt-4 flex gap-3">
@@ -74,14 +74,14 @@ export default function ContactSection() {
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-foreground transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06]"
                   aria-label="LinkedIn"
                 >
-                  <span className="text-sm font-semibold">in</span>
+                  <span className="text-sm font-medium">in</span>
                 </a>
                 <a
                   href="#"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-foreground transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06]"
                   aria-label="Facebook"
                 >
-                  <span className="text-sm font-semibold">f</span>
+                  <span className="text-sm font-medium">f</span>
                 </a>
               </div>
             </div>
@@ -99,11 +99,11 @@ export default function ContactSection() {
                 &ldquo;FluvoSoft&apos;s expertise in landing pages played a crucial role in our app&apos;s success. Highly recommended.&rdquo;
               </p>
               <div className="mt-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-sm font-semibold text-white">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-sm font-medium text-white">
                   ST
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Stephany</p>
+                  <p className="text-sm font-medium text-foreground">Stephany</p>
                   <p className="text-xs text-accent">PRODUCT MANAGER</p>
                 </div>
               </div>
@@ -112,7 +112,7 @@ export default function ContactSection() {
 
           {/* Right Column - Contact Form */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground">Send us a Message</h3>
+            <h3 className="text-lg font-medium text-foreground">Send us a Message</h3>
             <p className="mt-2 text-sm text-accent">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
 
             <form className="mt-6 space-y-6" onSubmit={(e) => e.preventDefault()}>

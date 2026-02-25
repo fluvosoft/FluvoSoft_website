@@ -20,7 +20,7 @@ export default function CTA({
   return (
     <section className={`border-t border-white/10 py-24 text-center ${className}`}>
       <div className="mx-auto max-w-2xl">
-        <h2 className="text-3xl font-semibold text-foreground md:text-4xl">{title}</h2>
+        <h2 className="text-3xl font-medium text-foreground md:text-4xl">{title}</h2>
         {description && <p className="mx-auto mt-4 text-accent">{description}</p>}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Button size="lg" onClick={primaryAction.onClick}>

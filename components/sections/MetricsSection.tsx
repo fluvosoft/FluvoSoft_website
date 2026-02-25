@@ -13,7 +13,7 @@ export default function MetricsSection() {
   return (
     <section className="border-y border-white/10 bg-background/50 px-6 py-20 lg:px-8">
       <div className="mx-auto max-w-container">
-        <h2 className="text-center text-2xl font-semibold text-foreground md:text-3xl">
+        <h2 className="text-center text-2xl font-medium text-foreground md:text-3xl">
           Industry-leading performance
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-accent">

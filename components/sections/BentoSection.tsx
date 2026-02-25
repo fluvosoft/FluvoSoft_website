@@ -16,14 +16,14 @@ export default function BentoSection() {
   return (
     <section className="bg-background py-20">
       <div className="mx-auto max-w-container px-6 lg:px-8">
-        <h2 className="mb-12 text-center text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl">
+        <h2 className="mb-12 text-center text-3xl font-medium text-foreground md:text-4xl lg:text-5xl">
           Build a better website, faster.
         </h2>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4 lg:flex-row">
             <div className="flex min-w-0 flex-1 flex-col gap-6 rounded-xl border border-white/20 bg-background p-6">
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-semibold text-foreground">
+                <h3 className="text-2xl font-medium text-foreground">
                   100+ sections and components
                 </h3>
                 <p className="text-base text-accent">
@@ -44,7 +44,7 @@ export default function BentoSection() {
             </div>
             <div className="flex min-w-0 flex-1 flex-col gap-6 rounded-xl border border-white/20 bg-background p-6">
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-semibold text-foreground">
+                <h3 className="text-2xl font-medium text-foreground">
                   You&apos;re in control
                 </h3>
                 <p className="text-base text-accent">
@@ -60,7 +60,7 @@ export default function BentoSection() {
           <div className="flex flex-col gap-4 lg:flex-row">
             <div className="flex min-w-0 flex-1 flex-col gap-6 rounded-xl border border-white/20 bg-background p-6">
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-semibold text-foreground">
+                <h3 className="text-2xl font-medium text-foreground">
                   Fits right into your stack
                 </h3>
                 <p className="text-base text-accent">
@@ -81,7 +81,7 @@ export default function BentoSection() {
             </div>
             <div className="flex min-w-0 flex-1 flex-col gap-6 rounded-xl border border-white/20 bg-background p-6">
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-semibold text-foreground">
+                <h3 className="text-2xl font-medium text-foreground">
                   Data-agnostic
                 </h3>
                 <p className="text-base text-accent">

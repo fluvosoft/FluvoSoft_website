@@ -33,7 +33,7 @@ export default function FAQSection() {
       <div className="mx-auto max-w-3xl">
         <h2
           id="faq-heading"
-          className="text-center text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl"
+          className="text-center text-3xl font-medium tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
           Frequently Asked Questions
         </h2>

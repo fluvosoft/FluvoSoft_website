@@ -65,7 +65,7 @@ export default function FeaturesSection() {
   return (
     <section className="bg-background py-20">
       <div className="mx-auto max-w-container px-6 lg:px-8">
-        <h2 className="mb-16 text-center text-3xl font-semibold leading-tight text-foreground md:text-4xl lg:text-5xl">
+        <h2 className="mb-16 text-center text-3xl font-medium leading-tight text-foreground md:text-4xl lg:text-5xl">
           Everything you need.
           <br />
           Nothing you don&apos;t.
@@ -75,7 +75,7 @@ export default function FeaturesSection() {
             <div key={f.title} className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
                 <Icon d={f.icon} d2={f.icon2} />
-                <h3 className="text-lg font-semibold text-foreground">{f.title}</h3>
+                <h3 className="text-lg font-medium text-foreground">{f.title}</h3>
               </div>
               <p className="text-base text-accent">{f.description}</p>
             </div>

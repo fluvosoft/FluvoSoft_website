@@ -63,12 +63,12 @@ export default function SolutionsSection() {
     <section className="bg-background px-6 py-10 lg:px-8 lg:py-14" aria-labelledby="solutions-heading">
       <div className="mx-auto max-w-container">
         <header className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-cta">
+          <p className="text-sm font-medium uppercase tracking-wider text-cta">
             Solutions
           </p>
           <h2
             id="solutions-heading"
-            className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl"
+            className="mt-3 text-3xl font-medium tracking-tight text-foreground md:text-4xl lg:text-5xl"
           >
             Our Solutions
           </h2>
@@ -87,11 +87,11 @@ export default function SolutionsSection() {
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-cta transition-colors duration-300 group-hover:border-cta/30 group-hover:bg-cta/10">
                   {icon}
                 </span>
-                <span className="rounded-full border border-cta/40 bg-cta/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cta">
+                <span className="rounded-full border border-cta/40 bg-cta/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-cta">
                   {tagline}
                 </span>
               </div>
-              <h3 className="mt-5 text-xl font-semibold text-foreground md:text-2xl">
+              <h3 className="mt-5 text-xl font-medium text-foreground md:text-2xl">
                 {title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-accent">

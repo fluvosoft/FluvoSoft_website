@@ -17,7 +17,7 @@ export default function Footer() {
                 height={34}
                 className="h-7 w-auto"
               />
-              <span className="text-lg font-semibold">FluvoSoft</span>
+              <span className="text-lg font-medium">FluvoSoft</span>
             </Link>
             <p className="mt-2 text-xs font-medium uppercase tracking-wider text-cta">
               Venture catalysts studio
@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex min-w-[120px] flex-col gap-3">
-            <h4 className="text-sm font-semibold text-foreground">Company</h4>
+            <h4 className="text-sm font-medium text-foreground">Company</h4>
             <Link href="/about" className="text-sm text-accent hover:text-foreground">
               About us
             </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="ml-auto flex min-w-[200px] flex-col gap-3">
-            <h4 className="text-sm font-semibold text-foreground">Subscribe</h4>
+            <h4 className="text-sm font-medium text-foreground">Subscribe</h4>
             <p className="text-sm text-accent">Stay updated with our latest news and updates.</p>
             <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
               <input

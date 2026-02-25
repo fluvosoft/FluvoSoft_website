@@ -66,7 +66,7 @@ export default function EverythingYouNeedSection() {
       <div className="mx-auto max-w-container">
         <h2
           id="everything-heading"
-          className="text-center text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl"
+          className="text-center text-3xl font-medium text-foreground md:text-4xl lg:text-5xl"
         >
           Apply AI — Agentic Solutions
         </h2>
@@ -85,7 +85,7 @@ export default function EverythingYouNeedSection() {
                 {item.icon}
               </div>
               <div className="min-w-0">
-                <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+                <h3 className="text-sm font-medium text-foreground">{item.title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-accent">{item.description}</p>
               </div>
             </div>

@@ -13,7 +13,7 @@ export default function Logos({ title, children, className = "", scroll = false 
     return (
       <div className={className}>
         {title && (
-          <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-accent">
+          <h2 className="text-center text-sm font-medium uppercase tracking-wider text-accent">
             {title}
           </h2>
         )}
@@ -31,7 +31,7 @@ export default function Logos({ title, children, className = "", scroll = false 
   return (
     <div className={className}>
       {title && (
-        <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-accent">
+        <h2 className="text-center text-sm font-medium uppercase tracking-wider text-accent">
           {title}
         </h2>
       )}

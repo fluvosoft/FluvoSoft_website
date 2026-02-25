@@ -40,7 +40,7 @@ export default function ComponentsPage() {
         <div className="mx-auto max-w-container px-6 py-16 lg:px-8">
         <div className="mb-16">
           <Link href="/" className="text-sm text-accent hover:text-foreground">← Back to home</Link>
-          <h1 className="mt-4 text-4xl font-semibold text-foreground">Launch UI Components</h1>
+          <h1 className="mt-4 text-4xl font-medium text-foreground">Launch UI Components</h1>
           <p className="mt-2 text-accent">
             All components and blocks from Launch UI. Built with React, Tailwind and TypeScript.
           </p>
@@ -49,7 +49,7 @@ export default function ComponentsPage() {
         <Separator className="my-12" />
 
         <section id="ui" className="scroll-mt-24">
-          <h2 className="text-2xl font-semibold text-foreground">UI Components</h2>
+          <h2 className="text-2xl font-medium text-foreground">UI Components</h2>
           <p className="mt-2 text-accent">Buttons, badges, cards, inputs, tabs, accordion, alert.</p>
 
           <div className="mt-8 space-y-12">
@@ -143,7 +143,7 @@ export default function ComponentsPage() {
         <Separator className="my-12" />
 
         <section id="blocks" className="scroll-mt-24">
-          <h2 className="text-2xl font-semibold text-foreground">Blocks</h2>
+          <h2 className="text-2xl font-medium text-foreground">Blocks</h2>
           <p className="mt-2 text-accent">Stats, Logos, Feature list, Bento grid, Testimonial, Pricing, CTA.</p>
 
           <div className="mt-8 space-y-16">

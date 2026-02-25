@@ -5,13 +5,13 @@ export default function HeroSection() {
   return (
     <section className="relative px-6 pt-8 pb-12 lg:px-8 lg:pt-14 lg:pb-16">
       <div className="mx-auto max-w-container text-center">
-        <p className="mx-auto mb-2 max-w-xl text-sm font-semibold uppercase tracking-wider text-cta">
+        <p className="mx-auto mb-2 max-w-xl text-sm font-medium uppercase tracking-wider text-cta">
           FluvoSoft venture catalysts studio
         </p>
-        <p className="mx-auto mb-4 max-w-xl text-sm font-semibold uppercase tracking-wider text-accent">
+        <p className="mx-auto mb-4 max-w-xl text-sm font-medium uppercase tracking-wider text-accent">
           FluvoSoft Works With
         </p>
-        <h1 className="mx-auto max-w-3xl text-hero font-bold leading-tight tracking-tight text-foreground lg:text-hero-lg">
+        <h1 className="mx-auto max-w-3xl text-hero font-semibold leading-tight tracking-tight text-foreground lg:text-hero-lg">
           Blockchain and
           <br />
           <span className="text-foreground-muted">Automation</span>

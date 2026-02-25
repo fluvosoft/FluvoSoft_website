@@ -17,7 +17,7 @@ export default function ScoresIllustration({ className = "" }: { className?: str
                 style={{ width: `${s.value}%` }}
               />
             </div>
-            <span className="w-8 text-right text-sm font-semibold text-foreground">{s.value}</span>
+            <span className="w-8 text-right text-sm font-medium text-foreground">{s.value}</span>
           </div>
         </div>
       ))}

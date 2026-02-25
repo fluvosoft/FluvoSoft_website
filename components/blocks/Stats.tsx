@@ -17,7 +17,7 @@ export default function Stats({ items, className = "" }: StatsProps) {
           key={item.label}
           className="rounded-xl border border-white/10 bg-white/5 p-6 text-center"
         >
-          <p className="text-3xl font-semibold text-foreground md:text-4xl">{item.value}</p>
+          <p className="text-3xl font-medium text-foreground md:text-4xl">{item.value}</p>
           <p className="mt-2 font-medium text-foreground">{item.label}</p>
           {item.description && <p className="mt-1 text-sm text-accent">{item.description}</p>}
         </div>

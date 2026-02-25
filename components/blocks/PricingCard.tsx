@@ -42,12 +42,12 @@ export default function PricingCard({
             <circle cx="12" cy="7" r="4" />
           </svg>
         )}
-        <h3 className="text-lg font-semibold text-foreground">{name}</h3>
+        <h3 className="text-lg font-medium text-foreground">{name}</h3>
       </div>
       <p className="mt-2 text-sm text-accent">{description}</p>
       <div className="mt-6">
         <div className="flex items-baseline gap-1">
-          <span className="text-4xl font-semibold text-foreground">{price}</span>
+          <span className="text-4xl font-medium text-foreground">{price}</span>
         </div>
         {period && <p className="mt-1 text-sm text-accent">{period}</p>}
       </div>

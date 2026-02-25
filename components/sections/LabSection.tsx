@@ -5,10 +5,10 @@ export default function LabSection() {
     <section className="bg-background px-6 py-10 lg:px-8 lg:py-14" aria-labelledby="lab-heading">
       <div className="mx-auto max-w-container">
         <div className="rounded-2xl border border-white/10 bg-dashboard-card px-8 py-16 text-center md:px-12 lg:px-20">
-          <p className="text-sm font-semibold uppercase tracking-wider text-cta">FluvoSoft Lab</p>
+          <p className="text-sm font-medium uppercase tracking-wider text-cta">FluvoSoft Lab</p>
           <h2
             id="lab-heading"
-            className="mx-auto mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl"
+            className="mx-auto mt-4 max-w-3xl text-3xl font-medium tracking-tight text-foreground md:text-4xl lg:text-5xl"
           >
             The Old Economy is Dying. We Are Building the New One.
           </h2>

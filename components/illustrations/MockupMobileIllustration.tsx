@@ -87,7 +87,7 @@ export default function MockupMobileIllustration({ className = "" }: { className
         >
           <p className="text-[15px] text-accent">Total Revenue</p>
           <div className="mt-1.5 flex items-baseline justify-between gap-1">
-            <span className="text-xl font-semibold tabular-nums text-foreground">{revenue.value}</span>
+            <span className="text-xl font-medium tabular-nums text-foreground">{revenue.value}</span>
             <span className="text-[14px] text-positive">{revenue.change}</span>
           </div>
           <p className="mt-2.5 text-[14px] text-accent">{revenue.subtitle}</p>

@@ -7,7 +7,7 @@ export default function CTASection() {
       <div className="mx-auto max-w-2xl text-center">
         <h2
           id="cta-heading"
-          className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl"
+          className="text-3xl font-medium tracking-tight text-foreground md:text-4xl lg:text-5xl"
         >
           Ready to transform your business?
         </h2>

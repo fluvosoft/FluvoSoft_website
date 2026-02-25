@@ -113,7 +113,7 @@ export default function BuiltWithTools() {
   return (
     <section className="bg-background px-6 py-10 lg:px-8 lg:py-14">
       <div className="mx-auto max-w-container">
-        <h2 className="text-center text-xl font-semibold text-foreground md:text-2xl">
+        <h2 className="text-center text-xl font-medium text-foreground md:text-2xl">
           Build AI — Powering Frontier AI
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center text-sm text-accent">

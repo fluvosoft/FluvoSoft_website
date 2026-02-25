@@ -59,7 +59,7 @@ export default function BlockchainPage() {
           <div className="mx-auto max-w-container">
             <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-12">
               <div>
-                <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Blockchain Development</h1>
+                <h1 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl">Blockchain Development</h1>
                 <p className="mt-6 max-w-2xl text-lg text-accent">Building secure, transparent, and decentralized solutions that transform how businesses operate and trust is established.</p>
                 <Link href="/#book-a-demo" className="mt-8 inline-flex rounded-full bg-cta px-6 py-3 text-sm font-medium text-white no-underline transition hover:bg-cta/90">Get Started</Link>
               </div>
@@ -72,9 +72,9 @@ export default function BlockchainPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">How Our Team Works</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">How Our Team Works</h2>
             <p className="mt-4 max-w-3xl text-accent">Our blockchain development team combines deep technical expertise with business acumen to deliver solutions that drive real value.</p>
-            <h3 className="mt-8 text-xl font-semibold text-foreground">Collaborative Approach</h3>
+            <h3 className="mt-8 text-xl font-medium text-foreground">Collaborative Approach</h3>
             <p className="mt-3 max-w-3xl text-accent">Our blockchain team works closely with your business stakeholders to understand your unique challenges and opportunities. We believe in transparent communication and iterative development, ensuring you&apos;re involved at every stage of the process.</p>
             <p className="mt-3 max-w-3xl text-accent">We combine agile methodologies with blockchain best practices, allowing us to adapt quickly to changing requirements while maintaining the highest standards of security and quality.</p>
             <ul className="mt-6 list-inside list-disc space-y-2 text-accent">
@@ -87,14 +87,14 @@ export default function BlockchainPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Our Development Process</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Our Development Process</h2>
             <p className="mt-2 text-accent">A proven methodology that ensures secure, scalable, and successful blockchain implementations</p>
             <div className="mt-10 space-y-8">
               {processSteps.map((step) => (
                 <div key={step.num} className="flex gap-6">
-                  <span className="text-2xl font-bold text-cta">{step.num}</span>
+                  <span className="text-2xl font-semibold text-cta">{step.num}</span>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
+                    <h3 className="text-lg font-medium text-foreground">{step.title}</h3>
                     <p className="mt-2 text-accent">{step.desc}</p>
                   </div>
                 </div>
@@ -105,12 +105,12 @@ export default function BlockchainPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Blockchain Technologies We Use</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Blockchain Technologies We Use</h2>
             <p className="mt-2 text-accent">We work with leading blockchain platforms and tools to build the right solution for your needs</p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {technologies.map((t) => (
                 <div key={t.name} className="rounded-xl border border-white/10 bg-dashboard-card p-6">
-                  <h3 className="font-semibold text-foreground">{t.name}</h3>
+                  <h3 className="font-medium text-foreground">{t.name}</h3>
                   <p className="mt-2 text-sm text-accent">{t.desc}</p>
                 </div>
               ))}
@@ -120,12 +120,12 @@ export default function BlockchainPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Our Blockchain Products</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Our Blockchain Products</h2>
             <p className="mt-2 text-accent">Explore our suite of blockchain solutions designed to solve real-world business challenges</p>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {products.map((p) => (
                 <div key={p.title} className="rounded-xl border border-white/10 bg-dashboard-card p-6">
-                  <h3 className="text-lg font-semibold text-foreground">{p.title}</h3>
+                  <h3 className="text-lg font-medium text-foreground">{p.title}</h3>
                   <p className="mt-3 text-sm text-accent">{p.desc}</p>
                   <ul className="mt-4 list-inside list-disc text-sm text-accent">
                     {p.bullets.map((b) => (
@@ -141,7 +141,7 @@ export default function BlockchainPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container text-center">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Ready to Build Your Blockchain Solution?</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Ready to Build Your Blockchain Solution?</h2>
             <p className="mt-4 text-accent">Let&apos;s discuss how blockchain technology can transform your business operations and create new opportunities for growth.</p>
             <Link href="/#book-a-demo" className="mt-8 inline-flex rounded-full bg-cta px-8 py-3.5 text-sm font-medium text-white no-underline transition hover:bg-cta/90">Get Started</Link>
           </div>

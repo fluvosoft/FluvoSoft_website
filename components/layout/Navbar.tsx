@@ -73,7 +73,7 @@ export default function Navbar() {
             className="h-8 w-auto md:h-9"
             priority
           />
-          <span className="text-lg font-semibold tracking-tight">FluvoSoft</span>
+          <span className="text-lg font-medium tracking-tight">FluvoSoft</span>
         </Link>
 
         {/* Nav links - hidden on small screens, add mobile menu later if needed */}

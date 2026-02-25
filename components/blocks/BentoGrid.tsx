@@ -13,7 +13,7 @@ export function BentoCell({ title, description, children, className = "", span =
   const spanClass = span === "2" ? "md:col-span-2" : span === "3" ? "md:col-span-3" : "";
   return (
     <Card variant="bordered" className={`${spanClass} ${className}`}>
-      {title && <h3 className="text-lg font-semibold text-foreground">{title}</h3>}
+      {title && <h3 className="text-lg font-medium text-foreground">{title}</h3>}
       {description && <p className="mt-1 text-sm text-accent">{description}</p>}
       {children && <div className="mt-4">{children}</div>}
     </Card>

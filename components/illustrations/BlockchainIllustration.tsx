@@ -76,7 +76,7 @@ export default function BlockchainIllustration({ className = "" }: { className?:
                     >
                       <div className="flex h-full w-full flex-col items-center justify-center">
                         <div
-                          className={`text-base font-mono font-semibold transition-colors duration-500 ${
+                          className={`text-base font-mono font-medium transition-colors duration-500 ${
                             isActive ? "text-brand" : "text-accent/70"
                           }`}
                         >

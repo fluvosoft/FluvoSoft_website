@@ -74,7 +74,7 @@ export default function TextingMockupIllustration({ className = "" }: { classNam
     <div className={`flex flex-col ${className}`} aria-hidden>
       {/* Header */}
       <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
-        <h4 className="text-base font-semibold text-foreground">Client Support Automation</h4>
+        <h4 className="text-base font-medium text-foreground">Client Support Automation</h4>
         <div className="flex items-center gap-1.5">
           <div className="h-2 w-2 rounded-full bg-green-500"></div>
           <span className="text-xs text-accent">Online</span>
@@ -98,7 +98,7 @@ export default function TextingMockupIllustration({ className = "" }: { classNam
           >
             {/* Left sender avatar */}
             {msg.sender === "left" && (
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand/80 to-brand/60 text-xs font-semibold text-white shadow-sm">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand/80 to-brand/60 text-xs font-medium text-white shadow-sm">
                 SG
               </div>
             )}
@@ -114,7 +114,7 @@ export default function TextingMockupIllustration({ className = "" }: { classNam
             </div>
             {/* Right sender avatar */}
             {msg.sender === "right" && (
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent/80 to-accent/60 text-xs font-semibold text-white shadow-sm">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent/80 to-accent/60 text-xs font-medium text-white shadow-sm">
                 ED
               </div>
             )}
@@ -131,7 +131,7 @@ export default function TextingMockupIllustration({ className = "" }: { classNam
                 <span className="h-2 w-2 animate-bounce rounded-full bg-foreground/60" style={{ animationDelay: "300ms" }} />
               </div>
             </div>
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent/80 to-accent/60 text-xs font-semibold text-white shadow-sm">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent/80 to-accent/60 text-xs font-medium text-white shadow-sm">
               ED
             </div>
           </div>

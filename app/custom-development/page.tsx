@@ -63,7 +63,7 @@ export default function CustomDevelopmentPage() {
           <div className="mx-auto max-w-container">
             <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-12">
               <div>
-                <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Custom Development</h1>
+                <h1 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl">Custom Development</h1>
                 <p className="mt-6 max-w-2xl text-lg text-accent">Tailored applications built specifically for your needs. From web apps to enterprise solutions, we deliver software that scales with your business.</p>
                 <Link href="/#book-a-demo" className="mt-8 inline-flex rounded-full bg-cta px-6 py-3 text-sm font-medium text-white no-underline transition hover:bg-cta/90">Get Started</Link>
               </div>
@@ -76,9 +76,9 @@ export default function CustomDevelopmentPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">How Our Team Works</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">How Our Team Works</h2>
             <p className="mt-4 max-w-3xl text-accent">Our development team combines technical excellence with business understanding to deliver custom solutions that perfectly fit your needs.</p>
-            <h3 className="mt-8 text-xl font-semibold text-foreground">Client-Centric Development</h3>
+            <h3 className="mt-8 text-xl font-medium text-foreground">Client-Centric Development</h3>
             <p className="mt-3 max-w-3xl text-accent">We believe in close collaboration with our clients throughout the development process. Our team works as an extension of yours, ensuring that every feature and functionality aligns with your business objectives and user needs.</p>
             <p className="mt-3 max-w-3xl text-accent">We use agile methodologies with regular sprints, demos, and feedback cycles. This iterative approach ensures you&apos;re always in the loop and can make adjustments as we build, resulting in a solution that truly fits your requirements.</p>
             <ul className="mt-6 list-inside list-disc space-y-2 text-accent">
@@ -91,14 +91,14 @@ export default function CustomDevelopmentPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Our Development Process</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Our Development Process</h2>
             <p className="mt-2 text-accent">A proven methodology that ensures successful delivery of custom software solutions from concept to deployment</p>
             <div className="mt-10 space-y-8">
               {processSteps.map((step) => (
                 <div key={step.num} className="flex gap-6">
-                  <span className="text-2xl font-bold text-cta">{step.num}</span>
+                  <span className="text-2xl font-semibold text-cta">{step.num}</span>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
+                    <h3 className="text-lg font-medium text-foreground">{step.title}</h3>
                     <p className="mt-2 text-accent">{step.desc}</p>
                   </div>
                 </div>
@@ -109,12 +109,12 @@ export default function CustomDevelopmentPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Technologies We Use</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Technologies We Use</h2>
             <p className="mt-2 text-accent">We leverage modern, proven technologies to build scalable, maintainable, and high-performance custom solutions</p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {technologies.map((t) => (
                 <div key={t.name} className="rounded-xl border border-white/10 bg-dashboard-card p-6">
-                  <h3 className="font-semibold text-foreground">{t.name}</h3>
+                  <h3 className="font-medium text-foreground">{t.name}</h3>
                   <p className="mt-2 text-sm text-accent">{t.desc}</p>
                 </div>
               ))}
@@ -124,12 +124,12 @@ export default function CustomDevelopmentPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Our Custom Development Services</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Our Custom Development Services</h2>
             <p className="mt-2 text-accent">Comprehensive custom software solutions tailored to your specific business needs and requirements</p>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {services.map((p) => (
                 <div key={p.title} className="rounded-xl border border-white/10 bg-dashboard-card p-6">
-                  <h3 className="text-lg font-semibold text-foreground">{p.title}</h3>
+                  <h3 className="text-lg font-medium text-foreground">{p.title}</h3>
                   <p className="mt-3 text-sm text-accent">{p.desc}</p>
                   <ul className="mt-4 list-inside list-disc text-sm text-accent">
                     {p.bullets.map((b) => (
@@ -145,13 +145,13 @@ export default function CustomDevelopmentPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Project Timelines</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Project Timelines</h2>
             <p className="mt-2 text-accent">We provide flexible timelines based on project complexity and requirements</p>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {timelines.map((t) => (
                 <div key={t.label} className="rounded-xl border border-white/10 bg-dashboard-card p-6 text-center">
-                  <p className="text-2xl font-bold text-cta">{t.duration}</p>
-                  <h3 className="mt-2 text-lg font-semibold text-foreground">{t.label}</h3>
+                  <p className="text-2xl font-semibold text-cta">{t.duration}</p>
+                  <h3 className="mt-2 text-lg font-medium text-foreground">{t.label}</h3>
                   <p className="mt-2 text-sm text-accent">{t.desc}</p>
                 </div>
               ))}
@@ -161,7 +161,7 @@ export default function CustomDevelopmentPage() {
 
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container text-center">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Ready to Build Your Custom Solution?</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Ready to Build Your Custom Solution?</h2>
             <p className="mt-4 text-accent">Let&apos;s discuss your project requirements and create a custom software solution that perfectly fits your business needs.</p>
             <Link href="/#book-a-demo" className="mt-8 inline-flex rounded-full bg-cta px-8 py-3.5 text-sm font-medium text-white no-underline transition hover:bg-cta/90">Get Started</Link>
           </div>

@@ -24,7 +24,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
       className={`rounded-lg border p-4 ${variants[variant]} ${className}`}
       {...props}
     >
-      {title && <h5 className="mb-1 font-semibold">{title}</h5>}
+      {title && <h5 className="mb-1 font-medium">{title}</h5>}
       <div className="text-sm">{children}</div>
     </div>
   )

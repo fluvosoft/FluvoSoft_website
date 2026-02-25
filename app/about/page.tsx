@@ -75,7 +75,7 @@ export default function AboutPage() {
         {/* Hero */}
         <section className="px-6 py-16 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-container text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl">
               About FluvoSoft
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-accent lg:text-xl">
@@ -87,7 +87,7 @@ export default function AboutPage() {
         {/* Our Story */}
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Our Story</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Our Story</h2>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-accent md:text-lg">
               We started as a small team who love technology. Today, we work with over 50 companies around the world. We build AI tools, blockchain apps, and custom software. Our focus on doing great work and helping clients succeed makes us a trusted choice for businesses looking for technology solutions.
             </p>
@@ -102,13 +102,13 @@ export default function AboutPage() {
           <div className="mx-auto max-w-container">
             <div className="grid gap-12 md:grid-cols-2">
               <div>
-                <h2 className="text-xl font-semibold text-foreground md:text-2xl">Our Mission</h2>
+                <h2 className="text-xl font-medium text-foreground md:text-2xl">Our Mission</h2>
                 <p className="mt-4 text-base leading-relaxed text-accent">
                   To build smart, safe, and reliable software that helps businesses everywhere. We make new technology easy to use and affordable for companies big and small.
                 </p>
               </div>
               <div>
-                <h2 className="text-xl font-semibold text-foreground md:text-2xl">Our Vision</h2>
+                <h2 className="text-xl font-medium text-foreground md:text-2xl">Our Vision</h2>
                 <p className="mt-4 text-base leading-relaxed text-accent">
                   To be a world leader in helping businesses use technology better. We want to set the standard for great ideas and reliable work. We see a future where every business can use technology to grow and succeed.
                 </p>
@@ -120,7 +120,7 @@ export default function AboutPage() {
         {/* Our Values */}
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Our Values</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Our Values</h2>
             <p className="mt-2 text-accent">The principles that guide everything we do</p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((v) => (
@@ -128,7 +128,7 @@ export default function AboutPage() {
                   key={v.title}
                   className="rounded-xl border border-white/10 bg-dashboard-card p-6 transition hover:border-white/20"
                 >
-                  <h3 className="text-lg font-semibold text-foreground">{v.title}</h3>
+                  <h3 className="text-lg font-medium text-foreground">{v.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-accent">{v.description}</p>
                 </div>
               ))}
@@ -139,7 +139,7 @@ export default function AboutPage() {
         {/* Our Impact */}
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Our Impact</h2>
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Our Impact</h2>
             <p className="mt-2 text-accent">Numbers that reflect our commitment to excellence</p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {impact.map((item) => (
@@ -147,8 +147,8 @@ export default function AboutPage() {
                   key={item.label}
                   className="rounded-xl border border-white/10 bg-dashboard-card p-6 text-center transition hover:border-cta/30"
                 >
-                  <p className="text-3xl font-bold text-cta md:text-4xl">{item.value}</p>
-                  <p className="mt-2 font-semibold text-foreground">{item.label}</p>
+                  <p className="text-3xl font-semibold text-cta md:text-4xl">{item.value}</p>
+                  <p className="mt-2 font-medium text-foreground">{item.label}</p>
                   <p className="mt-1 text-sm text-accent">{item.sub}</p>
                 </div>
               ))}
@@ -159,7 +159,7 @@ export default function AboutPage() {
         {/* Technology Expertise */}
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">
               Our Technology Expertise
             </h2>
             <p className="mt-2 text-accent">
@@ -181,7 +181,7 @@ export default function AboutPage() {
         {/* CTA */}
         <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-container text-center">
-            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">
               Ready to Work Together?
             </h2>
             <p className="mt-4 max-w-xl mx-auto text-accent">

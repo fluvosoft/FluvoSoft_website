@@ -428,7 +428,7 @@ export default function DashboardPreview() {
 
           {/* Header */}
           <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-            <h2 className="text-lg font-bold text-dashboard-title transition-opacity duration-200">
+            <h2 className="text-lg font-semibold text-dashboard-title transition-opacity duration-200">
               {NAV_TABS[activeNavTab]}
             </h2>
             <div className="flex items-center gap-3">
@@ -483,7 +483,7 @@ export default function DashboardPreview() {
                   style={{ animationDelay: `${i * 60}ms`, animationFillMode: "backwards" }}
                 >
                   <p className="text-sm font-medium text-accent">{m.label}</p>
-                  <p className="mt-1.5 text-xl font-bold text-foreground">{m.value}</p>
+                  <p className="mt-1.5 text-xl font-semibold text-foreground">{m.value}</p>
                   <p className="mt-1 text-sm text-positive">{m.change}</p>
                 </div>
               ))}
@@ -496,7 +496,7 @@ export default function DashboardPreview() {
                   className={`animate-card-enter rounded-lg bg-dashboard-card transition-colors duration-200 hover:bg-dashboard-card/90 lg:col-span-2 ${subTabId !== "Categories" ? "flex flex-col px-4 pt-4 pb-1" : "p-4"}`}
                   style={{ animationDelay: "240ms", animationFillMode: "backwards" }}
                 >
-                  <h3 className="text-base font-semibold text-dashboard-title flex-shrink-0">
+                  <h3 className="text-base font-medium text-dashboard-title flex-shrink-0">
                     {subTabId === "Catalog" ? CATALOG_CHART_LABEL.title : subTabId}
                   </h3>
                   <p className="mt-0.5 text-xs text-accent flex-shrink-0">
@@ -561,7 +561,7 @@ export default function DashboardPreview() {
                   className="animate-card-enter rounded-lg bg-dashboard-card p-4 transition-colors duration-200 hover:bg-dashboard-card/90"
                   style={{ animationDelay: "280ms", animationFillMode: "backwards" }}
                 >
-                  <h3 className="text-base font-semibold text-dashboard-title">
+                  <h3 className="text-base font-medium text-dashboard-title">
                     {subTabId === "Catalog" ? "Top products" : "Product list"}
                   </h3>
                   <p className="mt-1 text-sm text-accent">
@@ -598,7 +598,7 @@ export default function DashboardPreview() {
                   className="animate-card-enter rounded-lg bg-dashboard-card p-4 transition-colors duration-200 hover:bg-dashboard-card/90 lg:col-span-2"
                   style={{ animationDelay: "240ms", animationFillMode: "backwards" }}
                 >
-                  <h3 className="text-base font-semibold text-dashboard-title">{subTabId}</h3>
+                  <h3 className="text-base font-medium text-dashboard-title">{subTabId}</h3>
                   {subTabId === "Profile" && (
                     <div className="mt-4 space-y-4">
                       <div>
@@ -638,7 +638,7 @@ export default function DashboardPreview() {
                   {subTabId === "Billing" && (
                     <div className="mt-3 rounded-lg border border-white/10 p-4">
                       <p className="text-sm font-medium text-foreground">Pro plan</p>
-                      <p className="mt-1 text-2xl font-bold text-foreground">$29 <span className="text-sm font-normal text-accent">/month</span></p>
+                      <p className="mt-1 text-2xl font-semibold text-foreground">$29 <span className="text-sm font-normal text-accent">/month</span></p>
                       <p className="mt-2 text-xs text-accent">Billing cycle: Monthly. Next charge: Mar 15, 2023.</p>
                       <Button size="sm" variant="secondary" className="mt-4">Change plan</Button>
                     </div>
@@ -673,7 +673,7 @@ export default function DashboardPreview() {
                   className="animate-card-enter rounded-lg bg-dashboard-card p-4 transition-colors duration-200 hover:bg-dashboard-card/90"
                   style={{ animationDelay: "280ms", animationFillMode: "backwards" }}
                 >
-                  <h3 className="text-base font-semibold text-dashboard-title">Quick links</h3>
+                  <h3 className="text-base font-medium text-dashboard-title">Quick links</h3>
                   <ul className="mt-4 space-y-2">
                     {["API keys", "Webhooks", "Audit log", "Data export"].map((link, i) => (
                       <li key={link}>
@@ -699,7 +699,7 @@ export default function DashboardPreview() {
                     <>
                       <div className="flex flex-shrink-0 flex-wrap items-start justify-between gap-3">
                         <div>
-                          <h3 className="text-base font-semibold text-dashboard-title">Total Visitors</h3>
+                          <h3 className="text-base font-medium text-dashboard-title">Total Visitors</h3>
                           <p className="mt-0.5 text-xs text-accent">Total for the {VISITOR_TIME_RANGES.find((r) => r.id === visitorRange)?.label.toLowerCase()}</p>
                         </div>
                         <div className="flex rounded-md border border-white/10 bg-dashboard-bg/80 p-0.5">
@@ -788,7 +788,7 @@ export default function DashboardPreview() {
                     </ul>
                   ) : (
                     <>
-                      <h3 className="text-base font-semibold text-dashboard-title">
+                      <h3 className="text-base font-medium text-dashboard-title">
                         {CHART_LABELS[subTabId]?.title ?? subTabId}
                       </h3>
                       {CHART_LABELS[subTabId]?.subtitle && (
@@ -839,7 +839,7 @@ export default function DashboardPreview() {
                   className="animate-card-enter rounded-lg bg-dashboard-card p-4 transition-colors duration-200 hover:bg-dashboard-card/90"
                   style={{ animationDelay: "280ms", animationFillMode: "backwards" }}
                 >
-                  <h3 className="text-base font-semibold text-dashboard-title">Recent Sales</h3>
+                  <h3 className="text-base font-medium text-dashboard-title">Recent Sales</h3>
                   <p className="mt-1 text-sm text-accent">Latest transactions · 265 sales this month.</p>
                   <ul className="mt-3 space-y-3">
                     {recentSales.slice(0, 3).map((s, i) => (

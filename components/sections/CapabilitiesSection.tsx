@@ -29,13 +29,13 @@ export default function CapabilitiesSection() {
   return (
     <section className="border-t border-white/10 bg-background px-6 py-20 lg:px-8">
       <div className="mx-auto max-w-container">
-        <h2 className="text-center text-2xl font-semibold text-foreground md:text-3xl">
+        <h2 className="text-center text-2xl font-medium text-foreground md:text-3xl">
           Comprehensive MCP infrastructure
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-accent">
           Our platform integrates seamlessly with your existing applications, providing a robust infrastructure for running your MCP servers across a global network.
         </p>
-        <h3 className="mt-12 text-center text-lg font-semibold text-foreground">
+        <h3 className="mt-12 text-center text-lg font-medium text-foreground">
           MCP server capabilities
         </h3>
         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -44,7 +44,7 @@ export default function CapabilitiesSection() {
               <div className="mb-3 flex justify-center">
                 <CapIcon icon={c.icon} />
               </div>
-              <h4 className="font-semibold text-foreground">{c.name}</h4>
+              <h4 className="font-medium text-foreground">{c.name}</h4>
               <p className="mt-2 text-sm text-accent">{c.desc}</p>
             </div>
           ))}

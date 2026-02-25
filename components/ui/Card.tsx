@@ -32,7 +32,7 @@ export function CardHeader({ className = "", ...props }: React.HTMLAttributes<HT
 }
 
 export function CardTitle({ className = "", ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return <h3 className={`text-lg font-semibold text-foreground ${className}`} {...props} />;
+  return <h3 className={`text-lg font-medium text-foreground ${className}`} {...props} />;
 }
 
 export function CardDescription({ className = "", ...props }: React.HTMLAttributes<HTMLParagraphElement>) {

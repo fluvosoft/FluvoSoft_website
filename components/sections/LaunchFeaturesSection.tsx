@@ -42,7 +42,7 @@ export default function LaunchFeaturesSection() {
   return (
     <section className="bg-background px-6 py-10 lg:px-8 lg:py-14" aria-labelledby="features-heading">
       <div className="mx-auto max-w-container">
-        <h2 id="features-heading" className="text-center text-2xl font-semibold text-foreground md:text-3xl lg:text-4xl">
+        <h2 id="features-heading" className="text-center text-2xl font-medium text-foreground md:text-3xl lg:text-4xl">
           Build a better website, faster.
         </h2>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
@@ -67,7 +67,7 @@ export default function LaunchFeaturesSection() {
               }`}>
                 <Illustration className={illustrationClass} />
               </div>
-              <h3 className="mt-5 text-lg font-semibold text-foreground">{title}</h3>
+              <h3 className="mt-5 text-lg font-medium text-foreground">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-accent">{description}</p>
             </article>
           ))}
