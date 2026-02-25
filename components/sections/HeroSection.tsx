@@ -11,7 +11,7 @@ export default function HeroSection() {
         <p className="mx-auto mb-4 max-w-xl text-sm font-medium uppercase tracking-wider text-accent">
           FluvoSoft Works With
         </p>
-        <h1 className="mx-auto max-w-3xl text-hero font-semibold leading-tight tracking-tight text-foreground lg:text-hero-lg">
+        <h1 className="mx-auto max-w-3xl text-hero font-medium leading-tight tracking-tight text-foreground lg:text-hero-lg">
           Blockchain and
           <br />
           <span className="text-foreground-muted">Automation</span>

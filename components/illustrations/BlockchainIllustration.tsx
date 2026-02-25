@@ -47,10 +47,10 @@ export default function BlockchainIllustration({ className = "" }: { className?:
   };
 
   return (
-    <div className={`flex h-full w-full items-center justify-center ${className}`} aria-hidden>
-      <div className="flex h-full w-full flex-col justify-evenly gap-2 py-2">
+    <div className={`flex w-full items-center justify-center ${className}`} aria-hidden>
+      <div className="flex w-full max-w-[168px] flex-col justify-evenly gap-0.5 py-1 sm:max-w-[380px] sm:gap-2 sm:py-2 md:max-w-[440px] lg:max-w-[520px]">
         {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex items-center justify-center gap-2">
+          <div key={rowIndex} className="flex items-center justify-center gap-0.5 sm:gap-2">
             {row.map((block, colIndex) => {
               const index = getBlockIndex(rowIndex, colIndex);
               const isActive = activeBlock === index;
@@ -59,14 +59,14 @@ export default function BlockchainIllustration({ className = "" }: { className?:
               const isLastInRow = colIndex === row.length - 1;
 
               return (
-                <div key={block.id} className="flex items-center gap-3">
+                <div key={block.id} className="flex items-center gap-1 sm:gap-3">
                   <div
                     className={`relative flex flex-col items-center transition-all duration-500 ${
-                      isActive ? "scale-110" : isPrevious ? "scale-105" : "scale-100"
+                      isActive ? "scale-105 sm:scale-110" : isPrevious ? "scale-100 sm:scale-105" : "scale-100"
                     }`}
                   >
                     <div
-                      className={`h-[112px] w-[128px] rounded-xl border-2 p-3 transition-all duration-500 ${
+                      className={`h-[36px] w-[44px] rounded-md border p-1 transition-all duration-500 sm:h-[92px] sm:w-[108px] sm:rounded-xl sm:border-2 sm:p-3 md:h-[104px] md:w-[120px] lg:h-[112px] lg:w-[128px] ${
                         isActive
                           ? "border-brand bg-brand/20 shadow-lg shadow-brand/30"
                           : isPrevious
@@ -76,39 +76,39 @@ export default function BlockchainIllustration({ className = "" }: { className?:
                     >
                       <div className="flex h-full w-full flex-col items-center justify-center">
                         <div
-                          className={`text-base font-mono font-medium transition-colors duration-500 ${
+                          className={`text-[8px] font-mono font-medium leading-none transition-colors duration-500 sm:text-base sm:leading-normal ${
                             isActive ? "text-brand" : "text-accent/70"
                           }`}
                         >
                           #{block.id}
                         </div>
                         <div
-                          className={`mt-1 text-[11px] font-mono transition-colors duration-500 ${
+                          className={`mt-0.5 text-[6px] font-mono leading-none transition-colors duration-500 sm:mt-1 sm:text-[11px] sm:leading-normal ${
                             isActive ? "text-brand/80" : "text-accent/50"
                           }`}
                         >
-                          <span className="block w-[92px] truncate text-center">{block.hash}</span>
+                          <span className="block max-w-full truncate text-center">{block.hash}</span>
                         </div>
                         <div
-                          className={`mt-1 text-[10px] font-mono transition-colors duration-500 ${
+                          className={`text-[5px] font-mono leading-none transition-colors duration-500 sm:mt-1 sm:text-[10px] sm:leading-normal ${
                             isActive ? "text-brand/60" : "text-accent/40"
                           }`}
                         >
-                          <span className="block w-[92px] truncate text-center">
-                            {index === 0 ? "Genesis" : `${index * 12}tx`}
+                          <span className="block max-w-full truncate text-center">
+                            {index === 0 ? "Gen" : `${index * 12}t`}
                           </span>
                         </div>
                       </div>
 
                       {isActive && (
-                        <div className="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full border-2 border-black bg-brand animate-pulse" />
+                        <div className="absolute -top-0.5 -right-0.5 h-1 w-1 rounded-full border border-black bg-brand animate-pulse sm:-top-1 sm:-right-1 sm:h-2.5 sm:w-2.5 sm:border-2" />
                       )}
                     </div>
                   </div>
 
                   {!isLastInRow && (
                     <div
-                      className={`h-0.5 w-5 transition-all duration-500 ${
+                      className={`h-px w-1 transition-all duration-500 sm:h-0.5 sm:w-4 md:w-5 ${
                         isActive && index === activeBlock - 1
                           ? "bg-brand"
                           : isPrevious && index === activeBlock

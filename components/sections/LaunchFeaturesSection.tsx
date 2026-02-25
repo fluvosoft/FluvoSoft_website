@@ -13,14 +13,14 @@ const features = [
     description:
       "Seamlessly integrate blockchain technology into your applications. Secure, decentralized, and transparent solutions for the modern web.",
     Illustration: BlockchainIllustration,
-    illustrationClass: "h-full w-full",
+    illustrationClass: "max-w-full",
   },
   {
     title: "You're in control",
     description:
       "This is not a component library. It's a collection of re-usable components that you can copy and paste into your apps.",
     Illustration: MockupMobileIllustration,
-    illustrationClass: "shrink-0",
+    illustrationClass: "shrink-0 w-full max-w-full",
   },
   {
     title: "Fits right into your stack",
@@ -56,15 +56,17 @@ export default function LaunchFeaturesSection() {
               }`}
               style={{ animationDelay: `${index * 80}ms` }}
             >
-              <div className={`flex flex-shrink-0 items-center justify-center text-brand transition-transform duration-300 group-hover:scale-[1.02] ${
-                title === "Data-agnostic"
-                  ? "min-h-[240px]"
-                  : title === "Fits right into your stack"
-                    ? "h-[340px]"
-                    : title === "Blockchain Integration"
-                      ? "h-[520px] overflow-hidden"
-                      : "min-h-[200px]"
-              }`}>
+              <div
+                className={`flex flex-shrink-0 items-center justify-center text-brand transition-transform duration-300 group-hover:scale-[1.02] min-h-[180px] ${
+                  title === "Data-agnostic"
+                    ? "md:min-h-[260px]"
+                    : title === "Fits right into your stack"
+                      ? "md:h-[280px] lg:h-[320px]"
+                      : title === "Blockchain Integration"
+                        ? "md:h-[360px] lg:h-[440px] md:overflow-hidden"
+                        : "md:min-h-[240px]"
+                }`}
+              >
                 <Illustration className={illustrationClass} />
               </div>
               <h3 className="mt-5 text-lg font-medium text-foreground">{title}</h3>
