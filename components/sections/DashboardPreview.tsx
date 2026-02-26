@@ -371,7 +371,7 @@ export default function DashboardPreview() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-        <div className="relative overflow-hidden rounded-[calc(1rem-7px)] bg-dashboard-bg">
+        <div className="relative overflow-hidden rounded-[calc(1rem-7px)] bg-dashboard-bg min-h-[600px] sm:min-h-[650px] lg:min-h-[700px]">
           {/* Glossy + shade overlay + subtle orange catch from ambient glow */}
           <div
             className="pointer-events-none absolute inset-0 z-0 rounded-[calc(1rem-7px)]"
@@ -389,21 +389,21 @@ export default function DashboardPreview() {
           />
           <div className="relative z-10">
           {/* Top bar */}
-          <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5">
+            <div className="flex flex-col gap-2 border-b border-white/10 px-2 py-2.5 sm:flex-row sm:items-center sm:justify-between sm:px-4">
             <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-accent-dark transition-opacity duration-200 hover:opacity-80" />
-              <span className="text-sm font-medium text-accent">Alicia Koch</span>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" className="text-accent transition-transform duration-200 hover:rotate-180">
+              <div className="h-8 w-8 shrink-0 rounded-full bg-accent-dark transition-opacity duration-200 hover:opacity-80" />
+              <span className="text-xs font-medium text-accent sm:text-sm">Alicia Koch</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" className="hidden text-accent transition-transform duration-200 hover:rotate-180 sm:block">
                 <path d="M3 4.5L6 7.5L9 4.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <div className="flex items-center gap-6">
+            <div className="no-scrollbar flex flex-nowrap items-center gap-1 overflow-x-auto whitespace-nowrap sm:gap-2 md:gap-6">
               {NAV_TABS.map((tab, i) => (
                 <button
                   key={tab}
                   type="button"
                   onClick={() => handleNavTabClick(i)}
-                  className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${
+                  className={`shrink-0 rounded-md px-2 py-1.5 text-xs font-medium transition-colors duration-200 sm:px-3 sm:text-sm ${
                     i === activeNavTab ? "text-foreground" : "text-accent-dark hover:text-foreground"
                   }`}
                 >
@@ -411,8 +411,8 @@ export default function DashboardPreview() {
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-2 rounded-md bg-secondary-button px-4 py-2 transition-colors duration-200 hover:bg-white/20">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-accent shrink-0">
+            <div className="flex items-center gap-2 rounded-md bg-secondary-button px-2 py-1.5 transition-colors duration-200 hover:bg-white/20 sm:px-4 sm:py-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-4 w-4 shrink-0 text-accent sm:h-4 sm:w-4">
                 <circle cx="11" cy="11" r="8" strokeWidth="2" />
                 <path d="M21 21l-4.35-4.35" strokeWidth="2" strokeLinecap="round" />
               </svg>
@@ -421,41 +421,42 @@ export default function DashboardPreview() {
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-24 bg-transparent text-sm text-foreground placeholder:text-accent focus:outline-none focus:ring-0 sm:w-32"
+                className="w-20 bg-transparent text-xs text-foreground placeholder:text-accent focus:outline-none focus:ring-0 sm:w-24 sm:text-sm md:w-32"
               />
             </div>
           </div>
 
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-            <h2 className="text-lg font-semibold text-dashboard-title transition-opacity duration-200">
+          <div className="flex flex-col gap-2 border-b border-white/10 px-2 py-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-4 sm:py-3">
+            <h2 className="text-base font-semibold text-dashboard-title transition-opacity duration-200 sm:text-lg">
               {NAV_TABS[activeNavTab]}
             </h2>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <button
                 type="button"
-                className="flex items-center gap-2 rounded-md border border-white/10 bg-dashboard-card px-3 py-2 text-sm text-accent transition-colors duration-200 hover:border-white/20"
+                className="flex items-center gap-1.5 rounded-md border border-white/10 bg-dashboard-card px-2 py-1.5 text-xs text-accent transition-colors duration-200 hover:border-white/20 sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="shrink-0 sm:w-4 sm:h-4">
                   <rect x="3" y="4" width="18" height="18" rx="2" strokeWidth="2" />
                   <path d="M16 2v4M8 2v4M3 10h18" strokeWidth="2" strokeLinecap="round" />
                 </svg>
-                Jan 20, 2023 - Feb 09, 2023
+                <span className="hidden sm:inline">Jan 20, 2023 - Feb 09, 2023</span>
+                <span className="sm:hidden">Jan 20 - Feb 09</span>
               </button>
-              <Button size="sm" className="bg-tab-active-bg text-tab-active-text transition-opacity duration-200 hover:opacity-90">
+              <Button size="sm" className="bg-tab-active-bg text-tab-active-text shrink-0 text-xs transition-opacity duration-200 hover:opacity-90 sm:text-sm">
                 Download
               </Button>
             </div>
           </div>
 
           {/* Sub-nav */}
-          <div className="flex flex-wrap gap-1 border-b border-white/10 px-4 py-2">
+          <div className="no-scrollbar flex flex-nowrap gap-1 overflow-x-auto whitespace-nowrap border-b border-white/10 px-2 py-2 sm:px-4">
             {currentSubTabs.map((tab, i) => (
               <button
                 key={tab}
                 type="button"
                 onClick={() => handleSubTabClick(i)}
-                className={`rounded-md px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                className={`shrink-0 rounded-md px-2 py-1.5 text-xs font-medium transition-all duration-200 sm:px-4 sm:py-2 sm:text-sm ${
                   i === activeSubTab
                     ? "bg-tab-active-bg text-tab-active-text"
                     : "text-accent-dark hover:bg-white/10 hover:text-foreground"
@@ -465,12 +466,12 @@ export default function DashboardPreview() {
               </button>
             ))}
             {isPaused && (
-              <span className="ml-2 self-center text-xs text-accent">Auto-paused</span>
+              <span className="ml-2 shrink-0 self-center text-xs text-accent">Auto-paused</span>
             )}
           </div>
 
           {/* Content */}
-          <div className="p-4">
+          <div className="p-2 sm:p-4 min-h-[400px]">
             {/* Metric cards */}
             <div
               key={`metrics-${contentKey}-${activeNavTab}`}
@@ -482,16 +483,16 @@ export default function DashboardPreview() {
                   className="animate-card-enter rounded-lg bg-dashboard-card p-4 transition-colors duration-200 hover:bg-dashboard-card/90"
                   style={{ animationDelay: `${i * 60}ms`, animationFillMode: "backwards" }}
                 >
-                  <p className="text-sm font-medium text-accent">{m.label}</p>
-                  <p className="mt-1.5 text-xl font-semibold text-foreground">{m.value}</p>
-                  <p className="mt-1 text-sm text-positive">{m.change}</p>
+                  <p className="line-clamp-1 text-sm font-medium text-accent">{m.label}</p>
+                  <p className="mt-1.5 truncate text-xl font-semibold text-foreground">{m.value}</p>
+                  <p className="mt-1 line-clamp-1 text-sm text-positive">{m.change}</p>
                 </div>
               ))}
             </div>
 
             {/* Products content */}
             {isProducts && (
-              <div key={`products-${contentKey}`} className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+              <div key={`products-${contentKey}`} className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3 min-h-[300px]">
                 <div
                   className={`animate-card-enter rounded-lg bg-dashboard-card transition-colors duration-200 hover:bg-dashboard-card/90 lg:col-span-2 ${subTabId !== "Categories" ? "flex flex-col px-4 pt-4 pb-1" : "p-4"}`}
                   style={{ animationDelay: "240ms", animationFillMode: "backwards" }}
@@ -510,9 +511,9 @@ export default function DashboardPreview() {
                           className="animate-fade-in flex items-center justify-between rounded-md border border-white/5 px-3 py-2.5 transition-colors duration-200 hover:bg-white/5"
                           style={{ animationDelay: `${280 + i * 50}ms`, animationFillMode: "backwards" }}
                         >
-                          <span className="text-sm font-medium text-foreground">{cat.name}</span>
-                          <span className="text-xs text-accent">{cat.count} products</span>
-                          <span className="text-sm text-positive">{cat.revenue}</span>
+                          <span className="truncate text-sm font-medium text-foreground">{cat.name}</span>
+                          <span className="shrink-0 text-xs text-accent">{cat.count} products</span>
+                          <span className="shrink-0 text-sm text-positive">{cat.revenue}</span>
                         </li>
                       ))}
                     </ul>
@@ -543,11 +544,11 @@ export default function DashboardPreview() {
                           </svg>
                         </div>
                         <div
-                          className="mt-1 grid w-full text-xs text-accent"
+                          className="mt-1 grid w-full text-[10px] text-accent sm:text-xs"
                           style={{ gridTemplateColumns: `repeat(${CHART_X_LABELS.length}, minmax(0, 1fr))` }}
                         >
                           {CHART_X_LABELS.map((l) => (
-                            <span key={l} className="text-center first:text-left last:text-right">{l}</span>
+                            <span key={l} className="truncate text-center first:text-left last:text-right">{l}</span>
                           ))}
                         </div>
                       </div>
@@ -574,11 +575,11 @@ export default function DashboardPreview() {
                         className="animate-fade-in flex items-center justify-between gap-3 rounded-md border border-white/5 px-3 py-2 transition-colors duration-200 hover:bg-white/5"
                         style={{ animationDelay: `${320 + i * 50}ms`, animationFillMode: "backwards" }}
                       >
-                        <div>
-                          <p className="text-sm font-medium text-foreground">{p.name}</p>
-                          <p className="text-xs text-accent">{p.sku} · Stock: {p.stock}</p>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-medium text-foreground">{p.name}</p>
+                          <p className="truncate text-xs text-accent">{p.sku} · Stock: {p.stock}</p>
                         </div>
-                        <div className="text-right">
+                        <div className="shrink-0 text-right">
                           <p className="text-sm font-medium text-foreground">{p.price}</p>
                           <span className={`text-xs ${p.status === "Active" ? "text-positive" : p.status === "Low stock" ? "text-amber-400" : "text-accent"}`}>
                             {p.status}
@@ -593,7 +594,7 @@ export default function DashboardPreview() {
 
             {/* Settings content */}
             {isSettings && (
-              <div key={`settings-${contentKey}`} className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+              <div key={`settings-${contentKey}`} className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3 min-h-[300px]">
                 <div
                   className="animate-card-enter rounded-lg bg-dashboard-card p-4 transition-colors duration-200 hover:bg-dashboard-card/90 lg:col-span-2"
                   style={{ animationDelay: "240ms", animationFillMode: "backwards" }}
@@ -620,14 +621,14 @@ export default function DashboardPreview() {
                           className="animate-fade-in flex items-center justify-between rounded-md border border-white/5 px-3 py-2.5 transition-colors duration-200 hover:bg-white/5"
                           style={{ animationDelay: `${280 + i * 50}ms`, animationFillMode: "backwards" }}
                         >
-                          <div className="flex items-center gap-3">
-                            <div className="h-9 w-9 rounded-full bg-accent-dark" />
-                            <div>
-                              <p className="text-sm font-medium text-foreground">{member.name}</p>
-                              <p className="text-xs text-accent">{member.email}</p>
+                          <div className="flex min-w-0 flex-1 items-center gap-3">
+                            <div className="h-9 w-9 shrink-0 rounded-full bg-accent-dark" />
+                            <div className="min-w-0 flex-1">
+                              <p className="truncate text-sm font-medium text-foreground">{member.name}</p>
+                              <p className="truncate text-xs text-accent">{member.email}</p>
                             </div>
                           </div>
-                          <div className="flex items-center gap-2">
+                          <div className="flex shrink-0 items-center gap-2">
                             <span className="rounded-full bg-positive/20 px-2 py-0.5 text-xs text-positive">{member.role}</span>
                             <span className={`text-xs ${member.status === "Active" ? "text-positive" : "text-accent"}`}>{member.status}</span>
                           </div>
@@ -689,7 +690,7 @@ export default function DashboardPreview() {
 
             {/* Overview / Customers content (chart + recent sales) */}
             {!isProducts && !isSettings && (
-              <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+              <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3 min-h-[300px]">
                 <div
                   key={`chart-${contentKey}`}
                   className={`animate-card-enter rounded-lg bg-dashboard-card transition-colors duration-200 hover:bg-dashboard-card/90 lg:col-span-2 ${subTabId === "Overview" ? "flex flex-col px-4 pt-4 pb-1" : "p-4"}`}
@@ -708,13 +709,14 @@ export default function DashboardPreview() {
                               key={r.id}
                               type="button"
                               onClick={() => setVisitorRange(r.id)}
-                              className={`rounded px-3 py-1.5 text-xs font-medium transition-colors duration-200 ${
+                              className={`shrink-0 rounded px-2 py-1 text-[10px] font-medium transition-colors duration-200 sm:px-3 sm:py-1.5 sm:text-xs ${
                                 visitorRange === r.id
                                   ? "bg-white/15 text-foreground"
                                   : "text-accent hover:text-foreground"
                               }`}
                             >
-                              {r.label}
+                              <span className="hidden sm:inline">{r.label}</span>
+                              <span className="sm:hidden">{r.id === "3m" ? "3m" : r.id === "30d" ? "30d" : "7d"}</span>
                             </button>
                           ))}
                         </div>
@@ -750,11 +752,11 @@ export default function DashboardPreview() {
                           </svg>
                         </div>
                         <div
-                          className="mt-1 grid w-full text-xs text-accent"
+                          className="mt-1 grid w-full text-[10px] text-accent sm:text-xs"
                           style={{ gridTemplateColumns: `repeat(${VISITOR_CHART_DATES.length}, minmax(0, 1fr))` }}
                         >
                           {VISITOR_CHART_DATES.map((d) => (
-                            <span key={d} className="text-center first:text-left last:text-right">
+                            <span key={d} className="truncate text-center first:text-left last:text-right">
                               {d}
                             </span>
                           ))}
@@ -769,9 +771,9 @@ export default function DashboardPreview() {
                           className="animate-fade-in flex items-center justify-between gap-3 rounded-md border border-white/5 px-3 py-2.5 transition-colors duration-200 hover:bg-white/5"
                           style={{ animationDelay: `${280 + i * 50}ms`, animationFillMode: "backwards" }}
                         >
-                          <div>
-                            <p className="text-sm font-medium text-foreground">{item.title}</p>
-                            <p className="text-xs text-accent">{item.date ?? item.time}</p>
+                          <div className="min-w-0 flex-1">
+                            <p className="truncate text-sm font-medium text-foreground">{item.title}</p>
+                            <p className="truncate text-xs text-accent">{item.date ?? item.time}</p>
                           </div>
                           {item.status && (
                             <span className="rounded-full bg-positive/20 px-2 py-0.5 text-xs text-positive">
@@ -819,11 +821,11 @@ export default function DashboardPreview() {
                           </svg>
                         </div>
                         <div
-                          className="mt-2 grid w-full text-xs text-accent"
+                          className="mt-2 grid w-full text-[10px] text-accent sm:text-xs"
                           style={{ gridTemplateColumns: `repeat(${CHART_X_LABELS.length}, minmax(0, 1fr))` }}
                         >
                           {CHART_X_LABELS.map((l) => (
-                            <span key={l} className="text-center first:text-left last:text-right">{l}</span>
+                            <span key={l} className="truncate text-center first:text-left last:text-right">{l}</span>
                           ))}
                         </div>
                       </div>
@@ -848,14 +850,14 @@ export default function DashboardPreview() {
                         className="animate-fade-in flex items-center justify-between gap-3 transition-colors duration-200 hover:bg-white/5 -mx-2 rounded px-2 py-1"
                         style={{ animationDelay: `${320 + i * 60}ms`, animationFillMode: "backwards" }}
                       >
-                        <div className="flex items-center gap-3">
-                          <div className="h-9 w-9 rounded-full bg-accent-dark" />
-                          <div>
-                            <p className="text-sm font-medium text-foreground">{s.name}</p>
-                            <p className="text-xs text-accent">{s.email}</p>
+                        <div className="flex min-w-0 flex-1 items-center gap-3">
+                          <div className="h-9 w-9 shrink-0 rounded-full bg-accent-dark" />
+                          <div className="min-w-0 flex-1">
+                            <p className="truncate text-sm font-medium text-foreground">{s.name}</p>
+                            <p className="truncate text-xs text-accent">{s.email}</p>
                           </div>
                         </div>
-                        <span className="text-sm font-medium text-foreground">{s.amount}</span>
+                        <span className="shrink-0 text-sm font-medium text-foreground">{s.amount}</span>
                       </li>
                     ))}
                   </ul>

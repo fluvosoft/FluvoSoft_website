@@ -3,12 +3,10 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import AlertBanner from "@/components/sections/AlertBanner";
 import HeroSection from "@/components/sections/HeroSection";
-import LogosSection from "@/components/sections/LogosSection";
 import LaunchFeaturesSection from "@/components/sections/LaunchFeaturesSection";
 import SolutionsSection from "@/components/sections/SolutionsSection";
 import LabSection from "@/components/sections/LabSection";
 import DashboardPreview from "@/components/sections/DashboardPreview";
-import BuiltWithTools from "@/components/sections/BuiltWithTools";
 import EverythingYouNeedSection from "@/components/sections/EverythingYouNeedSection";
 import QualitySection from "@/components/sections/QualitySection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -57,9 +55,7 @@ export default function Home() {
         />
         <div className="relative z-10">
           <HeroSection />
-          <LogosSection />
           <DashboardPreview />
-          <BuiltWithTools />
           <LaunchFeaturesSection />
           <SolutionsSection />
           <LabSection />

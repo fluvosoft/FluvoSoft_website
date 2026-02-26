@@ -73,7 +73,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 px-4 pt-4 pb-2 md:px-6">
       <nav
         ref={navRef}
-        className="mx-auto flex max-w-6xl items-center justify-between gap-6 rounded-2xl bg-[#1A1A1A] px-6 py-3.5 shadow-lg md:rounded-3xl md:px-8"
+        className="relative mx-auto flex max-w-6xl items-center justify-between gap-6 rounded-2xl bg-[#1A1A1A] px-6 py-3.5 shadow-lg md:rounded-3xl md:px-8"
         aria-label="Main navigation"
       >
         {/* Brand */}
@@ -90,11 +90,11 @@ export default function Navbar() {
             className="h-8 w-auto md:h-9"
             priority
           />
-          <span className="text-lg font-medium tracking-tight">FluvoSoft</span>
+          <span className="hidden text-lg font-medium tracking-tight lg:inline">FluvoSoft</span>
         </Link>
 
         {/* Nav links - desktop */}
-        <div className="hidden flex-1 items-center justify-center gap-1 md:flex md:gap-2">
+        <div className="hidden flex-1 items-center justify-center gap-0.5 md:flex md:gap-1 lg:gap-2">
           {navLinks.map((item) =>
             "dropdown" in item ? (
               <div
@@ -104,7 +104,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setOpenDropdown((prev) => (prev === item.label ? null : item.label))}
-                  className="flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-white outline-none transition hover:text-cta focus-visible:ring-2 focus-visible:ring-cta/50"
+                  className="flex items-center gap-1 rounded-md px-2 py-1.5 text-xs font-medium text-white outline-none transition hover:text-cta focus-visible:ring-2 focus-visible:ring-cta/50 md:px-3 md:text-sm"
                   aria-expanded={openDropdown === item.label}
                   aria-haspopup="true"
                 >
@@ -142,7 +142,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="rounded-md px-3 py-1.5 text-sm font-medium text-white no-underline transition hover:text-cta"
+                className="rounded-md px-2 py-1.5 text-xs font-medium text-white no-underline transition hover:text-cta md:px-3 md:text-sm"
               >
                 {item.label}
               </Link>
@@ -156,7 +156,7 @@ export default function Navbar() {
           <div className="hidden shrink-0 md:block">
             <Link
               href="#book-a-demo"
-              className="inline-flex items-center justify-center rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-white no-underline shadow transition hover:bg-cta/90 focus-visible:ring-2 focus-visible:ring-cta/50"
+              className="inline-flex items-center justify-center rounded-full bg-cta px-3 py-2 text-xs font-medium text-white no-underline shadow transition hover:bg-cta/90 focus-visible:ring-2 focus-visible:ring-cta/50 lg:px-5 lg:py-2.5 lg:text-sm"
             >
               Book a Demo
             </Link>
@@ -198,7 +198,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="mt-2 md:hidden">
+        <div className="absolute left-0 right-0 top-full mt-2 md:hidden">
           <div className="mx-auto max-w-6xl rounded-2xl bg-[#1A1A1A] px-4 py-3 shadow-lg">
             <div className="space-y-1">
               {navLinks.map((item) =>

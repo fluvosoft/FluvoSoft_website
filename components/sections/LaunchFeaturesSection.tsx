@@ -43,7 +43,7 @@ export default function LaunchFeaturesSection() {
     <section className="bg-background px-6 py-10 lg:px-8 lg:py-14" aria-labelledby="features-heading">
       <div className="mx-auto max-w-container">
         <h2 id="features-heading" className="text-center text-2xl font-medium text-foreground md:text-3xl lg:text-4xl">
-          Build a better website, faster.
+          Build blockchain and automation solutions, faster.
         </h2>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
           {features.map(({ title, description, Illustration, illustrationClass }, index) => (

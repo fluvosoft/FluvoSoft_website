@@ -17,7 +17,7 @@ export default function BentoSection() {
     <section className="bg-background py-20">
       <div className="mx-auto max-w-container px-6 lg:px-8">
         <h2 className="mb-12 text-center text-3xl font-medium text-foreground md:text-4xl lg:text-5xl">
-          Build a better website, faster.
+          Build blockchain and automation solutions, faster.
         </h2>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4 lg:flex-row">
