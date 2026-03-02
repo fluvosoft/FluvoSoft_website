@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -57,14 +56,24 @@ export default function BlockchainPage() {
       <main className="min-h-screen bg-background" role="main">
         <section className="px-6 py-16 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-container">
-            <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-12">
-              <div>
+            <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:gap-12">
+              {/* On small screens: image first so it’s visible; on lg: text first */}
+              <div className="order-2 lg:order-1">
                 <h1 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl">Blockchain Development</h1>
                 <p className="mt-6 max-w-2xl text-lg text-accent">Building secure, transparent, and decentralized solutions that transform how businesses operate and trust is established.</p>
                 <Link href="/#book-a-demo" className="mt-8 inline-flex rounded-full bg-cta px-6 py-3 text-sm font-medium text-white no-underline transition hover:bg-cta/90">Get Started</Link>
               </div>
-              <div className="relative mx-auto min-h-[320px] max-w-md overflow-hidden rounded-xl border border-white/10 bg-dashboard-card lg:mx-0 lg:min-h-[480px] lg:max-w-xl">
-                <Image src="/images/Blockchain.png" alt="Blockchain development" fill className="object-contain object-center" sizes="(max-width: 1024px) 100vw, 28rem" priority />
+              <div className="relative order-1 w-full min-w-0 max-w-full overflow-hidden rounded-xl border border-white/10 bg-dashboard-card sm:mx-auto sm:max-w-md lg:order-2 lg:mx-0 lg:max-w-xl">
+                <div className="relative flex min-h-[200px] w-full items-center justify-center sm:min-h-[220px]">
+                  <img
+                    src="/images/Blockchain.png"
+                    alt="Blockchain development"
+                    className="block h-auto w-full max-w-full object-contain object-center max-h-[min(320px,60vw)] sm:max-h-[380px] lg:max-h-[480px]"
+                    width={560}
+                    height={420}
+                    fetchPriority="high"
+                  />
+                </div>
               </div>
             </div>
           </div>

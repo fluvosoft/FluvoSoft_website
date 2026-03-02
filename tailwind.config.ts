@@ -66,6 +66,10 @@ const config: Config = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "canvas-fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
         "globe-spin": {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
@@ -76,6 +80,7 @@ const config: Config = {
         "card-enter": "card-enter 0.5s ease-out forwards",
         "bar-grow": "bar-grow 0.6s ease-out forwards",
         "fade-in": "fade-in 0.4s ease-out forwards",
+        "canvas-fade-in": "canvas-fade-in 0.8s ease-out forwards",
         "globe-spin": "globe-spin 24s linear infinite",
       },
       transitionDuration: {

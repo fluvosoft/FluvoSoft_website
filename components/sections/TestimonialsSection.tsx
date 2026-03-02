@@ -71,7 +71,7 @@ function TestimonialCard({ testimonial, className = "" }: { testimonial: typeof 
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-background px-6 py-10 lg:px-8 lg:py-14" aria-labelledby="testimonials-heading">
+    <section id="testimonials" className="bg-background px-6 py-10 lg:px-8 lg:py-14" aria-labelledby="testimonials-heading">
       <div className="mx-auto max-w-container">
         <div className="mx-auto max-w-3xl text-center">
           <h2
