@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import AlertBanner from "@/components/sections/AlertBanner";
 import HeroSection from "@/components/sections/HeroSection";
 import LaunchFeaturesSection from "@/components/sections/LaunchFeaturesSection";
 import SolutionsSection from "@/components/sections/SolutionsSection";
@@ -34,7 +33,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <AlertBanner />
       <Navbar />
       <main className="relative overflow-x-hidden" role="main">
         {/* Layered soft oval orange shine – outer ambient */}

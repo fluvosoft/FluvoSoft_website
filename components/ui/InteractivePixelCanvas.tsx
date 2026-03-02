@@ -9,9 +9,9 @@ const HEAT_STRENGTH = 0.3;
 const DECAY = 0.985;
 const EMITTER_STRENGTH = 0.18;
 
-// Canvas base #e0cdc6, interactive color #f22e1a
-const BASE = { r: 224, g: 205, b: 198 }; // #e0cdc6
-const HEAT = { r: 242, g: 46, b: 26 }; // #f22e1a
+// Canvas base orange-tinted, interactive color orange
+const BASE = { r: 240, g: 220, b: 200 }; // Light orange/peach base
+const HEAT = { r: 255, g: 146, b: 60 }; // Orange (#FF923C / brand color)
 
 function lerpColor(heat: number): string {
   const t = Math.min(1, heat);

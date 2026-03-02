@@ -70,10 +70,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-4 pb-2 md:px-6">
+    <header className="relative z-50 bg-background">
       <nav
         ref={navRef}
-        className="relative mx-auto flex max-w-6xl items-center justify-between gap-6 rounded-2xl bg-[#1A1A1A] px-6 py-3.5 shadow-lg md:rounded-3xl md:px-8"
+        className="relative mx-auto flex items-center justify-between gap-6 px-6 py-3.5 md:px-8 lg:px-12"
         aria-label="Main navigation"
       >
         {/* Brand */}
@@ -93,8 +93,8 @@ export default function Navbar() {
           <span className="hidden text-lg font-medium tracking-tight lg:inline">FluvoSoft</span>
         </Link>
 
-        {/* Nav links - desktop */}
-        <div className="hidden flex-1 items-center justify-center gap-0.5 md:flex md:gap-1 lg:gap-2">
+        {/* Nav links + CTA - desktop */}
+        <div className="hidden flex-1 items-center justify-end gap-0.5 md:flex md:gap-1 lg:gap-2">
           {navLinks.map((item) =>
             "dropdown" in item ? (
               <div
@@ -112,7 +112,7 @@ export default function Navbar() {
                   <ChevronDownIcon className="h-4 w-4 shrink-0" open={openDropdown === item.label} />
                 </button>
                 <div
-                  className={`absolute left-0 top-full -mt-1 pt-1 transition duration-200 ${
+                  className={`absolute right-0 top-full -mt-1 pt-1 transition duration-200 ${
                     openDropdown === item.label ? "visible opacity-100" : "invisible opacity-0"
                   }`}
                 >
@@ -148,24 +148,22 @@ export default function Navbar() {
               </Link>
             )
           )}
+          {/* Desktop CTA */}
+          <Link
+            href="#book-a-demo"
+            className="inline-flex items-center justify-center rounded-md bg-cta px-3 py-2 text-xs font-medium text-white no-underline shadow transition hover:bg-cta/90 focus-visible:ring-2 focus-visible:ring-cta/50 lg:px-5 lg:py-2.5 lg:text-sm"
+          >
+            Book a Demo
+          </Link>
         </div>
 
-        {/* CTA + mobile menu toggle */}
+        {/* Mobile menu toggle */}
         <div className="flex items-center gap-3">
-          {/* Desktop CTA */}
-          <div className="hidden shrink-0 md:block">
-            <Link
-              href="#book-a-demo"
-              className="inline-flex items-center justify-center rounded-full bg-cta px-3 py-2 text-xs font-medium text-white no-underline shadow transition hover:bg-cta/90 focus-visible:ring-2 focus-visible:ring-cta/50 lg:px-5 lg:py-2.5 lg:text-sm"
-            >
-              Book a Demo
-            </Link>
-          </div>
 
           {/* Mobile menu toggle */}
           <button
             type="button"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white outline-none transition hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-cta/50 md:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 bg-white/5 text-white outline-none transition hover:bg-white/10 hover:border-white/30 focus-visible:ring-2 focus-visible:ring-cta/50 md:hidden"
             aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -198,8 +196,8 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="absolute left-0 right-0 top-full mt-2 md:hidden">
-          <div className="mx-auto max-w-6xl rounded-2xl bg-[#1A1A1A] px-4 py-3 shadow-lg">
+        <div className="absolute left-0 right-0 top-full mt-2 md:hidden z-50 bg-background">
+          <div className="mx-auto max-w-6xl bg-[#1A1A1A] px-4 py-3 rounded-lg border border-white/10 shadow-lg">
             <div className="space-y-1">
               {navLinks.map((item) =>
                 "dropdown" in item ? (
@@ -266,7 +264,7 @@ export default function Navbar() {
                   setOpenDropdown(null);
                   setIsMobileMenuOpen(false);
                 }}
-                className="flex w-full items-center justify-center rounded-full bg-cta px-4 py-2.5 text-sm font-medium text-white no-underline shadow transition hover:bg-cta/90"
+                className="flex w-full items-center justify-center rounded-md bg-cta px-4 py-2.5 text-sm font-medium text-white no-underline shadow transition hover:bg-cta/90"
               >
                 Book a Demo
               </Link>

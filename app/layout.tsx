@@ -48,6 +48,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+  icons: {
+    icon: "/images/fluvo_logo.png",
+    shortcut: "/images/fluvo_logo.png",
+    apple: "/images/fluvo_logo.png",
+  },
   category: "technology",
 };
 
