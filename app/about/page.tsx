@@ -55,16 +55,79 @@ const impact = [
   { value: "25+", label: "Team Members", sub: "Expert professionals" },
 ];
 
+const leadership = [
+  {
+    name: "John Doe",
+    role: "Chief Executive Officer",
+    title: "CEO",
+    bio: "Visionary leader with 15+ years of experience in technology and business strategy. Passionate about driving innovation and building transformative solutions.",
+  },
+  {
+    name: "Jane Smith",
+    role: "Chief Technology Officer",
+    title: "CTO",
+    bio: "Expert technologist specializing in blockchain, AI, and scalable architectures. Leads our technical innovation and engineering excellence initiatives.",
+  },
+  {
+    name: "Michael Johnson",
+    role: "Chief Operating Officer",
+    title: "COO",
+    bio: "Operations strategist focused on optimizing processes and ensuring seamless delivery. Committed to operational excellence and client satisfaction.",
+  },
+];
+
 const technologies = [
+  // Frontend & Web
   "Next.js 15",
   "React 19",
+  "TypeScript",
+  "Vue.js",
+  "Angular",
+  // Mobile Development
+  "Flutter",
+  "React Native",
+  "Swift",
+  "Kotlin",
+  // Backend & APIs
   "Node.js",
+  "Go",
+  "Python",
+  "Java",
+  "Express.js",
+  "GraphQL",
+  "REST APIs",
+  // Databases
   "MongoDB",
   "PostgreSQL",
-  "AWS",
-  "Firebase",
+  "MySQL",
+  "Redis",
+  // Blockchain Technologies
   "Solidity",
   "Web3.js",
+  "Ethers.js",
+  "Ethereum",
+  "Solana",
+  "Hyperledger",
+  "Corda",
+  "Rust",
+  "Truffle",
+  "Hardhat",
+  "IPFS",
+  "MetaMask",
+  // Cloud & Infrastructure
+  "AWS",
+  "Firebase",
+  "Docker",
+  "Kubernetes",
+  "Azure",
+  "Google Cloud",
+  "Terraform",
+  "CI/CD",
+  // DevOps & Tools
+  "Git",
+  "GitHub Actions",
+  "Jenkins",
+  "Linux",
 ];
 
 export default function AboutPage() {
@@ -130,6 +193,30 @@ export default function AboutPage() {
                 >
                   <h3 className="text-lg font-medium text-foreground">{v.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-accent">{v.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Leadership Team */}
+        <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-container">
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Leadership Team</h2>
+            <p className="mt-2 text-accent">Meet the visionaries leading FluvoSoft forward</p>
+            <div className="mt-10 grid gap-8 sm:grid-cols-1 md:grid-cols-3">
+              {leadership.map((leader) => (
+                <div
+                  key={leader.title}
+                  className="group rounded-xl border border-white/10 bg-dashboard-card p-6 text-center transition hover:border-cta/30"
+                >
+                  <div className="relative mx-auto mb-4 flex h-48 w-48 items-center justify-center overflow-hidden rounded-full border-2 border-white/10 bg-gradient-to-br from-white/10 to-white/5 transition group-hover:border-cta/50">
+                    <span className="text-4xl font-bold text-cta">{leader.title}</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">{leader.name}</h3>
+                  <p className="mt-1 text-sm font-medium text-cta">{leader.title}</p>
+                  <p className="mt-1 text-sm text-accent">{leader.role}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-accent">{leader.bio}</p>
                 </div>
               ))}
             </div>

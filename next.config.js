@@ -7,6 +7,10 @@ const nextConfig = {
         hostname: 'api.builder.io',
         pathname: '/api/v1/image/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+      },
     ],
   },
 };
