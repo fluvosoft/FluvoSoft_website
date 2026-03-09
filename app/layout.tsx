@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { siteConfig, buildJsonLdOrganization, buildJsonLdWebSite } from "@/lib/seo";
 
 export const viewport: Viewport = {
@@ -80,6 +81,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
