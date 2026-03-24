@@ -37,6 +37,9 @@ cd FluoSoft_website
 # Install dependencies
 npm install
 
+# Create env file for Firebase
+cp .env.example .env.local
+
 # Start development server
 npm run dev
 ```
@@ -110,6 +113,9 @@ FluvoSoft Website/
 
 - **Site URL & SEO:** Edit `lib/seo.ts` to change `url`, `description`, `keywords`, and Open Graph defaults.
 - **Theme:** Colors (e.g. `cta`, `brand`, `background`) and typography are in `tailwind.config.ts`.
+- **Firebase forms:** Fill `NEXT_PUBLIC_FIREBASE_*` values in `.env.local` so contact and subscribe forms can write to Firestore collections:
+  - `contactMessages`
+  - `subscribers`
 
 ---
 

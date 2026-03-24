@@ -1,9 +1,41 @@
 "use client";
 
+import { FormEvent, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db, hasAllFirebaseValues } from "@/lib/firebase";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState("");
+
+  const handleSubscribe = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!hasAllFirebaseValues || !db) {
+      setFeedback("Firebase is not configured yet.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setFeedback("");
+
+    try {
+      await addDoc(collection(db, "subscribers"), {
+        email,
+        createdAt: serverTimestamp(),
+      });
+      setFeedback("Thanks for subscribing!");
+      setEmail("");
+    } catch {
+      setFeedback("Subscription failed. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="border-t border-white/10 bg-background">
       <div className="mx-auto max-w-container px-6 py-12 lg:px-8">
@@ -45,19 +77,24 @@ export default function Footer() {
           <div className="ml-auto flex min-w-[200px] flex-col gap-3">
             <h4 className="text-sm font-medium text-foreground">Subscribe</h4>
             <p className="text-sm text-accent">Stay updated with our latest news and updates.</p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex gap-2" onSubmit={handleSubscribe}>
               <input
                 type="email"
                 placeholder="Email"
                 className="rounded-lg border border-white/10 bg-white/[0.02] px-3 py-2 text-sm text-foreground placeholder:text-accent focus:border-cta/50 focus:outline-none focus:ring-1 focus:ring-cta/50"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <button
                 type="submit"
                 className="rounded-lg bg-cta px-4 py-2 text-sm font-medium text-white transition hover:bg-cta/90"
+                disabled={isSubmitting}
               >
-                Subscribe
+                {isSubmitting ? "Submitting..." : "Subscribe"}
               </button>
             </form>
+            {feedback ? <p className="text-xs text-accent">{feedback}</p> : null}
           </div>
         </div>
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6">

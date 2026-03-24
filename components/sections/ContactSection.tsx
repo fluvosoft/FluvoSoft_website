@@ -1,10 +1,53 @@
 "use client";
 
+import { FormEvent, useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
+import { db, hasAllFirebaseValues } from "@/lib/firebase";
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!hasAllFirebaseValues || !db) {
+      setFeedback("Firebase is not configured yet. Please add environment variables.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setFeedback("");
+
+    try {
+      await addDoc(collection(db, "contactMessages"), {
+        ...formData,
+        createdAt: serverTimestamp(),
+      });
+
+      setFeedback("Message sent successfully. We will get back to you soon.");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch {
+      setFeedback("Failed to send your message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="book-a-demo" className="bg-background px-6 py-10 lg:px-8 lg:py-14" aria-labelledby="contact-heading">
       <div className="mx-auto max-w-container">
@@ -115,24 +158,50 @@ export default function ContactSection() {
             <h3 className="text-lg font-medium text-foreground">Send us a Message</h3>
             <p className="mt-2 text-sm text-accent">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
 
-            <form className="mt-6 space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="mt-6 space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground">
                   Name <span className="text-cta">*</span>
                 </label>
-                <Input id="name" type="text" placeholder="Your name" className="mt-2" required />
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  className="mt-2"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+                />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-foreground">
                   Email <span className="text-cta">*</span>
                 </label>
-                <Input id="email" type="email" placeholder="your@email.com" className="mt-2" required />
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  className="mt-2"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
+                />
               </div>
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-foreground">
                   Subject
                 </label>
-                <Input id="subject" type="text" placeholder="Subject" className="mt-2" />
+                <Input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  placeholder="Subject"
+                  className="mt-2"
+                  value={formData.subject}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, subject: e.target.value }))}
+                />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground">
@@ -144,10 +213,13 @@ export default function ContactSection() {
                   placeholder="Your message..."
                   className="mt-2 w-full rounded-md border border-white/20 bg-background px-3 py-2 text-sm text-foreground placeholder:text-accent focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-brand/50"
                   required
+                  value={formData.message}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full">
-                Send Message
+              {feedback ? <p className="text-sm text-accent">{feedback}</p> : null}
+              <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>
