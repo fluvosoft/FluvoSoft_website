@@ -24,11 +24,12 @@ export const easyInvoiceConfig = {
     "free invoicing software",
     "Android invoice app",
   ],
-  ogImagePath: "/images/easy invoice mocup-1.jpeg",
+  ogImagePath: "/images/easy_invoice_logo.svg",
+  ogImageAlt: "Easy Invoice logo by FluvoSoft",
 };
 
 const pageUrl = `${siteConfig.url}${easyInvoiceConfig.path}`;
-const ogImageUrl = `${siteConfig.url}${encodeURI(easyInvoiceConfig.ogImagePath)}`;
+const ogImageUrl = `${siteConfig.url}${easyInvoiceConfig.ogImagePath}`;
 
 export const easyInvoiceMetadata: Metadata = {
   title: {
@@ -61,9 +62,10 @@ export const easyInvoiceMetadata: Metadata = {
     images: [
       {
         url: ogImageUrl,
-        width: 1200,
-        height: 630,
-        alt: "Easy Invoice app dashboard on mobile — free invoicing by FluvoSoft",
+        width: 512,
+        height: 512,
+        alt: easyInvoiceConfig.ogImageAlt,
+        type: "image/svg+xml",
       },
     ],
   },
