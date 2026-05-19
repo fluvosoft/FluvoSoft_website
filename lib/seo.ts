@@ -35,13 +35,21 @@ export const siteConfig = {
 };
 
 export function buildJsonLdOrganization() {
+  const logoUrl = `${siteConfig.url}/images/fluvo_logo.png`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteConfig.url}#organization`,
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/fluvo_logo.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: logoUrl,
+      contentUrl: logoUrl,
+    },
+    image: logoUrl,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Dhaka",
@@ -52,6 +60,7 @@ export function buildJsonLdOrganization() {
       email: "support@fluvosoft.com",
       contactType: "customer service",
       areaServed: "Worldwide",
+      availableLanguage: ["English"],
     },
   };
 }
@@ -60,12 +69,13 @@ export function buildJsonLdWebSite() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteConfig.url}#website`,
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
+    inLanguage: siteConfig.locale,
     publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
+      "@id": `${siteConfig.url}#organization`,
     },
   };
 }

@@ -25,8 +25,6 @@ export const easyInvoiceConfig = {
     "Android invoice app",
   ],
   ogImagePath: "/images/easy invoice mocup-1.jpeg",
-  applicationCategory: "BusinessApplication",
-  operatingSystems: ["Android"],
 };
 
 const pageUrl = `${siteConfig.url}${easyInvoiceConfig.path}`;
@@ -83,6 +81,7 @@ export const easyInvoiceMetadata: Metadata = {
   },
 };
 
+/** BreadcrumbList — valid for rich results */
 export function buildEasyInvoiceBreadcrumbJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -104,6 +103,7 @@ export function buildEasyInvoiceBreadcrumbJsonLd() {
   };
 }
 
+/** WebPage — no nested SoftwareApplication (avoids duplicate invalid app entities) */
 export function buildEasyInvoiceWebPageJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -112,61 +112,20 @@ export function buildEasyInvoiceWebPageJsonLd() {
     url: pageUrl,
     name: "Easy Invoice — Free Mobile Invoice App",
     description: easyInvoiceConfig.description,
+    inLanguage: "en",
     isPartOf: {
       "@type": "WebSite",
-      "@id": `${siteConfig.url}#website`,
       url: siteConfig.url,
       name: siteConfig.name,
     },
-    about: {
-      "@type": "SoftwareApplication",
-      name: easyInvoiceConfig.name,
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: ogImageUrl,
     },
-    inLanguage: "en",
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
       url: siteConfig.url,
-    },
-  };
-}
-
-export function buildEasyInvoiceSoftwareJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: easyInvoiceConfig.name,
-    applicationCategory: easyInvoiceConfig.applicationCategory,
-    operatingSystem: easyInvoiceConfig.operatingSystems,
-    description: easyInvoiceConfig.description,
-    url: pageUrl,
-    image: ogImageUrl,
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-    },
-    featureList: [
-      "Professional invoice creation with 20 templates",
-      "Dashboard analytics and revenue tracking",
-      "PDF export and cloud sync",
-      "Client management and payment tracking",
-      "Google Sign-In and email authentication",
-      "Multi-language invoice support",
-    ],
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      logo: {
-        "@type": "ImageObject",
-        url: `${siteConfig.url}/images/fluvo_logo.png`,
-      },
-    },
-    brand: {
-      "@type": "Brand",
-      name: easyInvoiceConfig.name,
     },
   };
 }
@@ -186,14 +145,43 @@ export function buildEasyInvoiceFaqJsonLd() {
   };
 }
 
-export function buildEasyInvoiceJsonLdGraph() {
+/**
+ * Software App rich results require aggregateRating OR review (Google).
+ * Enable after the Play Store listing has real ratings — do not use placeholder values.
+ */
+export function buildEasyInvoiceSoftwareJsonLd(options: {
+  ratingValue: number;
+  ratingCount: number;
+}) {
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      buildEasyInvoiceWebPageJsonLd(),
-      buildEasyInvoiceBreadcrumbJsonLd(),
-      buildEasyInvoiceSoftwareJsonLd(),
-      buildEasyInvoiceFaqJsonLd(),
-    ],
+    "@type": "SoftwareApplication",
+    name: easyInvoiceConfig.name,
+    operatingSystem: "ANDROID",
+    applicationCategory: "FinanceApplication",
+    description: easyInvoiceConfig.description,
+    url: pageUrl,
+    image: ogImageUrl,
+    offers: {
+      "@type": "Offer",
+      price: 0,
+      priceCurrency: "USD",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: options.ratingValue,
+      ratingCount: options.ratingCount,
+    },
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
   };
 }
+
+export const easyInvoiceJsonLdBlocks = [
+  buildEasyInvoiceBreadcrumbJsonLd,
+  buildEasyInvoiceWebPageJsonLd,
+  buildEasyInvoiceFaqJsonLd,
+] as const;
