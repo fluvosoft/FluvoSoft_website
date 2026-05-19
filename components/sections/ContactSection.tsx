@@ -1,11 +1,9 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
-import { db, hasAllFirebaseValues } from "@/lib/firebase";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -13,26 +11,30 @@ export default function ContactSection() {
     email: "",
     subject: "",
     message: "",
+    website: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState("");
+  const [startedAt] = useState(() => Date.now());
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!hasAllFirebaseValues || !db) {
-      setFeedback("Firebase is not configured yet. Please add environment variables.");
-      return;
-    }
-
     setIsSubmitting(true);
     setFeedback("");
 
     try {
-      await addDoc(collection(db, "contactMessages"), {
-        ...formData,
-        createdAt: serverTimestamp(),
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          elapsedMs: Date.now() - startedAt,
+        }),
       });
+      const data = await response.json();
+      if (!response.ok || !data?.ok) {
+        throw new Error(data?.message || "Failed");
+      }
 
       setFeedback("Message sent successfully. We will get back to you soon.");
       setFormData({
@@ -40,9 +42,14 @@ export default function ContactSection() {
         email: "",
         subject: "",
         message: "",
+        website: "",
       });
-    } catch {
-      setFeedback("Failed to send your message. Please try again.");
+    } catch (error) {
+      if (error instanceof Error && error.message) {
+        setFeedback(error.message);
+      } else {
+        setFeedback("Failed to send your message. Please try again.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -159,6 +166,21 @@ export default function ContactSection() {
             <p className="mt-2 text-sm text-accent">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
 
             <form className="mt-6 space-y-6" onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="website-contact" className="sr-only">
+                  Website
+                </label>
+                <Input
+                  id="website-contact"
+                  name="website"
+                  type="text"
+                  autoComplete="off"
+                  tabIndex={-1}
+                  className="hidden"
+                  value={formData.website}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, website: e.target.value }))}
+                />
+              </div>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground">
                   Name <span className="text-cta">*</span>

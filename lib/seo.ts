@@ -20,6 +20,9 @@ export const siteConfig = {
     "technology solutions",
     "Dhaka",
     "Bangladesh",
+    "Easy Invoice",
+    "free invoice app",
+    "mobile invoicing",
   ],
   openGraph: {
     type: "website",

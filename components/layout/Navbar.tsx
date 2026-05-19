@@ -25,7 +25,10 @@ const navLinks = [
   { href: "/", label: "Home" },
   {
     label: "Brands",
-    dropdown: [{ href: "https://www.meshprojukti.cloud/", label: "Lumiro", external: true }],
+    dropdown: [
+      { href: "https://www.meshprojukti.cloud/", label: "Lumiro", external: true },
+      { href: "/easy-invoice", label: "Easy Invoice" },
+    ],
   },
   {
     label: "Solutions",

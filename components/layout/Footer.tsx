@@ -3,34 +3,42 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db, hasAllFirebaseValues } from "@/lib/firebase";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState("");
+  const [startedAt] = useState(() => Date.now());
 
   const handleSubscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!hasAllFirebaseValues || !db) {
-      setFeedback("Firebase is not configured yet.");
-      return;
-    }
-
     setIsSubmitting(true);
     setFeedback("");
 
     try {
-      await addDoc(collection(db, "subscribers"), {
-        email,
-        createdAt: serverTimestamp(),
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          website,
+          elapsedMs: Date.now() - startedAt,
+        }),
       });
+      const data = await response.json();
+      if (!response.ok || !data?.ok) {
+        throw new Error(data?.message || "Subscription failed.");
+      }
       setFeedback("Thanks for subscribing!");
       setEmail("");
-    } catch {
-      setFeedback("Subscription failed. Please try again.");
+      setWebsite("");
+    } catch (error) {
+      if (error instanceof Error && error.message) {
+        setFeedback(error.message);
+      } else {
+        setFeedback("Subscription failed. Please try again.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -78,6 +86,15 @@ export default function Footer() {
             <h4 className="text-sm font-medium text-foreground">Subscribe</h4>
             <p className="text-sm text-accent">Stay updated with our latest news and updates.</p>
             <form className="flex gap-2" onSubmit={handleSubscribe}>
+              <input
+                type="text"
+                name="website"
+                autoComplete="off"
+                tabIndex={-1}
+                className="hidden"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+              />
               <input
                 type="email"
                 placeholder="Email"

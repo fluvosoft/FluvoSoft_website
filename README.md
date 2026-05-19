@@ -116,6 +116,7 @@ FluvoSoft Website/
 - **Firebase forms:** Fill `NEXT_PUBLIC_FIREBASE_*` values in `.env.local` so contact and subscribe forms can write to Firestore collections:
   - `contactMessages`
   - `subscribers`
+- **Bot protection on forms:** Contact and subscribe now submit through protected API routes with request validation, honeypot checks, and per-IP rate limiting.
 
 ---
 

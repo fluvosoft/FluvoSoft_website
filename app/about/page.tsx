@@ -57,22 +57,31 @@ const impact = [
 
 const leadership = [
   {
-    name: "John Doe",
+    name: "Md Sifat Bin Jibon",
     role: "Chief Executive Officer",
     title: "CEO",
-    bio: "Visionary leader with 15+ years of experience in technology and business strategy. Passionate about driving innovation and building transformative solutions.",
+    bio: "Co-founder of FluvoSoft. Blockchain developer at R3, with experience across SaaS, Web3, and custom software. Based in Dhaka.",
   },
   {
-    name: "Jane Smith",
+    name: "Shouvick Monzur",
     role: "Chief Technology Officer",
     title: "CTO",
-    bio: "Expert technologist specializing in blockchain, AI, and scalable architectures. Leads our technical innovation and engineering excellence initiatives.",
+    bio: "Lead software engineer with 10+ years building backends, cloud systems, and SaaS platforms. Leads FluvoSoft's technical direction.",
   },
   {
-    name: "Michael Johnson",
+    name: "Sifat ALI",
     role: "Chief Operating Officer",
     title: "COO",
-    bio: "Operations strategist focused on optimizing processes and ensuring seamless delivery. Committed to operational excellence and client satisfaction.",
+    bio: "2× national hackathon winner and full-stack engineer. Runs day-to-day operations and keeps projects moving from build to delivery.",
+  },
+];
+
+const advisors = [
+  {
+    name: "Sahid Hossain Ratul",
+    role: "Business Advisor",
+    title: "Advisor",
+    bio: "Advises FluvoSoft on business strategy and growth.",
   },
 ];
 
@@ -217,6 +226,29 @@ export default function AboutPage() {
                   <p className="mt-1 text-sm font-medium text-cta">{leader.title}</p>
                   <p className="mt-1 text-sm text-accent">{leader.role}</p>
                   <p className="mt-4 text-sm leading-relaxed text-accent">{leader.bio}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Advisor Panel */}
+        <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-container">
+            <h2 className="text-2xl font-medium text-foreground md:text-3xl">Advisor Panel</h2>
+            <p className="mt-2 text-accent">Experienced advisors supporting our strategic direction</p>
+            <div className="mt-10 flex justify-center">
+              {advisors.map((advisor) => (
+                <div
+                  key={advisor.name}
+                  className="group w-full max-w-sm rounded-xl border border-white/10 bg-dashboard-card p-6 text-center transition hover:border-cta/30"
+                >
+                  <div className="relative mx-auto mb-4 flex h-48 w-48 items-center justify-center overflow-hidden rounded-full border-2 border-white/10 bg-gradient-to-br from-white/10 to-white/5 transition group-hover:border-cta/50">
+                    <span className="text-3xl font-bold text-cta">{advisor.title}</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">{advisor.name}</h3>
+                  <p className="mt-1 text-sm font-medium text-cta">{advisor.role}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-accent">{advisor.bio}</p>
                 </div>
               ))}
             </div>

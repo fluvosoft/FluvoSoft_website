@@ -31,6 +31,22 @@ const config: Config = {
         cta: "#FF6B3E",
         positive: "#4CAF50",
         border: "rgba(250, 250, 250, 0.1)",
+        ei: {
+          nav: "#84AF55",
+          primaryDark: "#0F5C4F",
+          primary: "#205072",
+          teal: "#329D9C",
+          secondary: "#56C596",
+          accent: "#7BE495",
+          action: "#B4DE63",
+          background: "#FFFFFF",
+          surface: "#FFFFFF",
+          textPrimary: "#3A3A3A",
+        },
+      },
+      backgroundImage: {
+        "ei-brand-gradient": "linear-gradient(180deg, #B4DE63 0%, #0F5C4F 100%)",
+        "ei-feature-gradient": "linear-gradient(135deg, #84AF55 0%, #56C596 45%, #0F5C4F 100%)",
       },
       fontSize: {
         "hero": ["3.25rem", { lineHeight: "1.15" }],
