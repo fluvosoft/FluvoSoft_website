@@ -3,7 +3,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/images/app-release.apk",
+        source: "/downloads/app-release.apk",
         headers: [
           {
             key: "Content-Type",

@@ -3,6 +3,9 @@
 import type { ReactNode } from "react";
 import { useEasyInvoiceBetaModal } from "./EasyInvoiceBetaModalProvider";
 
+const heroCtaBase =
+  "inline-flex min-h-[52px] min-w-[168px] items-center justify-center gap-2.5 rounded-xl px-6 py-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime";
+
 function PlayStoreIcon() {
   return (
     <svg className="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -24,7 +27,7 @@ export function GooglePlayButton({
     <button
       type="button"
       onClick={openBetaModal}
-      className={`ei-cta-primary inline-flex min-w-[160px] items-center gap-2.5 rounded-xl bg-ei-forest px-5 py-3 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime ${size === "large" ? "px-6 py-3.5" : ""} ${className}`}
+      className={`ei-cta-primary ${heroCtaBase} bg-ei-forest text-white ${size === "default" ? "min-h-[48px] min-w-[160px] px-5 py-3" : ""} ${className}`}
       aria-label="Get Easy Invoice on Google Play"
     >
       <span className="shrink-0">

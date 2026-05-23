@@ -24,7 +24,7 @@ export const easyInvoiceConfig = {
   ogImageAlt:
     "Easy Invoice Android app dashboard showing revenue overview and invoice analytics",
   playStoreUrl: "#",
-  apkUrl: "/images/app-release.apk",
+  apkUrl: "/downloads/app-release.apk",
   apkFileName: "easy-invoice.apk",
 };
 
