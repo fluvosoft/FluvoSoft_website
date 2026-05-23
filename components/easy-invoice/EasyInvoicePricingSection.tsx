@@ -1,4 +1,4 @@
-import { GooglePlayButton } from "./EasyInvoiceCTAs";
+import { GooglePlayButton } from "./GooglePlayButton";
 
 const includedFeatures = [
   "Unlimited invoices and clients",

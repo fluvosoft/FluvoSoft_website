@@ -1,5 +1,6 @@
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import { easyInvoiceMetadata } from "@/lib/easyInvoiceSeo";
+import { EasyInvoiceBetaModalProvider } from "@/components/easy-invoice/EasyInvoiceBetaModalProvider";
 import "./easy-invoice.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -23,7 +24,7 @@ export default function EasyInvoiceLayout({
 }>) {
   return (
     <div className={`${plusJakarta.variable} ${dmSans.variable} font-ei-body ei-page`}>
-      {children}
+      <EasyInvoiceBetaModalProvider>{children}</EasyInvoiceBetaModalProvider>
     </div>
   );
 }

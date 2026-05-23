@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { PlayStoreNavButton } from "./GooglePlayButton";
 
 const navLinks = [
   { label: "Features", href: "/easy-invoice#features" },
@@ -85,13 +86,9 @@ export default function EasyInvoiceNavbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="#pricing"
-              className="ei-cta-primary ml-1 rounded-full bg-ei-forest px-4 py-2 text-sm font-semibold text-white no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime"
-              aria-label="Download Easy Invoice on Google Play"
-            >
+            <PlayStoreNavButton className="ei-cta-primary ml-1 rounded-full bg-ei-forest px-4 py-2 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime">
               Get on Play
-            </a>
+            </PlayStoreNavButton>
           </div>
         </div>
 
@@ -145,14 +142,12 @@ export default function EasyInvoiceNavbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="#pricing"
+            <PlayStoreNavButton
               onClick={closeMenu}
-              className="ei-cta-primary mt-2 rounded-full bg-ei-forest px-4 py-3 text-center text-sm font-semibold text-white no-underline"
-              aria-label="Download Easy Invoice on Google Play"
+              className="ei-cta-primary mt-2 w-full rounded-full bg-ei-forest px-4 py-3 text-center text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime"
             >
               Get on Google Play
-            </a>
+            </PlayStoreNavButton>
             <div className="mt-4 flex justify-center border-t border-ei-forest/10 pt-4">
               <BackToHomeButton onClick={closeMenu} className="w-full justify-center sm:w-auto" />
             </div>

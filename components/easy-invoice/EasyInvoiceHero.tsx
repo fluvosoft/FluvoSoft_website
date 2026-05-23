@@ -1,6 +1,7 @@
 import Image from "next/image";
 import EasyInvoiceCounterStats from "./EasyInvoiceCounterStats";
-import { GooglePlayButton, DownloadApkButton, TrustBadge } from "./EasyInvoiceCTAs";
+import { DownloadApkButton, TrustBadge } from "./EasyInvoiceCTAs";
+import { GooglePlayButton } from "./GooglePlayButton";
 
 const HERO_LOGO = "/images/easy_invoice_logo_fluvosoft.svg";
 
