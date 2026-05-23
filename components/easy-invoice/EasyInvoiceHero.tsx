@@ -29,9 +29,9 @@ export default function EasyInvoiceHero() {
               web. Built for small businesses and freelancers by FluvoSoft in Dhaka, Bangladesh.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-stretch gap-3">
               <GooglePlayButton size="large" />
-              <DownloadApkButton />
+              <DownloadApkButton size="large" />
             </div>
 
             <ul
