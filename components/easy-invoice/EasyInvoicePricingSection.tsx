@@ -4,7 +4,6 @@ const includedFeatures = [
   "Unlimited invoices and clients",
   "All 20 professional templates",
   "Dashboard, analytics, and PDF export",
-  "Cloud sync with Firebase",
   "No subscription or in-app purchases",
 ];
 
@@ -12,8 +11,6 @@ const comparisonRows = [
   { feature: "Monthly subscription", easyInvoice: "None — $0 forever", typical: "$9–$30/mo" },
   { feature: "Invoice templates", easyInvoice: "20 included free", typical: "Limited on free tier" },
   { feature: "PDF export", easyInvoice: "Included", typical: "Often paywalled" },
-  { feature: "Cloud sync", easyInvoice: "Included", typical: "Premium only" },
-  { feature: "Ads", easyInvoice: "Optional AdMob only", typical: "Ads + upsells" },
 ];
 
 const adNotes = [
