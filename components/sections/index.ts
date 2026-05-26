@@ -1,0 +1,9 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as LogosSection } from "./LogosSection";
+export { default as BentoSection } from "./BentoSection";
+export { default as FeaturesSection } from "./FeaturesSection";
+export { default as QualitySection } from "./QualitySection";
+export { default as TestimonialsSection } from "./TestimonialsSection";
+export { default as FAQSection } from "./FAQSection";
+export { default as PricingSection } from "./PricingSection";
+export { default as CTASection } from "./CTASection";

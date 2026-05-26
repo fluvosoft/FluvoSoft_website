@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" fill="none">
+  <rect width="360" height="640" fill="#F9FAF5"/>
+  <text x="24" y="72" fill="#1A3C2E" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Contacts</text>
+  <rect x="24" y="88" width="80" height="32" rx="16" fill="#1A3C2E"/>
+  <text x="40" y="110" fill="#F9FAF5" font-family="system-ui,sans-serif" font-size="12">All</text>
+  <rect x="112" y="88" width="100" height="32" rx="16" fill="#fff" stroke="#1A3C2E" stroke-opacity="0.12"/>
+  <text x="128" y="110" fill="#4A6358" font-family="system-ui,sans-serif" font-size="12">Customers</text>
+  <rect x="24" y="136" width="312" height="72" rx="14" fill="#fff" stroke="#1A3C2E" stroke-opacity="0.08"/>
+  <circle cx="56" cy="172" r="20" fill="#8CC63F" opacity="0.4"/>
+  <rect x="88" y="158" width="120" height="12" rx="6" fill="#1A3C2E" opacity="0.2"/>
+  <rect x="88" y="178" width="90" height="10" rx="5" fill="#4A6358" opacity="0.25"/>
+  <rect x="24" y="220" width="312" height="72" rx="14" fill="#fff" stroke="#1A3C2E" stroke-opacity="0.08"/>
+  <circle cx="56" cy="256" r="20" fill="#2D6B52" opacity="0.35"/>
+  <rect x="88" y="242" width="140" height="12" rx="6" fill="#1A3C2E" opacity="0.2"/>
+  <rect x="88" y="262" width="100" height="10" rx="5" fill="#4A6358" opacity="0.25"/>
+  <rect x="24" y="304" width="312" height="72" rx="14" fill="#fff" stroke="#1A3C2E" stroke-opacity="0.08"/>
+  <circle cx="56" cy="340" r="20" fill="#8CC63F" opacity="0.4"/>
+  <rect x="88" y="326" width="100" height="12" rx="6" fill="#1A3C2E" opacity="0.2"/>
+  <rect x="88" y="346" width="110" height="10" rx="5" fill="#4A6358" opacity="0.25"/>
+</svg>

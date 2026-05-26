@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" fill="none">
+  <rect width="360" height="640" fill="#F9FAF5"/>
+  <rect x="24" y="48" width="312" height="56" rx="12" fill="#1A3C2E"/>
+  <text x="40" y="84" fill="#F9FAF5" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Dashboard</text>
+  <rect x="24" y="120" width="312" height="120" rx="16" fill="#1A3C2E"/>
+  <text x="40" y="155" fill="#8CC63F" font-family="system-ui,sans-serif" font-size="12">Earnings</text>
+  <text x="40" y="195" fill="#F9FAF5" font-family="system-ui,sans-serif" font-size="28" font-weight="700">$12,480</text>
+  <rect x="24" y="256" width="148" height="72" rx="12" fill="#fff" stroke="#1A3C2E" stroke-opacity="0.1"/>
+  <rect x="188" y="256" width="148" height="72" rx="12" fill="#fff" stroke="#1A3C2E" stroke-opacity="0.1"/>
+  <rect x="24" y="344" width="312" height="160" rx="16" fill="#fff" stroke="#1A3C2E" stroke-opacity="0.1"/>
+  <rect x="48" y="400" width="32" height="80" rx="6" fill="#8CC63F"/>
+  <rect x="96" y="430" width="32" height="50" rx="6" fill="#2D6B52" opacity="0.5"/>
+  <rect x="144" y="380" width="32" height="100" rx="6" fill="#8CC63F"/>
+  <rect x="192" y="420" width="32" height="60" rx="6" fill="#2D6B52" opacity="0.5"/>
+  <rect x="240" y="395" width="32" height="85" rx="6" fill="#8CC63F"/>
+</svg>
