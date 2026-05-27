@@ -1,10 +1,15 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { GooglePlayBadgeImage } from "@/components/shared/GooglePlayBadgeImage";
+import {
+  productHeroCtaBase,
+  productHeroCtaGhostButton,
+  productHeroCtaGhostBadgeButton,
+  productHeroCtaGhostSm,
+  productHeroCtaGhostBadgeSm,
+} from "@/components/shared/productHeroCtaStyles";
 import { useEasyInvoiceBetaModal } from "./EasyInvoiceBetaModalProvider";
-
-const heroCtaBase =
-  "inline-flex min-h-[52px] min-w-[168px] items-center justify-center gap-2.5 rounded-xl px-6 py-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime";
 
 function PlayStoreIcon() {
   return (
@@ -17,17 +22,32 @@ function PlayStoreIcon() {
 export function GooglePlayButton({
   className = "",
   size = "default",
+  variant = "default",
 }: {
   className?: string;
   size?: "default" | "large";
+  variant?: "default" | "badge";
 }) {
   const { openBetaModal } = useEasyInvoiceBetaModal();
+
+  if (variant === "badge") {
+    return (
+      <button
+        type="button"
+        onClick={openBetaModal}
+        className={`${size === "default" ? productHeroCtaGhostBadgeSm : productHeroCtaGhostBadgeButton} ${className}`}
+        aria-label="Get Easy Invoice on Google Play"
+      >
+        <GooglePlayBadgeImage size={size} />
+      </button>
+    );
+  }
 
   return (
     <button
       type="button"
       onClick={openBetaModal}
-      className={`ei-cta-primary ${heroCtaBase} bg-ei-forest text-white ${size === "default" ? "min-h-[48px] min-w-[160px] px-5 py-3" : ""} ${className}`}
+      className={`ei-cta-primary ${productHeroCtaBase} bg-ei-forest text-white ${size === "default" ? "h-[48px] min-w-[160px] px-5 py-3" : ""} ${className}`}
       aria-label="Get Easy Invoice on Google Play"
     >
       <span className="shrink-0">

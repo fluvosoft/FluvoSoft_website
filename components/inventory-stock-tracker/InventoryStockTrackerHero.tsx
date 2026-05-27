@@ -36,8 +36,8 @@ export default function InventoryStockTrackerHero() {
               is built for shops and warehouses in Bangladesh and worldwide.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-stretch gap-3">
-              <GooglePlayButton size="large" />
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <GooglePlayButton size="large" variant="badge" />
               <DownloadApkButton size="large" />
             </div>
 
