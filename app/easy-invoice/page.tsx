@@ -7,6 +7,9 @@ import EasyInvoicePricingSection from "@/components/easy-invoice/EasyInvoicePric
 import EasyInvoicePrivacySection from "@/components/easy-invoice/EasyInvoicePrivacySection";
 import EasyInvoiceFooter from "@/components/easy-invoice/EasyInvoiceFooter";
 import EasyInvoiceJsonLd from "@/components/seo/EasyInvoiceJsonLd";
+import { easyInvoiceMetadata } from "@/lib/easyInvoiceSeo";
+
+export const metadata = easyInvoiceMetadata;
 
 export default function EasyInvoicePage() {
   return (

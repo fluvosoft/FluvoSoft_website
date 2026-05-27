@@ -6,6 +6,9 @@ import InventoryStockTrackerFAQSection from "@/components/inventory-stock-tracke
 import InventoryStockTrackerShowcaseSections from "@/components/inventory-stock-tracker/InventoryStockTrackerShowcaseSections";
 import InventoryStockTrackerPricingSection from "@/components/inventory-stock-tracker/InventoryStockTrackerPricingSection";
 import InventoryStockTrackerJsonLd from "@/components/seo/InventoryStockTrackerJsonLd";
+import { inventoryStockTrackerMetadata } from "@/lib/inventoryStockTrackerSeo";
+
+export const metadata = inventoryStockTrackerMetadata;
 
 export default function InventoryStockTrackerPage() {
   return (
