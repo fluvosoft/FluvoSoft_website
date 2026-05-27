@@ -50,7 +50,7 @@ export const privacyHighlights = [
     icon: "control" as PrivacyHighlightIcon,
     title: "You're in control",
     description:
-      "You can contact us to access, correct, or delete your information where applicable.",
+      "Delete your account in-app where available, or contact us to access, correct, or delete your information.",
   },
 ];
 
@@ -117,7 +117,7 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
           "Contact and inquiry information: messages, support tickets, demo requests, and details you submit through forms or email.",
           "Business and product data: information you enter into our apps (such as invoices, inventory records, clients, and settings).",
           "Payment-related information: billing contact details and transaction references. We do not store full payment card numbers on our servers when payments are handled by a secure payment provider.",
-          "Usage and device information: pages viewed, features used, approximate location derived from IP address, browser or device type, operating system, and diagnostic logs needed to keep services reliable.",
+          "Usage and device information: pages viewed, features used, approximate location derived from IP address, browser or device type, operating system, crash or diagnostic logs (where enabled), and data needed to keep services reliable.",
           "Marketing preferences: whether you subscribed to updates and how you interact with our communications.",
         ],
       },
@@ -174,7 +174,8 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
         id: "retention",
         title: "How long we keep information",
         paragraphs: [
-          "We retain personal information for as long as your account is active or as needed to provide services, resolve disputes, enforce agreements, and comply with law. When we no longer need the information, we delete it or anonymize it where possible.",
+          "We retain personal information for as long as your account is active or as needed to provide services, resolve disputes, enforce agreements, and comply with law. When you delete your account, we remove personal data from active production systems within a reasonable period, typically within 30 days.",
+          "Encrypted backup copies may persist for a limited time (generally up to 90 days) before automatic removal. We may retain minimal records where required for fraud prevention, security, or legal compliance.",
         ],
       },
       {
@@ -201,7 +202,56 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
           "You are responsible for having a lawful basis to collect and process data about your own customers and contacts.",
           "You can access, export, or delete service data through product features where available.",
           "We do not use your service data for our own marketing or to sell to third parties.",
-          "If you close your account, we delete or anonymize service data within a reasonable period, subject to backups and legal retention requirements.",
+          "If you close your account, we delete or anonymize service data within a reasonable period, typically within 30 days, subject to backups and legal retention requirements.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "mobile-apps",
+    title: "Mobile applications",
+    description:
+      "Requirements for Apple App Store and Google Play, including account deletion, permissions, and third-party tools.",
+    articles: [
+      {
+        id: "account-deletion",
+        title: "Account deletion",
+        paragraphs: [
+          "If a FluvoSoft app lets you create an account, you must also be able to delete that account and associated personal data, as required by Apple and Google app store policies.",
+        ],
+        bullets: [
+          "Inventory Stock Tracker: open Settings and choose Delete account. Deletion removes your account and associated cloud data from active systems.",
+          "Easy Invoice: request account deletion by emailing support@fluvosoft.com. If your app version includes an in-app delete option in Settings, you may use that instead.",
+          "After a deletion request, we remove personal data from production systems within a reasonable period, typically within 30 days. Backup copies may persist for up to 90 days before automatic purge.",
+          "You may also contact us if you need help completing deletion or confirming that your data was removed.",
+        ],
+      },
+      {
+        id: "device-permissions",
+        title: "Device permissions",
+        paragraphs: [
+          "Our apps request device permissions only when needed for a feature you use. You can deny or revoke permissions in your device settings, though some features may not work without them.",
+        ],
+        bullets: [
+          "Camera (Inventory Stock Tracker): used to scan product barcodes when you open the barcode scanner. Camera access is requested at the time of use.",
+          "Photos / storage (Easy Invoice and Inventory Stock Tracker): used when you attach images to invoices, products, or related records. We access only the files you select.",
+          "Contacts (Inventory Stock Tracker Pro): used only if you choose to import customers or vendors from your device contact list.",
+          "Notifications: optional push alerts for service-related messages. You can disable notifications in device or app settings.",
+        ],
+      },
+      {
+        id: "mobile-third-parties",
+        title: "Third-party services in our apps",
+        paragraphs: [
+          "Our mobile apps use third-party tools to provide sign-in, cloud sync, analytics, advertising, notifications, file delivery, and crash reporting. These providers may collect identifiers, device information, and usage data under their own privacy policies.",
+        ],
+        bullets: [
+          "Identity and sign-in services (email/password and third-party login where offered).",
+          "Cloud hosting, database sync, and file storage for your business records and attachments.",
+          "Analytics and crash or diagnostic reporting to improve app stability (where enabled in your app or settings).",
+          "Advertising services in apps that display ads (for example, optional ads in the Easy Invoice native app).",
+          "Push notification delivery when you enable notifications.",
+          "Services used to generate invoice previews, PDFs, and secure download links.",
         ],
       },
     ],
@@ -216,7 +266,7 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
         title: "Your privacy rights",
         paragraphs: [
           "Depending on your location, you may have rights to access, correct, delete, restrict, or object to certain processing, and to receive a copy of your data in a portable format. You may also have the right to lodge a complaint with a supervisory authority.",
-          "To exercise your rights, contact us at the email below. We will respond within a reasonable time and may need to verify your identity.",
+          "To delete your account, use the in-app option where your app provides one, or contact us at the email below. We will respond within a reasonable time and may need to verify your identity.",
         ],
       },
       {

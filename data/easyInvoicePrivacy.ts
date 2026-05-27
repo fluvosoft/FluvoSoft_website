@@ -7,8 +7,8 @@ export type EasyInvoicePrivacySection = {
 };
 
 export const easyInvoicePrivacyMeta = {
-  effectiveDate: "May 26, 2026",
-  lastUpdated: "May 26, 2026",
+  effectiveDate: "May 27, 2026",
+  lastUpdated: "May 27, 2026",
   contactEmail: "support@fluvosoft.com",
   appName: "Easy Invoice",
   companyName: "FluvoSoft Ltd.",
@@ -75,11 +75,31 @@ export const easyInvoicePrivacySections: EasyInvoicePrivacySection[] = [
     ],
   },
   {
+    id: "permissions",
+    title: "Device permissions",
+    paragraphs: [
+      "The App requests device permissions only when a feature needs them. You can deny or revoke permissions in your device settings, though related features may not work.",
+    ],
+    bullets: [
+      "Photos / storage: when you attach images to invoices or related records. We access only the files you select.",
+      "Notifications: optional push alerts for service messages. You can disable these in device or app settings.",
+    ],
+  },
+  {
     id: "storage-security",
     title: "Storage, retention, and security",
     paragraphs: [
       "Your data is stored on secure cloud infrastructure. We retain account and invoice data while your account is active and for a reasonable period afterward unless you delete your account or applicable law requires otherwise.",
+      "When you delete your account, we remove personal data from active production systems within a reasonable period, typically within 30 days. Backup copies may persist for up to 90 days before automatic removal.",
       "We use industry-standard measures to protect data in transit and at rest. No method of transmission or storage is 100% secure; we cannot guarantee absolute security.",
+    ],
+  },
+  {
+    id: "account-deletion",
+    title: "Account deletion",
+    paragraphs: [
+      "If you created an Easy Invoice account, you can request deletion of your account and associated personal data by emailing support@fluvosoft.com from the address linked to your account, or by using Delete account in Settings if your app version includes that option.",
+      "After deletion, we remove personal data from active systems within a reasonable period, typically within 30 days. Backup copies may persist for up to 90 days before automatic removal.",
     ],
   },
   {
@@ -92,7 +112,7 @@ export const easyInvoicePrivacySections: EasyInvoicePrivacySection[] = [
       "Opt out of optional rewarded ads by not watching them; core features remain available without watching ads.",
       "Disable push notifications in device or app settings.",
       "Sign out at any time; sign-out clears Firebase and Google sessions as described in the App.",
-      "Contact us to request account deletion or raise a privacy concern.",
+      "Delete your account as described in Account deletion above, or contact us to raise a privacy concern.",
     ],
   },
   {

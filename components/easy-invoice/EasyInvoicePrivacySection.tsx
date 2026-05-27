@@ -78,6 +78,28 @@ export default function EasyInvoicePrivacySection() {
         ),
       },
       {
+        id: "permissions",
+        title: "Device permissions",
+        content: (
+          <>
+            <p>The App requests permissions only when a feature needs them:</p>
+            <ul className="mt-3 list-disc space-y-2 pl-5">
+              <li>
+                Photos / storage: when you attach images to invoices or related records. We access
+                only the files you choose.
+              </li>
+              <li>
+                Notifications: optional push alerts for service messages. You can turn these off in
+                device or app settings.
+              </li>
+            </ul>
+            <p className="mt-3 text-sm text-ei-muted">
+              Denying a permission may limit related features but core invoicing remains available.
+            </p>
+          </>
+        ),
+      },
+      {
         id: "third-parties",
         title: "Third-party services",
         content: (
@@ -87,14 +109,23 @@ export default function EasyInvoicePrivacySection() {
               including:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5">
-              <li>Identity and sign-in services</li>
-              <li>Cloud hosting and storage for your invoices and settings</li>
-              <li>Services used to generate and deliver invoice previews/PDFs</li>
-              <li>Notification services (when enabled)</li>
-              <li>Optional advertising services (only where ads are supported)</li>
+              <li>Identity and sign-in services (email/password and Google Sign-In)</li>
+              <li>Cloud hosting and database sync for invoices, clients, and settings</li>
+              <li>File storage for invoice previews, HTML, and PDF delivery</li>
+              <li>Push notification services (when enabled)</li>
+              <li>Analytics and crash reporting to improve stability (where enabled)</li>
+              <li>Optional advertising services in the native Android app (where supported)</li>
             </ul>
             <p className="mt-3 text-sm text-ei-muted">
-              These service providers process information under their own privacy policies. We share only what’s needed to provide the App.
+              These providers process information under their own privacy policies. We share only
+              what is needed to provide the App. See our{" "}
+              <a
+                href="/privacy#mobile-third-parties"
+                className="font-medium text-ei-forest underline decoration-ei-lime/60 underline-offset-2 hover:decoration-ei-lime"
+              >
+                full privacy policy
+              </a>{" "}
+              for more detail.
             </p>
           </>
         ),
@@ -121,6 +152,39 @@ export default function EasyInvoicePrivacySection() {
         ),
       },
       {
+        id: "account-deletion",
+        title: "Account deletion",
+        content: (
+          <>
+            <p>
+              If you created an Easy Invoice account, you can request deletion of your account and
+              associated personal data:
+            </p>
+            <ul className="mt-3 list-disc space-y-2 pl-5">
+              <li>
+                Email{" "}
+                <a
+                  href={`mailto:${easyInvoicePrivacyMeta.contactEmail}?subject=Easy%20Invoice%20account%20deletion`}
+                  className="font-medium text-ei-forest underline decoration-ei-lime/60 underline-offset-2 hover:decoration-ei-lime"
+                >
+                  {easyInvoicePrivacyMeta.contactEmail}
+                </a>{" "}
+                from the address linked to your account.
+              </li>
+              <li>
+                If your app version includes Delete account in Settings, you may use that option
+                instead.
+              </li>
+            </ul>
+            <p className="mt-3 text-sm text-ei-muted">
+              After deletion, we remove personal data from active systems within a reasonable period,
+              typically within 30 days. Backup copies may persist for up to 90 days before automatic
+              removal.
+            </p>
+          </>
+        ),
+      },
+      {
         id: "rights",
         title: "Your choices & contact",
         content: (
@@ -132,14 +196,8 @@ export default function EasyInvoicePrivacySection() {
                 Opt out of optional rewarded ads by not watching them (core features remain available).
               </li>
               <li>
-                Contact us at{" "}
-                <a
-                  href={`mailto:${easyInvoicePrivacyMeta.contactEmail}`}
-                  className="font-medium text-ei-forest underline decoration-ei-lime/60 underline-offset-2 hover:decoration-ei-lime"
-                >
-                  {easyInvoicePrivacyMeta.contactEmail}
-                </a>{" "}
-                for privacy questions, data requests, or account deletion.
+                Delete your account as described above, or contact us for privacy questions and data
+                requests.
               </li>
             </ul>
             <p className="mt-3 text-sm text-ei-muted">
@@ -205,7 +263,14 @@ export default function EasyInvoicePrivacySection() {
           </h2>
           <p className="mt-4 text-base text-ei-muted leading-relaxed">
             Easy Invoice keeps your invoicing data secure and in sync across devices. Here’s a
-            quick, plain-language view of what we collect and why.
+            quick, plain-language view of what we collect and why. For the full policy, see{" "}
+            <a
+              href="/privacy"
+              className="font-medium text-ei-forest underline decoration-ei-lime/60 underline-offset-2 hover:decoration-ei-lime"
+            >
+              fluvosoft.com/privacy
+            </a>
+            .
           </p>
         </div>
 
