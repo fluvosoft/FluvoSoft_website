@@ -1,7 +1,6 @@
 import Image from "next/image";
 import InventoryStockTrackerCounterStats from "./InventoryStockTrackerCounterStats";
-import { DownloadApkButton, TrustBadge } from "./InventoryStockTrackerCTAs";
-import { GooglePlayButton } from "./StoreButtons";
+import { DownloadApkButton, GooglePlayButton, TrustBadge } from "./StoreButtons";
 
 const HERO_LOGO = "/images/inventory_stock_tracker_logo.png";
 

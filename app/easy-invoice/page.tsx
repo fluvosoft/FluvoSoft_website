@@ -1,10 +1,11 @@
-import Footer from "@/components/layout/Footer";
 import EasyInvoiceHero from "@/components/easy-invoice/EasyInvoiceHero";
 import EasyInvoiceNavbar from "@/components/easy-invoice/EasyInvoiceNavbar";
 import EasyInvoiceFeaturesSection from "@/components/easy-invoice/EasyInvoiceFeaturesSection";
 import EasyInvoiceFAQSection from "@/components/easy-invoice/EasyInvoiceFAQSection";
 import EasyInvoiceShowcaseSections from "@/components/easy-invoice/EasyInvoiceShowcaseSections";
 import EasyInvoicePricingSection from "@/components/easy-invoice/EasyInvoicePricingSection";
+import EasyInvoicePrivacySection from "@/components/easy-invoice/EasyInvoicePrivacySection";
+import EasyInvoiceFooter from "@/components/easy-invoice/EasyInvoiceFooter";
 import EasyInvoiceJsonLd from "@/components/seo/EasyInvoiceJsonLd";
 
 export default function EasyInvoicePage() {
@@ -18,9 +19,10 @@ export default function EasyInvoicePage() {
         <EasyInvoiceFeaturesSection />
         <EasyInvoiceFAQSection />
         <EasyInvoicePricingSection />
+        <EasyInvoicePrivacySection />
       </main>
       <div id="resources">
-        <Footer />
+        <EasyInvoiceFooter />
       </div>
     </>
   );

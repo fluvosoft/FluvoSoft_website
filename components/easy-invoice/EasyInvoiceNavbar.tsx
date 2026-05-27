@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Features", href: "/easy-invoice#features" },
   { label: "Pricing", href: "/easy-invoice#pricing" },
   { label: "FAQ", href: "/easy-invoice#faq" },
+  { label: "Privacy", href: "/easy-invoice#privacy" },
 ];
 
 function ArrowLeftIcon() {
@@ -37,7 +38,7 @@ function BackToHomeButton({ onClick, className = "" }: { onClick?: () => void; c
 
 export default function EasyInvoiceNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -60,12 +61,12 @@ export default function EasyInvoiceNavbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-ei-forest/10 bg-ei-cream/90 shadow-[0_1px_0_rgba(26,60,46,0.04)] backdrop-blur-lg">
-      <nav
-        ref={navRef}
-        className="relative mx-auto flex max-w-container items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 lg:py-3.5"
-        aria-label="Easy Invoice navigation"
-      >
-        <BackToHomeButton onClick={closeMenu} />
+      <div ref={navRef}>
+        <nav
+          className="relative mx-auto flex max-w-container items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 lg:py-3.5"
+          aria-label="Easy Invoice navigation"
+        >
+          <BackToHomeButton onClick={closeMenu} />
 
         <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
           <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-ei-forest/10 bg-white/80 p-1.5 shadow-md backdrop-blur-sm">
@@ -127,33 +128,37 @@ export default function EasyInvoiceNavbar() {
 
         {/* Spacer balances layout on desktop (matches menu btn width on mobile) */}
         <div className="hidden w-10 md:block" aria-hidden />
-      </nav>
+        </nav>
 
-      {isMobileMenuOpen && (
-        <div className="border-t border-ei-forest/10 bg-ei-cream px-4 py-5 shadow-lg md:hidden">
-          <div className="mx-auto flex max-w-sm flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
+        {isMobileMenuOpen && (
+          <div className="border-t border-ei-forest/10 bg-ei-cream px-4 py-5 shadow-lg md:hidden">
+            <div className="mx-auto flex max-w-sm flex-col gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className="rounded-xl px-4 py-3 text-center text-sm font-medium text-ei-forest no-underline transition hover:bg-ei-lime/15"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <PlayStoreNavButton
                 onClick={closeMenu}
-                className="rounded-xl px-4 py-3 text-center text-sm font-medium text-ei-forest no-underline transition hover:bg-ei-lime/15"
+                className="ei-cta-primary mt-2 w-full rounded-full bg-ei-forest px-4 py-3 text-center text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime"
               >
-                {link.label}
-              </Link>
-            ))}
-            <PlayStoreNavButton
-              onClick={closeMenu}
-              className="ei-cta-primary mt-2 w-full rounded-full bg-ei-forest px-4 py-3 text-center text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime"
-            >
-              Get on Google Play
-            </PlayStoreNavButton>
-            <div className="mt-4 flex justify-center border-t border-ei-forest/10 pt-4">
-              <BackToHomeButton onClick={closeMenu} className="w-full justify-center sm:w-auto" />
+                Get on Google Play
+              </PlayStoreNavButton>
+              <div className="mt-4 flex justify-center border-t border-ei-forest/10 pt-4">
+                <BackToHomeButton
+                  onClick={closeMenu}
+                  className="w-full justify-center sm:w-auto"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 }

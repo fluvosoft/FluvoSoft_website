@@ -119,7 +119,7 @@ export default function Footer() {
             FluvoSoft | Copyright © {new Date().getFullYear()}
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-sm text-accent hover:text-foreground">
+            <Link href="/privacy" className="text-sm text-accent hover:text-foreground">
               Privacy Policy
             </Link>
             <Link href="#" className="text-sm text-accent hover:text-foreground">
