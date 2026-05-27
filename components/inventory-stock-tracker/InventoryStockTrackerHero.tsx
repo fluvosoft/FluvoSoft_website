@@ -20,17 +20,20 @@ export default function InventoryStockTrackerHero() {
               <span aria-hidden>📦</span> Free core features — Pro from $4.99/mo
             </TrustBadge>
 
+            <p className="mt-5 text-sm font-semibold uppercase tracking-wider text-ei-forest/80">
+              Inventory Stock Tracker
+            </p>
             <h1
               id="inventory-stock-tracker-hero-heading"
-              className="mt-5 font-ei-heading text-4xl font-bold leading-[1.1] tracking-tight text-ei-forest md:text-5xl lg:text-[3.25rem]"
+              className="mt-2 font-ei-heading text-4xl font-bold leading-[1.1] tracking-tight text-ei-forest md:text-5xl lg:text-[3.25rem]"
             >
-              Track Stock. Grow Your Business.
+              Inventory App — Track Stock. Grow Your Business.
             </h1>
 
             <p className="mt-5 max-w-lg text-base leading-relaxed text-ei-muted md:text-lg">
-              Manage product inventory, record stock in and out, and see earnings on your dashboard —
-              with real-time cloud sync and offline support. Built for shops and warehouses by
-              FluvoSoft in Dhaka, Bangladesh.
+              Manage product inventory, scan barcodes, record stock in and out, and view sales
+              analytics — with cloud sync and offline support. Inventory Stock Tracker by FluvoSoft
+              is built for shops and warehouses in Bangladesh and worldwide.
             </p>
 
             <div className="mt-8 flex flex-wrap items-stretch gap-3">

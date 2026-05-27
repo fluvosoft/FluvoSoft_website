@@ -1,186 +1,73 @@
-import type { Metadata } from "next";
 import { easyInvoiceFaqs } from "@/data/easyInvoiceFaqs";
-import { siteConfig } from "@/lib/seo";
+import {
+  buildProductPageJsonLdGraph,
+  buildProductPageMetadata,
+  type ProductSeoConfig,
+} from "@/lib/productPageSeo";
 
-export const easyInvoiceConfig = {
+export const easyInvoiceConfig: ProductSeoConfig = {
   name: "Easy Invoice",
-  tagline: "Free mobile invoice app for small businesses",
+  tagline: "Free Mobile Invoice App for Small Businesses",
   path: "/easy-invoice",
   description:
-    "Create professional invoices, track payments & export PDFs free. Easy Invoice by FluvoSoft — 20 templates, cloud sync, no subscriptions. Get it on Android.",
+    "Easy Invoice is a free Android and web invoicing app for small businesses and freelancers. Create professional invoices, use 20 templates, track payments, export PDFs, and sync to the cloud — no subscription required.",
   shortDescription:
-    "Create professional invoices, track payments & export PDFs free. Easy Invoice by FluvoSoft — 20 templates, cloud sync, no subscriptions.",
+    "Free invoice app with 20 templates, PDF export, payment tracking, and cloud sync. Built by FluvoSoft for small businesses.",
   keywords: [
+    "Easy Invoice",
+    "free invoice app",
     "free invoice app android",
     "mobile invoicing app",
     "invoice generator free",
     "small business invoice app",
+    "freelancer invoice app",
     "PDF invoice maker",
-    "Easy Invoice",
-    "FluvoSoft",
+    "invoice template app",
+    "invoice maker Bangladesh",
     "invoice app Bangladesh",
+    "FluvoSoft Easy Invoice",
+    "cloud invoice app",
+    "invoice app no subscription",
+    "Android invoice app",
+    "Zoho Corporation",
+    "Zoho Invoice alternative",
   ],
   ogImagePath: "/images/easy_invoice_logo_fluvosoft.svg",
   ogImageAlt:
-    "Easy Invoice Android app dashboard showing revenue overview and invoice analytics",
+    "Easy Invoice — free mobile invoicing app with dashboard analytics and PDF export by FluvoSoft",
+  applicationCategory: "FinanceApplication",
+  operatingSystems: ["Android", "Web"],
+  features: [
+    "20 professional invoice templates",
+    "PDF export and share",
+    "Payment and invoice status tracking",
+    "Dashboard revenue analytics",
+    "Cloud sync across devices",
+    "Email and Google Sign-In",
+    "Offline-friendly workflow",
+    "Free forever — no subscription",
+  ],
+  screenshotPaths: [
+    "/images/easy invoice mocup-1.jpeg",
+    "/images/easy invoice mocup-2.jpeg",
+    "/images/easy invoice mocup-3.jpeg",
+    "/images/easy invoice mocup-4.jpeg",
+  ],
   playStoreUrl: "#",
   apkUrl: "/downloads/app-release.apk",
   apkFileName: "easy-invoice.apk",
+  offers: [{ name: "Free", price: 0 }],
+  faqs: easyInvoiceFaqs.map((item) => ({
+    question: item.question,
+    answer: item.answer,
+  })),
 };
 
-const pageUrl = `${siteConfig.url}${easyInvoiceConfig.path}`;
-const ogImageUrl = `${siteConfig.url}${easyInvoiceConfig.ogImagePath}`;
+export const easyInvoiceMetadata = buildProductPageMetadata(easyInvoiceConfig);
 
-export const easyInvoiceMetadata: Metadata = {
-  title: {
-    absolute:
-      "Easy Invoice – Free Mobile Invoice App for Small Businesses | FluvoSoft",
-  },
-  description: easyInvoiceConfig.description,
-  keywords: easyInvoiceConfig.keywords,
-  authors: [{ name: "FluvoSoft", url: siteConfig.url }],
-  creator: "FluvoSoft",
-  publisher: "FluvoSoft",
-  category: "Business",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: siteConfig.openGraph.locale,
-    url: pageUrl,
-    siteName: siteConfig.openGraph.siteName,
-    title:
-      "Easy Invoice – Free Mobile Invoice App for Small Businesses | FluvoSoft",
-    description: easyInvoiceConfig.description,
-    images: [
-      {
-        url: ogImageUrl,
-        width: 1200,
-        height: 630,
-        alt: easyInvoiceConfig.ogImageAlt,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title:
-      "Easy Invoice – Free Mobile Invoice App for Small Businesses | FluvoSoft",
-    description: easyInvoiceConfig.description,
-    images: [ogImageUrl],
-  },
-  alternates: {
-    canonical: pageUrl,
-  },
-  other: {
-    "application-name": easyInvoiceConfig.name,
-  },
-};
-
-export function buildEasyInvoiceBreadcrumbJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: siteConfig.url,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: easyInvoiceConfig.name,
-        item: pageUrl,
-      },
-    ],
-  };
+export function buildEasyInvoiceJsonLdGraph() {
+  return buildProductPageJsonLdGraph(easyInvoiceConfig);
 }
 
-export function buildEasyInvoiceWebPageJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${pageUrl}#webpage`,
-    url: pageUrl,
-    name: "Easy Invoice – Free Mobile Invoice App for Small Businesses",
-    description: easyInvoiceConfig.description,
-    inLanguage: "en",
-    isPartOf: {
-      "@type": "WebSite",
-      url: siteConfig.url,
-      name: siteConfig.name,
-    },
-    primaryImageOfPage: {
-      "@type": "ImageObject",
-      url: ogImageUrl,
-      caption: easyInvoiceConfig.ogImageAlt,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-  };
-}
-
-export function buildEasyInvoiceFaqJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: easyInvoiceFaqs.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
-}
-
-/** SoftwareApplication — offers only; add aggregateRating when Play Store ratings are available */
-export function buildEasyInvoiceSoftwareJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: easyInvoiceConfig.name,
-    operatingSystem: "ANDROID, Web",
-    applicationCategory: "FinanceApplication",
-    description: easyInvoiceConfig.description,
-    url: pageUrl,
-    downloadUrl: easyInvoiceConfig.playStoreUrl,
-    image: ogImageUrl,
-    offers: {
-      "@type": "Offer",
-      price: 0,
-      priceCurrency: "USD",
-    },
-    author: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Dhaka",
-        addressCountry: "BD",
-      },
-    },
-  };
-}
-
-export const easyInvoiceJsonLdBlocks = [
-  buildEasyInvoiceBreadcrumbJsonLd,
-  buildEasyInvoiceWebPageJsonLd,
-  buildEasyInvoiceSoftwareJsonLd,
-  buildEasyInvoiceFaqJsonLd,
-] as const;
+/** @deprecated Use buildEasyInvoiceJsonLdGraph — kept for compatibility */
+export const easyInvoiceJsonLdBlocks = [buildEasyInvoiceJsonLdGraph] as const;

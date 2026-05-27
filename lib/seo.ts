@@ -23,6 +23,11 @@ export const siteConfig = {
     "Easy Invoice",
     "free invoice app",
     "mobile invoicing",
+    "Inventory Stock Tracker",
+    "inventory app",
+    "stock management app",
+    "Zoho Corporation",
+    "Zoho",
   ],
   openGraph: {
     type: "website",

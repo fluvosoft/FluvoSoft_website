@@ -18,16 +18,20 @@ export default function EasyInvoiceHero() {
               <span aria-hidden>⭐</span> Free Forever — No Subscriptions
             </TrustBadge>
 
+            <p className="mt-5 text-sm font-semibold uppercase tracking-wider text-ei-forest/80">
+              Easy Invoice
+            </p>
             <h1
               id="easy-invoice-hero-heading"
-              className="mt-5 font-ei-heading text-4xl font-bold leading-[1.1] tracking-tight text-ei-forest md:text-5xl lg:text-[3.25rem]"
+              className="mt-2 font-ei-heading text-4xl font-bold leading-[1.1] tracking-tight text-ei-forest md:text-5xl lg:text-[3.25rem]"
             >
-              Invoice in Seconds. Get Paid Faster.
+              Free Invoice App — Invoice in Seconds. Get Paid Faster.
             </h1>
 
             <p className="mt-5 max-w-lg text-base leading-relaxed text-ei-muted md:text-lg">
               Create professional invoices, track payments, and export PDFs — free on Android and
-              web. Built for small businesses and freelancers by FluvoSoft in Dhaka, Bangladesh.
+              web. Easy Invoice by FluvoSoft is built for small businesses and freelancers in
+              Bangladesh and worldwide.
             </p>
 
             <div className="mt-8 flex flex-wrap items-stretch gap-3">
