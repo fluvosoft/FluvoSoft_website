@@ -43,6 +43,7 @@ const navLinks = [
   {
     label: "Resources",
     dropdown: [
+      { href: "/privacy", label: "Privacy Policy" },
       { href: "#security", label: "Security" },
       { href: "#guides", label: "Guides" },
       { href: "#careers", label: "Careers" },
