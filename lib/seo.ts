@@ -84,3 +84,24 @@ export function buildJsonLdWebSite() {
     },
   };
 }
+
+/** Bing / Google site ownership meta tags (set via env on production). */
+export function buildSiteVerificationMetadata() {
+  const bingCode = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION?.trim();
+  const googleMetaCode = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
+
+  if (!bingCode && !googleMetaCode) {
+    return undefined;
+  }
+
+  return {
+    ...(googleMetaCode ? { google: googleMetaCode } : {}),
+    ...(bingCode
+      ? {
+          other: {
+            "msvalidate.01": bingCode,
+          },
+        }
+      : {}),
+  };
+}

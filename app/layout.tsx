@@ -1,13 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import { siteConfig, buildJsonLdOrganization, buildJsonLdWebSite } from "@/lib/seo";
+import { siteConfig, buildJsonLdOrganization, buildJsonLdWebSite, buildSiteVerificationMetadata } from "@/lib/seo";
 
 export const viewport: Viewport = {
   themeColor: "#0A0A0A",
   width: "device-width",
   initialScale: 1,
 };
+
+const siteVerification = buildSiteVerificationMetadata();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -20,6 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
+  ...(siteVerification ? { verification: siteVerification } : {}),
   formatDetection: {
     email: false,
     address: false,
