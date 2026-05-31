@@ -35,7 +35,7 @@ export default function EasyInvoiceHero() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <GooglePlayButton size="large" variant="badge" />
+              <GooglePlayButton size="large" />
               <DownloadApkButton size="large" />
             </div>
 

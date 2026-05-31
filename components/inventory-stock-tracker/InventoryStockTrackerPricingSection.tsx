@@ -1,26 +1,42 @@
 import { GooglePlayButton } from "./StoreButtons";
 
 const freeFeatures = [
-  "Unlimited items, stock movements, contacts, and categories",
-  "Barcode scanner and cloud sync with offline support",
-  "Dashboard with Last 7 Days analytics",
+  "Unlimited items, categories, and stock movements",
+  "Barcode scanner and Firebase cloud sync with offline mode",
+  "Dashboard analytics (Last 7 Days)",
   "Activity history (last 30 days) and basic search",
+  "Customers, vendors, and organization profile",
 ];
 
 const proFeatures = [
   "CSV export & share for inventory and movements",
   "All analytics ranges: Today, Last 30 Days, All Time",
-  "Low stock alerts and alert center",
+  "Low-stock alerts at reorder points",
   "Import phone contacts as customers or vendors",
   "Unlimited activity history",
-  "Advanced filters, multi-location tracking, financial reports",
+  "Advanced filters, sort, group-by, multi-location tracking",
+  "Financial reports: profit/loss and stock value by category",
+];
+
+const proPlusFeatures = [
+  "Everything in Pro",
+  "Item expiry dates, supplier info, and custom notes",
+  "PDF inventory reports — generate and share",
+  "Cloud backup snapshots with one-tap restore",
+  "Advanced analytics: top sellers, slow movers, turnover",
+  "Bulk multi-select: delete, stock changes, reassign categories",
 ];
 
 const comparisonRows = [
   {
     feature: "Monthly cost",
-    stockTracker: "Free tier + Pro $4.99/mo",
+    stockTracker: "Free · Pro $4.99 · Pro Plus $9.99",
     typical: "$15–$50/mo",
+  },
+  {
+    feature: "Unlimited items (Free)",
+    stockTracker: "Included",
+    typical: "Often capped",
   },
   {
     feature: "Barcode scanning",
@@ -36,6 +52,11 @@ const comparisonRows = [
     feature: "CSV export",
     stockTracker: "Pro",
     typical: "Often Enterprise",
+  },
+  {
+    feature: "PDF reports & cloud backup",
+    stockTracker: "Pro Plus",
+    typical: "Rare on mobile",
   },
 ];
 
@@ -72,15 +93,15 @@ export default function InventoryStockTrackerPricingSection() {
             Start Free. Upgrade When You Need More.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-ei-muted md:text-lg">
-            All core inventory features are free. Pro unlocks exports, full analytics, alerts, and
-            financial reports for growing businesses.
+            Core inventory tools are free on Android. Pro and Pro Plus subscriptions match in-app
+            plans — restore purchases after installing from Google Play when available.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10">
-          <article className="ei-pricing-glow relative overflow-hidden rounded-2xl border border-ei-lime/40 bg-white p-8 lg:p-10">
+        <div className="mt-12 grid gap-8 lg:grid-cols-3 lg:items-start lg:gap-6 xl:gap-8">
+          <article className="ei-pricing-glow relative overflow-hidden rounded-2xl border border-ei-lime/40 bg-white p-8 lg:p-8">
             <span className="inline-flex items-center rounded-full bg-ei-lime/25 px-3 py-1 text-xs font-bold uppercase tracking-wide text-ei-forest">
-              Free — default
+              Free
             </span>
             <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-ei-muted">
               Inventory Stock Tracker
@@ -103,23 +124,48 @@ export default function InventoryStockTrackerPricingSection() {
             </ul>
           </article>
 
-          <article className="relative overflow-hidden rounded-2xl border border-ei-forest/15 bg-ei-cream p-8 shadow-sm lg:p-10">
+          <article className="relative overflow-hidden rounded-2xl border border-ei-forest/15 bg-ei-cream p-8 shadow-sm lg:p-8">
             <span className="inline-flex items-center rounded-full bg-ei-forest px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
               Pro
             </span>
             <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-ei-muted">
-              For growing businesses
+              Growing businesses
             </p>
             <div className="mt-2 flex items-baseline gap-2">
               <span className="font-ei-heading text-5xl font-bold text-ei-forest">$4.99</span>
               <span className="text-lg text-ei-muted">/ month</span>
             </div>
             <p className="mt-4 text-base text-ei-muted">
-              Everything in Free, plus exports, full analytics, alerts, and advanced tools.
+              Exports, full analytics, alerts, locations, and financial reports.
             </p>
 
             <ul className="mt-8 space-y-3">
               {proFeatures.map((feature) => (
+                <li key={feature} className="flex items-start gap-3 text-sm text-ei-forest">
+                  <CheckIcon />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="relative overflow-hidden rounded-2xl border-2 border-ei-forest/20 bg-gradient-to-b from-white to-ei-cream/60 p-8 shadow-md lg:p-8">
+            <span className="inline-flex items-center rounded-full bg-ei-lime px-3 py-1 text-xs font-bold uppercase tracking-wide text-ei-forest">
+              Pro Plus
+            </span>
+            <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-ei-muted">
+              Advanced operations
+            </p>
+            <div className="mt-2 flex items-baseline gap-2">
+              <span className="font-ei-heading text-5xl font-bold text-ei-forest">$9.99</span>
+              <span className="text-lg text-ei-muted">/ month</span>
+            </div>
+            <p className="mt-4 text-base text-ei-muted">
+              Everything in Pro, plus PDF reports, cloud backup, and bulk analytics tools.
+            </p>
+
+            <ul className="mt-8 space-y-3">
+              {proPlusFeatures.map((feature) => (
                 <li key={feature} className="flex items-start gap-3 text-sm text-ei-forest">
                   <CheckIcon />
                   <span>{feature}</span>
@@ -167,17 +213,9 @@ export default function InventoryStockTrackerPricingSection() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-dashed border-ei-forest/20 bg-white p-6 text-center shadow-sm">
-          <h3 className="font-ei-heading font-semibold text-ei-forest">Pro Plus — coming soon</h3>
-          <p className="mt-2 text-sm leading-relaxed text-ei-muted">
-            A future tier with additional premium features for larger businesses and multi-team
-            operations.
-          </p>
-        </div>
-
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-ei-muted">
-          FluvoSoft Softwares — Manage your inventory with ease. Prices may vary by platform and
-          region. Version 1.0.0.
+          FluvoSoft Softwares — Manage your inventory with ease. Subscriptions are managed in-app
+          (Android 7.0+, v1.0.0). Prices may vary by region and store.
         </p>
       </div>
     </section>

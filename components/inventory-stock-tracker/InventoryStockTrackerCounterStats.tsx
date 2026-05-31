@@ -10,16 +10,16 @@ type StatItem = {
 };
 
 const stats: StatItem[] = [
-  { label: "Cloud sync", value: 100, suffix: "%" },
-  { label: "Core features", value: 100, suffix: "%" },
+  { label: "App version", value: 1, suffix: ".0.0" },
+  { label: "Unlimited items", value: 100, suffix: "%" },
   { label: "Pro from", value: 4, prefix: "$", suffix: ".99/mo" },
 ];
 
 function AnimatedStat({ item, active }: { item: StatItem; active: boolean }) {
-  const [display, setDisplay] = useState(0);
+  const [display, setDisplay] = useState(item.label === "App version" ? item.value : 0);
 
   useEffect(() => {
-    if (!active) return;
+    if (!active || item.label === "App version") return;
 
     const duration = 1200;
     const start = performance.now();
@@ -37,8 +37,8 @@ function AnimatedStat({ item, active }: { item: StatItem; active: boolean }) {
   }, [active, item.value]);
 
   const displayText =
-    item.label === "Pro from"
-      ? `${item.prefix ?? ""}${display}${item.suffix ?? ""}`
+    item.label === "App version"
+      ? `v${item.value}${item.suffix ?? ""}`
       : `${item.prefix ?? ""}${display}${item.suffix ?? ""}`;
 
   return (

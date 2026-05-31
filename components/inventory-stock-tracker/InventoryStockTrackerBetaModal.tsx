@@ -70,8 +70,8 @@ export default function InventoryStockTrackerBetaModal({
             Store listings coming soon
           </h2>
           <p id="ist-beta-modal-desc" className="mt-3 text-sm leading-relaxed text-ei-muted sm:text-base">
-            Inventory Stock Tracker is launching on Google Play soon. For early access on Android,
-            download the APK below.
+            Inventory Stock Tracker v1.0.0 is on Google Play soon. Install now on Android 7.0+ with
+            the release APK below (package fluvosoft.com).
           </p>
         </div>
 

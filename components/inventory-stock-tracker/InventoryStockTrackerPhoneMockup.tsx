@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { IPhoneMockup } from "react-device-mockup";
+import { AndroidMockup } from "react-device-mockup";
 
 type InventoryStockTrackerPhoneMockupProps = {
   src: string;
@@ -24,28 +24,25 @@ export default function InventoryStockTrackerPhoneMockup({
     <figure
       className={`flex flex-col items-center ${animate ? "ei-phone-enter ei-phone-shadow" : ""}`}
     >
-      <IPhoneMockup
+      <AndroidMockup
         screenWidth={screenWidth}
-        screenType="island"
+        frameColor="#1A3C2E"
+        frameOnly
         hideStatusBar
         hideNavBar
-        frameColor="#1A3C2E"
+        noRoundedScreen={false}
         className={animate ? "" : "drop-shadow-xl"}
       >
-        <div className="flex h-full w-full items-center justify-center overflow-hidden bg-white p-2">
-          <Image
-            src={src}
-            alt={alt}
-            width={400}
-            height={844}
-            className="h-[99%] w-[100%] object-contain object-center"
-            sizes={`${screenWidth}px`}
-            priority={priority}
-            loading={priority ? undefined : "lazy"}
-            unoptimized={src.endsWith(".svg")}
-          />
-        </div>
-      </IPhoneMockup>
+        <Image
+          src={src}
+          alt={alt}
+          width={400}
+          height={866}
+          className="h-full w-full object-cover object-top"
+          sizes={`${screenWidth}px`}
+          priority={priority}
+        />
+      </AndroidMockup>
       {caption ? (
         <figcaption className="mt-4 text-center text-sm font-medium text-ei-muted">
           {caption}

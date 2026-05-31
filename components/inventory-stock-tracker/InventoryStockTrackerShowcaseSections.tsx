@@ -1,11 +1,5 @@
 import InventoryStockTrackerPhoneMockup from "./InventoryStockTrackerPhoneMockup";
-
-const MOCKUP_IMAGES = {
-  dashboard: "/images/inventory-mockup-dashboard.svg",
-  items: "/images/inventory-mockup-items.svg",
-  stock: "/images/inventory-mockup-stock.svg",
-  contacts: "/images/inventory-mockup-contacts.svg",
-} as const;
+import { inventoryStockTrackerScreenshots } from "@/data/inventoryStockTrackerScreenshots";
 
 type PhoneImage = { src: string; alt: string; caption: string };
 
@@ -105,46 +99,32 @@ function ShowcaseBlock({
   );
 }
 
+const { items, addItem, premium, settings } = inventoryStockTrackerScreenshots;
+
 export default function InventoryStockTrackerShowcaseSections() {
   return (
     <>
       <ShowcaseBlock
-        badge="Dashboard & inventory"
-        title="Know Your Stock at a Glance"
+        badge="Get started"
+        title="Add Items in Seconds"
         paragraphs={[
-          "The dashboard summarizes sold and purchased quantities, earnings, spendings, total items, and contacts — with a bar chart comparing sales vs. purchases over time so you always know how your business is performing.",
-          "Add products with images, SKU, barcode, category, and prices. Search by name, SKU, or barcode, scan codes with your camera, and open any item for stock history and profit margin.",
+          "Browse your catalog from the Items tab — search by name or SKU, scan barcodes, and filter your list. Tap Add New Item when you are ready to grow your inventory.",
+          "Capture name, SKU, opening stock, reorder point, category, selling and cost prices, and warehouse location (Pro). Scan barcodes from the SKU field with your camera.",
         ]}
-        left={{
-          src: MOCKUP_IMAGES.dashboard,
-          alt: "Inventory Stock Tracker dashboard showing earnings and analytics chart",
-          caption: "Dashboard overview",
-        }}
-        right={{
-          src: MOCKUP_IMAGES.items,
-          alt: "Inventory Stock Tracker product list with stock quantities",
-          caption: "Product catalog",
-        }}
+        left={items}
+        right={addItem}
         bgClass="bg-white"
       />
 
       <ShowcaseBlock
-        badge="Stock & contacts"
-        title="Every Movement and Relationship in One Place"
+        badge="Pro & Pro Plus"
+        title="Unlock Premium When You Grow"
         paragraphs={[
-          "Record Stock In, Stock Out, and Adjustments with a clear audit trail. Preferences let you highlight low stock and optionally prevent selling below zero.",
-          "Manage customers and vendors, filter by type, and search by name or phone. Pro users can import device contacts in bulk and track multiple warehouse or store locations per item.",
+          "Upgrade to Pro ($4.99/mo) for CSV export, all analytics ranges, low-stock alerts, contact import, filters, multi-location tracking, and financial reports.",
+          "Pro Plus ($9.99/mo) adds PDF reports, cloud backup and restore, advanced analytics, and bulk operations — visible in Settings with PRO and PRO+ badges.",
         ]}
-        left={{
-          src: MOCKUP_IMAGES.stock,
-          alt: "Inventory Stock Tracker stock in and stock out movement screen",
-          caption: "Stock movements",
-        }}
-        right={{
-          src: MOCKUP_IMAGES.contacts,
-          alt: "Inventory Stock Tracker contacts list for customers and vendors",
-          caption: "Customers & vendors",
-        }}
+        left={premium}
+        right={settings}
         bgClass="bg-ei-cream"
       />
     </>

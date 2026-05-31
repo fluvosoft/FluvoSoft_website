@@ -1,8 +1,7 @@
 import Image from "next/image";
+import { inventoryStockTrackerHeroLogo } from "@/data/inventoryStockTrackerScreenshots";
 import InventoryStockTrackerCounterStats from "./InventoryStockTrackerCounterStats";
 import { DownloadApkButton, GooglePlayButton, TrustBadge } from "./StoreButtons";
-
-const HERO_LOGO = "/images/inventory_stock_tracker_logo.png";
 
 export default function InventoryStockTrackerHero() {
   return (
@@ -17,7 +16,7 @@ export default function InventoryStockTrackerHero() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="order-2 lg:order-1">
             <TrustBadge>
-              <span aria-hidden>📦</span> Free core features — Pro from $4.99/mo
+              <span aria-hidden>📦</span> Android v1.0.0 · Free · Pro $4.99 · Pro Plus $9.99/mo
             </TrustBadge>
 
             <p className="mt-5 text-sm font-semibold uppercase tracking-wider text-ei-forest/80">
@@ -31,13 +30,13 @@ export default function InventoryStockTrackerHero() {
             </h1>
 
             <p className="mt-5 max-w-lg text-base leading-relaxed text-ei-muted md:text-lg">
-              Manage product inventory, scan barcodes, record stock in and out, and view sales
-              analytics — with cloud sync and offline support. Inventory Stock Tracker by FluvoSoft
-              is built for shops and warehouses in Bangladesh and worldwide.
+              Manage unlimited items, scan barcodes, record stock in and out, and track earnings
+              versus spendings on a live dashboard — with Firebase cloud sync and offline mode.
+              Download the Android app today; upgrade to Pro or Pro Plus when your business grows.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <GooglePlayButton size="large" variant="badge" />
+              <GooglePlayButton size="large" />
               <DownloadApkButton size="large" />
             </div>
 
@@ -45,15 +44,15 @@ export default function InventoryStockTrackerHero() {
               className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-ei-muted"
               aria-label="Key features"
             >
+              <li>Unlimited items</li>
+              <li aria-hidden className="text-ei-lime">
+                ·
+              </li>
               <li>Barcode scan</li>
               <li aria-hidden className="text-ei-lime">
                 ·
               </li>
-              <li>Cloud sync</li>
-              <li aria-hidden className="text-ei-lime">
-                ·
-              </li>
-              <li>Offline mode</li>
+              <li>Cloud + offline</li>
             </ul>
 
             <div className="mt-10">
@@ -63,8 +62,8 @@ export default function InventoryStockTrackerHero() {
 
           <div className="order-1 relative flex min-h-[320px] items-center justify-center lg:order-2 lg:min-h-[480px]">
             <Image
-              src={HERO_LOGO}
-              alt="Inventory Stock Tracker app logo by FluvoSoft"
+              src={inventoryStockTrackerHeroLogo.src}
+              alt={inventoryStockTrackerHeroLogo.alt}
               width={520}
               height={520}
               className="ei-phone-enter h-auto w-full max-w-md object-contain drop-shadow-2xl lg:max-w-lg"

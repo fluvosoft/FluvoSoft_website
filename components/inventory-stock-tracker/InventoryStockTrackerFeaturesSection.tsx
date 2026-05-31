@@ -89,19 +89,19 @@ const featureAreas: FeatureCard[] = [
   {
     title: "Dashboard & Analytics",
     description:
-      "Summary of sales, purchases, earnings, and spendings plus a bar chart of sales vs. purchases over time.",
+      "Sold and purchased quantities, earnings, spendings, stock value, and a sales vs. purchases chart. Free: Last 7 Days; Pro: Today, 30 Days, and All Time.",
     icon: <IconDashboard />,
   },
   {
     title: "Contacts",
     description:
-      "Customers and vendors with filter, sort, and search. Pro adds bulk import from your phone contacts.",
+      "Customers and vendors with filter, sort, and search. Pro unlocks bulk import from your phone contacts.",
     icon: <IconContacts />,
   },
   {
     title: "Activity History",
     description:
-      "Full log of items, stock, contacts, and categories — filter by type, grouped by date with timestamps.",
+      "Log of items, stock, contacts, and categories with filters and date groups. Free keeps 30 days; Pro is unlimited.",
     icon: <IconActivity />,
   },
   {
@@ -118,7 +118,7 @@ const featureAreas: FeatureCard[] = [
   {
     title: "Settings",
     description:
-      "Organization profile, categories, low-stock preferences, privacy controls, feedback, and account management.",
+      "Organization profile, categories, dashboard display options, below-zero stock guard, diagnostics/crash privacy, feedback, and account delete.",
     icon: <IconSettings />,
   },
 ];
@@ -204,7 +204,8 @@ export default function InventoryStockTrackerFeaturesSection() {
           </h2>
           <p className="mt-4 text-base text-ei-muted">
             From sign-up and organization setup to inventory, analytics, contacts, and activity
-            history — built for Android and iOS.
+            history — matching the Android app (v1.0.0). Pro Plus adds PDF reports, backup, and
+            advanced insights.
           </p>
         </div>
 
