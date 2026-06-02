@@ -61,7 +61,7 @@ const navLinks = [
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -75,9 +75,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="relative z-50 bg-background">
+    <header ref={navRef} className="relative z-50 bg-background">
       <nav
-        ref={navRef}
         className="relative mx-auto flex items-center justify-between gap-6 px-6 py-3.5 md:px-8 lg:px-12"
         aria-label="Main navigation"
       >
