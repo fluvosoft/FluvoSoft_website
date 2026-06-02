@@ -42,8 +42,8 @@ function AnimatedStat({ item, active }: { item: StatItem; active: boolean }) {
       : `${item.prefix ?? ""}${display}${item.suffix ?? ""}`;
 
   return (
-    <div className="text-center">
-      <p className="font-ei-heading text-3xl font-bold text-ei-forest md:text-4xl">
+    <div className="min-w-0 text-center">
+      <p className="break-words font-ei-heading text-xl font-bold text-ei-forest sm:text-3xl md:text-4xl">
         {displayText}
       </p>
       <p className="mt-1 text-sm text-ei-muted">{item.label}</p>
@@ -76,7 +76,7 @@ export default function InventoryStockTrackerCounterStats() {
   return (
     <div
       ref={ref}
-      className="mx-auto grid max-w-2xl grid-cols-3 gap-4 rounded-2xl border border-ei-forest/10 bg-white/80 px-4 py-6 backdrop-blur-sm md:gap-8 md:px-8"
+      className="mx-auto grid max-w-2xl grid-cols-3 gap-3 rounded-2xl border border-ei-forest/10 bg-white/80 px-3 py-4 backdrop-blur-sm sm:gap-6 sm:px-4 sm:py-6 md:gap-8 md:px-8"
       aria-label="Inventory Stock Tracker highlights"
     >
       {stats.map((item) => (

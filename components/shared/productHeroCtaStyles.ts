@@ -13,11 +13,11 @@ export const productHeroCtaGhostBadgeButton = `${productHeroCtaGhost} inline-fle
 
 /** Filled Google Play store CTA (dark pill, white label). */
 export const productHeroCtaPlayStoreButton =
-  "ei-cta-primary inline-flex shrink-0 items-center justify-center gap-3 rounded-xl border border-black/10 bg-[#142b22] text-white shadow-[0_2px_8px_rgba(20,43,34,0.35)] transition-[transform,background-color,box-shadow] hover:bg-[#1a352b] hover:shadow-[0_4px_14px_rgba(20,43,34,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime";
+  "ei-cta-primary inline-flex shrink-0 items-center justify-center overflow-hidden rounded-xl border border-ei-forest/15 bg-white shadow-[0_2px_10px_rgba(12,24,19,0.10)] transition-[transform,background-color,box-shadow] hover:bg-ei-cream/60 hover:shadow-[0_4px_16px_rgba(12,24,19,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime";
 
-export const productHeroCtaPlayStoreButtonLg = `${productHeroCtaPlayStoreButton} h-[56px] min-w-[200px] px-5 py-3`;
+export const productHeroCtaPlayStoreButtonLg = `${productHeroCtaPlayStoreButton} h-[56px] w-fit px-2.5 py-1.5`;
 
-export const productHeroCtaPlayStoreButtonSm = `${productHeroCtaPlayStoreButton} h-[48px] min-w-[168px] gap-2.5 px-4 py-2.5`;
+export const productHeroCtaPlayStoreButtonSm = `${productHeroCtaPlayStoreButton} h-[48px] w-fit px-2 py-1`;
 
 export const productHeroCtaGhostSm = `${productHeroCtaGhost} inline-flex h-[48px] w-auto shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 py-3 text-xs font-semibold leading-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ei-lime`;
 

@@ -90,7 +90,7 @@ export default function EasyInvoicePricingSection() {
             </ul>
 
             <div className="mt-10">
-              <GooglePlayButton className="w-full sm:w-auto" size="large" />
+              <GooglePlayButton className="w-fit" size="large" />
             </div>
           </article>
 

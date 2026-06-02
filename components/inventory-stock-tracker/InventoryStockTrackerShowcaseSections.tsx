@@ -1,7 +1,7 @@
 import InventoryStockTrackerPhoneMockup from "./InventoryStockTrackerPhoneMockup";
 import { inventoryStockTrackerScreenshots } from "@/data/inventoryStockTrackerScreenshots";
 
-type PhoneImage = { src: string; alt: string; caption: string };
+type PhoneImage = { src: string; alt: string };
 
 type ShowcaseBlockProps = {
   badge: string;
@@ -33,7 +33,6 @@ function ShowcaseBlock({
             <InventoryStockTrackerPhoneMockup
               src={left.src}
               alt={left.alt}
-              caption={left.caption}
               screenWidth={220}
             />
           </div>
@@ -59,7 +58,6 @@ function ShowcaseBlock({
             <InventoryStockTrackerPhoneMockup
               src={right.src}
               alt={right.alt}
-              caption={right.caption}
               screenWidth={220}
             />
           </div>
@@ -79,17 +77,15 @@ function ShowcaseBlock({
               ))}
             </div>
           </div>
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6">
             <InventoryStockTrackerPhoneMockup
               src={left.src}
               alt={left.alt}
-              caption={left.caption}
               screenWidth={160}
             />
             <InventoryStockTrackerPhoneMockup
               src={right.src}
               alt={right.alt}
-              caption={right.caption}
               screenWidth={160}
             />
           </div>
@@ -99,34 +95,48 @@ function ShowcaseBlock({
   );
 }
 
-const { items, addItem, premium, settings } = inventoryStockTrackerScreenshots;
+const { home, items, barCodeScan, addItem, activityLog, createContact } =
+  inventoryStockTrackerScreenshots;
 
 export default function InventoryStockTrackerShowcaseSections() {
   return (
     <>
       <ShowcaseBlock
-        badge="Get started"
-        title="Add Items in Seconds"
+        badge="Overview"
+        title="See Your Inventory at a Glance"
         paragraphs={[
-          "Browse your catalog from the Items tab — search by name or SKU, scan barcodes, and filter your list. Tap Add New Item when you are ready to grow your inventory.",
-          "Capture name, SKU, opening stock, reorder point, category, selling and cost prices, and warehouse location (Pro). Scan barcodes from the SKU field with your camera.",
+          "Get an instant snapshot of sold vs purchased quantities, earnings, and spendings — plus clean analytics for recent performance.",
+          "Find any product fast with search, then scan barcodes to pull up the right SKU in seconds.",
         ]}
-        left={items}
-        right={addItem}
+        left={home}
+        right={barCodeScan}
         bgClass="bg-white"
       />
 
       <ShowcaseBlock
-        badge="Pro & Pro Plus"
-        title="Unlock Premium When You Grow"
+        badge="Daily workflow"
+        title="Add Items, Track Activity, Manage Contacts"
         paragraphs={[
-          "Upgrade to Pro ($4.99/mo) for CSV export, all analytics ranges, low-stock alerts, contact import, filters, multi-location tracking, and financial reports.",
-          "Pro Plus ($9.99/mo) adds PDF reports, cloud backup and restore, advanced analytics, and bulk operations — visible in Settings with PRO and PRO+ badges.",
+          "Add items with SKU and pricing, update stock as it moves, and keep customers and vendors organized as you grow.",
+          "Built for speed: the essentials are always one tap away, without extra clutter.",
         ]}
-        left={premium}
-        right={settings}
+        left={items}
+        right={addItem}
         bgClass="bg-ei-cream"
       />
+
+      <ShowcaseBlock
+        badge="History"
+        title="Keep a Clear Activity Trail"
+        paragraphs={[
+          "Every key action is logged so you can confirm what changed and when — ideal when more than one person manages stock.",
+          "Scan recent activity to spot mistakes early and keep your numbers accurate.",
+        ]}
+        left={activityLog}
+        right={createContact}
+        bgClass="bg-white"
+      />
+
     </>
   );
 }

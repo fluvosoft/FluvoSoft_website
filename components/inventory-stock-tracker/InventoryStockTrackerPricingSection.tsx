@@ -176,7 +176,7 @@ export default function InventoryStockTrackerPricingSection() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <GooglePlayButton className="w-full sm:w-auto" size="large" />
+          <GooglePlayButton className="w-fit" size="large" />
         </div>
 
         <div className="mt-12 overflow-hidden rounded-2xl border border-ei-forest/10 bg-ei-cream">

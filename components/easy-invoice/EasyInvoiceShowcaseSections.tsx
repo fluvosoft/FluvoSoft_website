@@ -87,7 +87,7 @@ function ShowcaseBlock({
               ))}
             </div>
           </div>
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6">
             <EasyInvoicePhoneMockup
               src={left.src}
               alt={left.alt}

@@ -38,7 +38,7 @@ export default function InventoryStockTrackerPhoneMockup({
           alt={alt}
           width={400}
           height={866}
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full bg-black object-contain object-center"
           sizes={`${screenWidth}px`}
           priority={priority}
         />

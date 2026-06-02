@@ -43,7 +43,7 @@ function AnimatedStat({ item, active }: { item: StatItem; active: boolean }) {
 
   return (
     <div className="text-center">
-      <p className="font-ei-heading text-3xl font-bold text-ei-forest md:text-4xl">
+      <p className="font-ei-heading text-2xl font-bold text-ei-forest sm:text-3xl md:text-4xl">
         {displayText}
       </p>
       <p className="mt-1 text-sm text-ei-muted">{item.label}</p>
