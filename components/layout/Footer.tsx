@@ -78,8 +78,26 @@ export default function Footer() {
             <Link href="/about" className="text-sm text-accent hover:text-foreground">
               About us
             </Link>
-            <Link href="#" className="text-sm text-accent hover:text-foreground">
-              Documents
+            <Link href="/contact" className="text-sm text-accent hover:text-foreground">
+              Contact us
+            </Link>
+            <Link href="/careers" className="text-sm text-accent hover:text-foreground">
+              Careers
+            </Link>
+          </div>
+          <div className="flex min-w-[120px] flex-col gap-3">
+            <h4 className="text-sm font-medium text-foreground">Resources</h4>
+            <Link href="/documentation" className="text-sm text-accent hover:text-foreground">
+              Documentation
+            </Link>
+            <Link href="/guides" className="text-sm text-accent hover:text-foreground">
+              Guides
+            </Link>
+            <Link href="/blog" className="text-sm text-accent hover:text-foreground">
+              Blog
+            </Link>
+            <Link href="/security" className="text-sm text-accent hover:text-foreground">
+              Security
             </Link>
           </div>
           <div className="ml-auto flex min-w-[200px] flex-col gap-3">
