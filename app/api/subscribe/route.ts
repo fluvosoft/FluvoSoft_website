@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { push, ref, serverTimestamp as rtdbServerTimestamp } from "firebase/database";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { checkRateLimit } from "@/lib/rateLimit";
-import { db, hasAllFirebaseValues } from "@/lib/firebase";
+import { db, hasAllFirebaseValues, rtdb } from "@/lib/firebase";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -36,15 +37,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: false, message: "Invalid email." }, { status: 400 });
     }
 
-    if (!hasAllFirebaseValues || !db) {
+    if (!hasAllFirebaseValues || !db || !rtdb) {
       return NextResponse.json({ ok: false, message: "Server is not configured for subscriptions." }, { status: 500 });
     }
 
-    await addDoc(collection(db, "subscribers"), {
+    const payload = {
       email,
       ipHashHint: ip.slice(0, 6),
-      createdAt: serverTimestamp(),
-    });
+    };
+
+    await Promise.all([
+      addDoc(collection(db, "subscribers"), {
+        ...payload,
+        createdAt: serverTimestamp(),
+      }),
+      push(ref(rtdb, "subscribers"), {
+        ...payload,
+        createdAt: rtdbServerTimestamp(),
+      }),
+    ]);
 
     return NextResponse.json({ ok: true });
   } catch {

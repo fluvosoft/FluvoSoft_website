@@ -1,0 +1,35 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isDashboardAdmin() {
+      return request.auth != null
+        && request.auth.token.email in [
+          "alisifat061@gmail.com",
+          "sifatali008@gmail.com",
+          "codewithsifat4@gmail.com"
+        ];
+    }
+
+    match /contactMessages/{messageId} {
+      allow create: if request.resource.data.keys().hasAll([
+          "name",
+          "email",
+          "subject",
+          "message",
+          "createdAt"
+        ])
+        && request.resource.data.name is string
+        && request.resource.data.email is string
+        && request.resource.data.message is string;
+      allow read, update, delete: if isDashboardAdmin();
+    }
+
+    match /subscribers/{subscriberId} {
+      allow create: if request.resource.data.keys().hasAll(["email", "createdAt"])
+        && request.resource.data.email is string;
+      allow read: if isDashboardAdmin();
+      allow update, delete: if false;
+    }
+  }
+}

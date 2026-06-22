@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { push, ref, serverTimestamp as rtdbServerTimestamp } from "firebase/database";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { checkRateLimit } from "@/lib/rateLimit";
-import { db, hasAllFirebaseValues } from "@/lib/firebase";
+import { db, hasAllFirebaseValues, rtdb } from "@/lib/firebase";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -63,11 +64,11 @@ export async function POST(req: NextRequest) {
     if (!message || message.length < 5 || message.length > 5000) {
       return NextResponse.json({ ok: false, message: "Invalid message length." }, { status: 400 });
     }
-    if (!hasAllFirebaseValues || !db) {
+    if (!hasAllFirebaseValues || !db || !rtdb) {
       return NextResponse.json({ ok: false, message: "Server is not configured for form storage." }, { status: 500 });
     }
 
-    await addDoc(collection(db, "contactMessages"), {
+    const payload = {
       name,
       email,
       subject,
@@ -77,8 +78,20 @@ export async function POST(req: NextRequest) {
       budget: budget || null,
       meetingSlot: meetingSlot || null,
       ipHashHint: ip.slice(0, 6),
-      createdAt: serverTimestamp(),
-    });
+      source: "talk-with-team",
+      status: "new",
+    };
+
+    await Promise.all([
+      addDoc(collection(db, "contactMessages"), {
+        ...payload,
+        createdAt: serverTimestamp(),
+      }),
+      push(ref(rtdb, "contactMessages"), {
+        ...payload,
+        createdAt: rtdbServerTimestamp(),
+      }),
+    ]);
 
     return NextResponse.json({ ok: true });
   } catch {

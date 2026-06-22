@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import FirebaseAnalytics from "@/components/analytics/FirebaseAnalytics";
 import { siteConfig, buildJsonLdOrganization, buildJsonLdWebSite, buildSiteVerificationMetadata } from "@/lib/seo";
 
 export const viewport: Viewport = {
@@ -84,6 +85,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <FirebaseAnalytics />
         <Analytics />
       </body>
     </html>
