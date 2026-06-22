@@ -33,7 +33,12 @@
 - [Privacy Policy](/privacy), [Security](/security), [Careers](/careers), [Research](/research), [Blog](/blog), [Contact](/contact)
 - [About](/about) — Company story, mission, values, leadership, and technology stack
 
+### Admin dashboard
 
+- **`/admin`** — Firebase Google sign-in for allowed admin emails (`lib/dashboard-access.ts`)
+- View, filter, and sort contact form submissions from Firestore (`contactMessages`)
+- Update status (new / read / handled), add admin notes, reply via Gmail compose
+- Delete messages server-side via Firebase Admin (`/api/admin/messages/[id]`)
 
 ### SEO & forms
 
@@ -76,6 +81,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | `npm run build` | Production build |
 | `npm start` | Run production server |
 | `npm run lint` | Run ESLint |
+
+### Deployment (Vercel)
+
+1. Connect the [GitHub repository](https://github.com/fluvosoft/FluvoSoft_website) to Vercel.
+2. Set environment variables in the Vercel project (same keys as `.env.example`).
+3. For **`FIREBASE_SERVICE_ACCOUNT_JSON`**, paste the full Firebase service account JSON on **one line** (standard `project_id` / `client_email` / `private_key` format from the Firebase Console).
+4. Build command: `npm run build` · Output: Next.js default.
+
+Requires **Node.js 18.17+** (see `engines` in `package.json`).
 
 ---
 
@@ -148,7 +162,7 @@ Set `NEXT_PUBLIC_FIREBASE_*` in `.env.local` so contact and subscribe forms writ
 
 ### Firebase Admin (dashboard delete)
 
-Set `FIREBASE_SERVICE_ACCOUNT_JSON` in `.env.local` (full service account JSON on one line) for server-side delete in `/admin`.
+Set `FIREBASE_SERVICE_ACCOUNT_JSON` in `.env.local` or Vercel env vars (full service account JSON on one line) for server-side delete in `/admin`. The app maps standard Firebase snake_case fields (`project_id`, `client_email`, `private_key`) to the Admin SDK format at runtime.
 
 ### Admin access
 
