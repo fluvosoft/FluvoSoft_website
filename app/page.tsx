@@ -9,6 +9,7 @@ import DashboardPreview from "@/components/sections/DashboardPreview";
 import EverythingYouNeedSection from "@/components/sections/EverythingYouNeedSection";
 import QualitySection from "@/components/sections/QualitySection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import ContributionsSection from "@/components/sections/ContributionsSection";
 import PricingSection from "@/components/sections/PricingSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -60,6 +61,7 @@ export default function Home() {
           <EverythingYouNeedSection />
           <QualitySection />
           <TestimonialsSection />
+          <ContributionsSection />
           <PricingSection />
           <FAQSection />
           <ContactSection />
