@@ -56,6 +56,7 @@ export const easyInvoiceConfig: ProductSeoConfig = {
   playStoreUrl: "#",
   apkUrl: "/downloads/app-release.apk",
   apkFileName: "easy-invoice.apk",
+  webUrl: "https://easyinvoice.fluvosoft.com/",
   offers: [{ name: "Free", price: 0 }],
   faqs: easyInvoiceFaqs.map((item) => ({
     question: item.question,

@@ -25,6 +25,7 @@ export type ProductSeoConfig = {
   appStoreUrl?: string;
   apkUrl?: string;
   apkFileName?: string;
+  webUrl?: string;
   softwareVersion?: string;
   offers: ProductOfferConfig[];
   faqs: { question: string; answer: string }[];

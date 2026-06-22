@@ -87,12 +87,6 @@ export default function Footer() {
           </div>
           <div className="flex min-w-[120px] flex-col gap-3">
             <h4 className="text-sm font-medium text-foreground">Resources</h4>
-            <Link href="/documentation" className="text-sm text-accent hover:text-foreground">
-              Documentation
-            </Link>
-            <Link href="/guides" className="text-sm text-accent hover:text-foreground">
-              Guides
-            </Link>
             <Link href="/blog" className="text-sm text-accent hover:text-foreground">
               Blog
             </Link>
