@@ -8,16 +8,38 @@
 
 ## Features
 
-- **Home page** — Hero, partner logos marquee, solutions overview, FluvoSoft Lab, features, testimonials, pricing, FAQ, contact form, and CTA
-- **Solution pages** — Dedicated pages with hero images and content for:
-  - [Blockchain](/blockchain) — Smart contracts, Ethereum, Solana, Corda, enterprise blockchain
-  - [Automation](/automation) — AI automation, RPA, workflow automation
-  - [Custom Development](/custom-development) — Enterprise and web applications, legacy modernization
-  - [SaaS](/saas) — Cloud platforms, subscription management, multi-tenant architecture
-- **About** — Company story, mission, vision, values, impact metrics, and technology expertise
-- **SEO** — Metadata, Open Graph, Twitter cards, JSON-LD (Organization, WebSite, FAQPage), semantic HTML, canonical URLs
-- **Responsive** — Mobile-first layout with Tailwind CSS
-- **Book a Demo** — Contact section with form (Name, Email, Subject, Message) and company details
+### Home page
+
+- Hero, dashboard preview, launch features, and solutions overview
+- **Latest releases** — Auto-playing product slider (Inventory Stock Tracker, Easy Invoice mobile/web, SANDBOX)
+- **Contributions** — Partner company logos and names
+- FluvoSoft Lab, features, quality, testimonials, pricing, FAQ, and CTA
+- **Book a quick call** — Contact section with calendar time slots, project inquiry form (service, budget, location), and social links
+
+### Product pages
+
+- **[Easy Invoice](/easy-invoice)** — Free mobile invoicing app (Android APK, Google Play, [web app](https://easyinvoice.fluvosoft.com/))
+- **[Inventory Stock Tracker](/inventory-stock-tracker)** — Android inventory and stock management app
+
+### Solution pages
+
+- [Blockchain](/blockchain) — Smart contracts, Ethereum, Solana, Corda, enterprise blockchain
+- [Automation](/automation) — AI automation, RPA, workflow automation
+- [Custom Development](/custom-development) — Enterprise and web applications, legacy modernization
+- [SaaS](/saas) — Cloud platforms, subscription management, multi-tenant architecture
+
+### Resources
+
+- [Privacy Policy](/privacy), [Security](/security), [Careers](/careers), [Research](/research), [Blog](/blog), [Contact](/contact)
+- [About](/about) — Company story, mission, values, leadership, and technology stack
+
+
+
+### SEO & forms
+
+- Metadata, Open Graph, Twitter cards, JSON-LD (Organization, WebSite, FAQPage), sitemap, robots.txt
+- Contact and subscribe forms via protected API routes (validation, honeypot, rate limiting)
+- Firebase Firestore storage for `contactMessages` and `subscribers`
 
 ---
 
@@ -25,14 +47,14 @@
 
 ### Prerequisites
 
-- **Node.js** 18+ and **npm**
+- **Node.js** 18.17+ and **npm**
 
 ### Setup
 
 ```bash
 # Clone the repository
 git clone https://github.com/fluvosoft/FluvoSoft_website.git
-cd FluoSoft_website
+cd FluvoSoft_website
 
 # Install dependencies
 npm install
@@ -64,46 +86,48 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | Framework | **Next.js 14** (App Router) |
 | UI | **React 18**, **TypeScript** |
 | Styling | **Tailwind CSS 3** |
+| Backend / data | **Firebase** (client SDK + Admin SDK), Firestore |
 | Fonts | Poppins (Google Fonts) |
+| Device mockups | `react-device-mockup` (product showcase) |
 
 ---
 
 ## Project structure
 
 ```
-FluvoSoft Website/
+FluvoSoft_website/
 ├── app/
-│   ├── layout.tsx           # Root layout, metadata, JSON-LD
-│   ├── page.tsx             # Home page
-│   ├── globals.css          # Tailwind + global styles
-│   ├── about/page.tsx       # About FluvoSoft
-│   ├── blockchain/page.tsx  # Blockchain solutions
-│   ├── automation/page.tsx  # Automation solutions
-│   ├── custom-development/page.tsx
-│   ├── saas/page.tsx
-│   └── ...
+│   ├── layout.tsx              # Root layout, metadata, JSON-LD
+│   ├── page.tsx                # Home page
+│   ├── globals.css             # Tailwind + global styles
+│   ├── about/                  # About FluvoSoft
+│   ├── easy-invoice/           # Easy Invoice product landing
+│   ├── inventory-stock-tracker/
+│   ├── blockchain/ automation/ custom-development/ saas/
+│   ├── contact/ privacy/ security/ careers/ research/ blog/
+│   ├── admin/                  # Contact submissions dashboard
+│   ├── api/
+│   │   ├── contact/            # Contact form API
+│   │   ├── subscribe/          # Newsletter subscribe API
+│   │   └── admin/messages/     # Server-side message delete
+│   ├── sitemap.ts
+│   └── robots.ts
 ├── components/
-│   ├── layout/
-│   │   ├── Navbar.tsx       # Main nav, logo, Solutions dropdown, Book a Demo
-│   │   └── Footer.tsx       # Logo, company info, subscribe, links
-│   ├── sections/            # Home page sections
-│   │   ├── HeroSection.tsx
-│   │   ├── LogosSection.tsx  # Partner marquee
-│   │   ├── SolutionsSection.tsx
-│   │   ├── LabSection.tsx
-│   │   ├── ContactSection.tsx
-│   │   ├── FAQSection.tsx
-│   │   └── ...
+│   ├── layout/                 # Navbar, Footer
+│   ├── sections/               # Home page sections
+│   ├── contact/                # Booking calendar
+│   ├── dashboard/              # Admin dashboard UI
+│   ├── easy-invoice/           # Easy Invoice page components
+│   ├── inventory-stock-tracker/
+│   ├── resources/              # Shared resource page layout
 │   ├── seo/
-│   │   └── FAQSchema.tsx    # FAQPage JSON-LD
-│   ├── blocks/              # Reusable blocks (Logos, PricingCard, etc.)
-│   └── ui/                  # Button, Card, Input, Accordion, etc.
-├── lib/
-│   └── seo.ts               # Site config, JSON-LD helpers
+│   └── ui/
+├── data/                       # FAQs, releases, contributions, resource copy
+├── lib/                        # SEO, Firebase client/admin, dashboard access
 ├── public/
-│   └── images/              # fluvo_logo.png, Blockchain.png, automation.png, etc.
-├── tailwind.config.ts       # Theme (colors, fonts, container)
-├── next.config.js
+│   ├── images/
+│   └── downloads/              # APK files
+├── tailwind.config.ts
 └── package.json
 ```
 
@@ -111,17 +135,34 @@ FluvoSoft Website/
 
 ## Configuration
 
-- **Site URL & SEO:** Edit `lib/seo.ts` to change `url`, `description`, `keywords`, and Open Graph defaults.
-- **Theme:** Colors (e.g. `cta`, `brand`, `background`) and typography are in `tailwind.config.ts`.
-- **Firebase forms:** Fill `NEXT_PUBLIC_FIREBASE_*` values in `.env.local` so contact and subscribe forms can write to Firestore collections:
-  - `contactMessages`
-  - `subscribers`
-- **Bot protection on forms:** Contact and subscribe now submit through protected API routes with request validation, honeypot checks, and per-IP rate limiting.
+### Site & SEO
+
+Edit `lib/seo.ts` for site URL, description, keywords, and Open Graph defaults. Theme colors (`cta`, `brand`, `background`) live in `tailwind.config.ts`.
+
+### Firebase (forms)
+
+Set `NEXT_PUBLIC_FIREBASE_*` in `.env.local` so contact and subscribe forms write to Firestore:
+
+- `contactMessages` — name, email, subject, message, service, location, budget, meeting slot
+- `subscribers` — newsletter emails
+
+### Firebase Admin (dashboard delete)
+
+Set `FIREBASE_SERVICE_ACCOUNT_JSON` in `.env.local` (full service account JSON on one line) for server-side delete in `/admin`.
+
+### Admin access
+
+Allowed Google accounts are defined in `lib/dashboard-access.ts`. Enable Google sign-in in Firebase Authentication and restrict Firestore rules to admin emails for `contactMessages`.
+
+### Search verification (optional)
+
+- `NEXT_PUBLIC_BING_SITE_VERIFICATION`
+- `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`
 
 ---
 
 ## License & contact
 
 - **Repository:** [github.com/fluvosoft/FluvoSoft_website](https://github.com/fluvosoft/FluvoSoft_website)
-- **FluvoSoft Ltd.** — Dhaka, Bangladesh  
+- **FluvoSoft Ltd.** — Dhaka, Bangladesh
 - **Email:** support@fluvosoft.com
