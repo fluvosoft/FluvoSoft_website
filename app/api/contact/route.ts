@@ -24,6 +24,10 @@ export async function POST(req: NextRequest) {
     const email = String(body?.email || "").trim().toLowerCase();
     const subject = String(body?.subject || "").trim();
     const message = String(body?.message || "").trim();
+    const service = String(body?.service || "").trim();
+    const location = String(body?.location || "").trim();
+    const budget = String(body?.budget || "").trim();
+    const meetingSlot = String(body?.meetingSlot || "").trim();
     const website = String(body?.website || "").trim(); // honeypot field
     const elapsedMs = Number(body?.elapsedMs || 0);
 
@@ -44,6 +48,18 @@ export async function POST(req: NextRequest) {
     if (subject.length > 150) {
       return NextResponse.json({ ok: false, message: "Subject is too long." }, { status: 400 });
     }
+    if (service.length > 120) {
+      return NextResponse.json({ ok: false, message: "Service is too long." }, { status: 400 });
+    }
+    if (location.length > 120) {
+      return NextResponse.json({ ok: false, message: "Location is too long." }, { status: 400 });
+    }
+    if (budget.length > 80) {
+      return NextResponse.json({ ok: false, message: "Budget is too long." }, { status: 400 });
+    }
+    if (meetingSlot.length > 120) {
+      return NextResponse.json({ ok: false, message: "Meeting slot is too long." }, { status: 400 });
+    }
     if (!message || message.length < 5 || message.length > 5000) {
       return NextResponse.json({ ok: false, message: "Invalid message length." }, { status: 400 });
     }
@@ -56,6 +72,10 @@ export async function POST(req: NextRequest) {
       email,
       subject,
       message,
+      service: service || null,
+      location: location || null,
+      budget: budget || null,
+      meetingSlot: meetingSlot || null,
       ipHashHint: ip.slice(0, 6),
       createdAt: serverTimestamp(),
     });

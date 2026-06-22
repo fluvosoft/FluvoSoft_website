@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import LaunchFeaturesSection from "@/components/sections/LaunchFeaturesSection";
 import SolutionsSection from "@/components/sections/SolutionsSection";
+import LatestReleasesSection from "@/components/sections/LatestReleasesSection";
 import LabSection from "@/components/sections/LabSection";
 import DashboardPreview from "@/components/sections/DashboardPreview";
 import EverythingYouNeedSection from "@/components/sections/EverythingYouNeedSection";
@@ -57,6 +58,7 @@ export default function Home() {
           <DashboardPreview />
           <LaunchFeaturesSection />
           <SolutionsSection />
+          <LatestReleasesSection />
           <LabSection />
           <EverythingYouNeedSection />
           <QualitySection />

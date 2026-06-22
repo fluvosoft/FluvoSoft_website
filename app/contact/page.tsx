@@ -36,7 +36,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-accent lg:text-xl">
-              Book a demo, ask about our products, or start a conversation about your next project.
+              Book a quick call and tell us about your project — we&apos;ll get back to you with next steps.
             </p>
           </div>
         </section>
