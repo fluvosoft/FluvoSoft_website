@@ -1,4 +1,4 @@
-import { App, cert, getApps, initializeApp } from "firebase-admin/app";
+import { App, cert, getApps, initializeApp, type ServiceAccount } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 import { getFirestore } from "firebase-admin/firestore";
 
@@ -19,11 +19,16 @@ export function getFirebaseAdminApp(): App | null {
   if (!raw) return null;
 
   try {
-    const serviceAccount = JSON.parse(raw) as {
-      project_id: string;
-      client_email: string;
-      private_key: string;
+    const parsed = JSON.parse(raw) as Record<string, string>;
+    const serviceAccount: ServiceAccount = {
+      projectId: parsed.project_id ?? parsed.projectId,
+      clientEmail: parsed.client_email ?? parsed.clientEmail,
+      privateKey: parsed.private_key ?? parsed.privateKey,
     };
+
+    if (!serviceAccount.projectId || !serviceAccount.clientEmail || !serviceAccount.privateKey) {
+      return null;
+    }
 
     adminApp = initializeApp({
       credential: cert(serviceAccount),
