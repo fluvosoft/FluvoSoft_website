@@ -1,4 +1,4 @@
-import LatestReleasesSlider from "@/components/sections/LatestReleasesSlider";
+import LatestReleasesGrid from "@/components/sections/LatestReleasesGrid";
 
 export default function LatestReleasesSection() {
   return (
@@ -36,7 +36,7 @@ export default function LatestReleasesSection() {
           </p>
         </header>
 
-        <LatestReleasesSlider />
+        <LatestReleasesGrid />
       </div>
     </section>
   );

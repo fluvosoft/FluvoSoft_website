@@ -1,5 +1,5 @@
-import DashboardApp from "@/components/dashboard/DashboardApp";
+import { redirect } from "next/navigation";
 
-export default function AdminPage() {
-  return <DashboardApp />;
+export default function AdminRedirectPage() {
+  redirect("/dash");
 }

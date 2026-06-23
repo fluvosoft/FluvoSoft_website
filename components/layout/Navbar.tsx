@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function ChevronDownIcon({ className, open }: { className?: string; open?: boolean }) {
   return (
@@ -26,7 +27,6 @@ const navLinks = [
   {
     label: "Brands",
     dropdown: [
-      { href: "https://www.meshprojukti.cloud/", label: "Lumiro", external: true },
       { href: "/easy-invoice", label: "Easy Invoice" },
       { href: "/inventory-stock-tracker", label: "Inventory Stock Tracker" },
     ],
@@ -58,6 +58,22 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const router = useRouter();
+
+  const closeMenus = useCallback(() => {
+    setOpenDropdown(null);
+    setIsMobileMenuOpen(false);
+  }, []);
+
+  const goHome = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      closeMenus();
+      router.push("/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    [closeMenus, router]
+  );
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -71,7 +87,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header ref={navRef} className="relative z-50 bg-background">
+    <header ref={navRef} className="sticky top-0 z-50 bg-background">
       <nav
         className="relative mx-auto flex items-center justify-between gap-6 px-6 py-3.5 md:px-8 lg:px-12"
         aria-label="Main navigation"
@@ -79,18 +95,21 @@ export default function Navbar() {
         {/* Brand */}
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-2 text-white no-underline transition hover:opacity-90"
+          onClick={goHome}
+          className="relative z-[60] flex shrink-0 items-center gap-2 text-white no-underline transition hover:opacity-90"
           aria-label="FluvoSoft home"
         >
           <Image
             src="/images/fluvo_logo.png"
-            alt="FluvoSoft - Venture catalysts studio logo"
+            alt=""
             width={140}
             height={40}
             className="h-8 w-auto md:h-9"
             priority
           />
-          <span className="hidden text-lg font-medium tracking-tight lg:inline">FluvoSoft</span>
+          <span className="hidden text-lg font-medium tracking-tight lg:inline">
+            FluvoSoft
+          </span>
         </Link>
 
         {/* Nav links + CTA - desktop */}
@@ -142,6 +161,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
+                onClick={item.href === "/" ? goHome : closeMenus}
                 className="rounded-md px-2 py-1.5 text-xs font-medium text-white no-underline transition hover:text-cta md:px-3 md:text-sm"
               >
                 {item.label}
@@ -245,10 +265,7 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    onClick={() => {
-                      setOpenDropdown(null);
-                      setIsMobileMenuOpen(false);
-                    }}
+                    onClick={item.href === "/" ? goHome : closeMenus}
                     className="block rounded-md px-2 py-2 text-sm font-medium text-white no-underline transition hover:bg-white/5 hover:text-cta"
                   >
                     {item.label}

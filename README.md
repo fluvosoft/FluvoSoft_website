@@ -35,7 +35,7 @@
 
 ### Admin dashboard
 
-- **`/admin`** — Firebase Google sign-in for allowed admin emails (`lib/dashboard-access.ts`)
+- **`/dash`** — Firebase Google sign-in for allowed admin emails (`lib/dashboard-access.ts`)
 - View, filter, and sort contact form submissions from Firestore (`contactMessages`)
 - Update status (new / read / handled), add admin notes, reply via Gmail compose
 - Delete messages server-side via Firebase Admin (`/api/admin/messages/[id]`)
@@ -119,7 +119,7 @@ FluvoSoft_website/
 │   ├── inventory-stock-tracker/
 │   ├── blockchain/ automation/ custom-development/ saas/
 │   ├── contact/ privacy/ security/ careers/ research/ blog/
-│   ├── admin/                  # Contact submissions dashboard
+│   ├── dash/                   # Contact submissions dashboard
 │   ├── api/
 │   │   ├── contact/            # Contact form API
 │   │   ├── subscribe/          # Newsletter subscribe API
@@ -162,7 +162,7 @@ Set `NEXT_PUBLIC_FIREBASE_*` in `.env.local` so contact and subscribe forms writ
 
 ### Firebase Admin (dashboard delete)
 
-Set `FIREBASE_SERVICE_ACCOUNT_JSON` in `.env.local` or Vercel env vars (full service account JSON on one line) for server-side delete in `/admin`. The app maps standard Firebase snake_case fields (`project_id`, `client_email`, `private_key`) to the Admin SDK format at runtime.
+Set `FIREBASE_SERVICE_ACCOUNT_JSON` in `.env.local` or Vercel env vars (full service account JSON on one line) for server-side delete in `/dash`. The app maps standard Firebase snake_case fields (`project_id`, `client_email`, `private_key`) to the Admin SDK format at runtime.
 
 ### Admin access
 
