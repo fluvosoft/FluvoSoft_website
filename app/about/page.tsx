@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -60,18 +61,24 @@ const leadership = [
     name: "Md Sifat Bin Jibon",
     role: "Chief Executive Officer",
     title: "CEO",
+    image: "/images/team/md-sifat-bin-jibon.png",
+    imageAlt: "Md Sifat Bin Jibon, CEO of FluvoSoft",
     bio: "Co-founder of FluvoSoft. Blockchain developer at R3, with experience across SaaS, Web3, and custom software. Based in Dhaka.",
   },
   {
     name: "Shouvick Monzur",
     role: "Chief Technology Officer",
     title: "CTO",
+    image: "/images/team/shouvick-monzur.png",
+    imageAlt: "Shouvick Monzur, CTO of FluvoSoft",
     bio: "Lead software engineer with 10+ years building backends, cloud systems, and SaaS platforms. Leads FluvoSoft's technical direction.",
   },
   {
     name: "Sifat ALI",
     role: "Chief Operating Officer",
     title: "COO",
+    image: "/images/team/sifat-ali.png",
+    imageAlt: "Sifat ALI, COO of FluvoSoft",
     bio: "2× national hackathon winner and full-stack engineer. Runs day-to-day operations and keeps projects moving from build to delivery.",
   },
 ];
@@ -81,6 +88,8 @@ const advisors = [
     name: "Sahid Hossain Ratul",
     role: "Business Advisor",
     title: "Advisor",
+    image: "/images/team/sahid-hossain-ratul.png",
+    imageAlt: "Sahid Hossain Ratul, Business Advisor at FluvoSoft",
     bio: "Advises FluvoSoft on business strategy and growth.",
   },
 ];
@@ -219,8 +228,14 @@ export default function AboutPage() {
                   key={leader.title}
                   className="group rounded-xl border border-white/10 bg-dashboard-card p-6 text-center transition hover:border-cta/30"
                 >
-                  <div className="relative mx-auto mb-4 flex h-48 w-48 items-center justify-center overflow-hidden rounded-full border-2 border-white/10 bg-gradient-to-br from-white/10 to-white/5 transition group-hover:border-cta/50">
-                    <span className="text-4xl font-bold text-cta">{leader.title}</span>
+                  <div className="relative mx-auto mb-4 h-48 w-48 overflow-hidden rounded-full border-2 border-white/10 transition group-hover:border-cta/50">
+                    <Image
+                      src={leader.image}
+                      alt={leader.imageAlt}
+                      fill
+                      sizes="192px"
+                      className="object-cover object-top grayscale"
+                    />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">{leader.name}</h3>
                   <p className="mt-1 text-sm font-medium text-cta">{leader.title}</p>
@@ -243,8 +258,14 @@ export default function AboutPage() {
                   key={advisor.name}
                   className="group w-full max-w-sm rounded-xl border border-white/10 bg-dashboard-card p-6 text-center transition hover:border-cta/30"
                 >
-                  <div className="relative mx-auto mb-4 flex h-48 w-48 items-center justify-center overflow-hidden rounded-full border-2 border-white/10 bg-gradient-to-br from-white/10 to-white/5 transition group-hover:border-cta/50">
-                    <span className="text-3xl font-bold text-cta">{advisor.title}</span>
+                  <div className="relative mx-auto mb-4 h-48 w-48 overflow-hidden rounded-full border-2 border-white/10 transition group-hover:border-cta/50">
+                    <Image
+                      src={advisor.image}
+                      alt={advisor.imageAlt}
+                      fill
+                      sizes="192px"
+                      className="object-cover object-top grayscale"
+                    />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">{advisor.name}</h3>
                   <p className="mt-1 text-sm font-medium text-cta">{advisor.role}</p>
