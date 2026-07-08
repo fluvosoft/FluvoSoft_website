@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { GooglePlayStoreButton as GooglePlayStoreButtonUI } from "@/components/shared/GooglePlayStoreButton";
-import { useEasyInvoiceBetaModal } from "./EasyInvoiceBetaModalProvider";
+import { easyInvoiceConfig } from "@/lib/easyInvoiceSeo";
 
 export function GooglePlayButton({
   className = "",
@@ -13,11 +13,9 @@ export function GooglePlayButton({
   /** @deprecated Badge image variant removed — use default filled store button */
   variant?: "default" | "badge";
 }) {
-  const { openBetaModal } = useEasyInvoiceBetaModal();
-
   return (
     <GooglePlayStoreButtonUI
-      onClick={openBetaModal}
+      href={easyInvoiceConfig.playStoreUrl}
       size={size}
       className={className}
       ariaLabel="Get Easy Invoice on Google Play"
@@ -34,19 +32,16 @@ export function PlayStoreNavButton({
   className?: string;
   onClick?: () => void;
 }) {
-  const { openBetaModal } = useEasyInvoiceBetaModal();
-
   return (
-    <button
-      type="button"
-      onClick={() => {
-        openBetaModal();
-        onClick?.();
-      }}
-      className={className}
+    <a
+      href={easyInvoiceConfig.playStoreUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={onClick}
+      className={`inline-block no-underline ${className}`}
       aria-label="Get Easy Invoice on Google Play"
     >
       {children}
-    </button>
+    </a>
   );
 }

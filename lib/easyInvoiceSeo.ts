@@ -53,7 +53,7 @@ export const easyInvoiceConfig: ProductSeoConfig = {
     "/images/easy invoice mocup-3.jpeg",
     "/images/easy invoice mocup-4.jpeg",
   ],
-  playStoreUrl: "#",
+  playStoreUrl: "https://play.google.com/store/apps/details?id=com.easy.invoice",
   apkUrl: "/downloads/app-release.apk",
   apkFileName: "easy-invoice.apk",
   webUrl: "https://easyinvoice.fluvosoft.com/",

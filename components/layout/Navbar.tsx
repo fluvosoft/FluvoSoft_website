@@ -38,6 +38,7 @@ const navLinks = [
       { href: "/automation", label: "Automation" },
       { href: "/custom-development", label: "Custom Development" },
       { href: "/saas", label: "SaaS" },
+      { href: "/rnd", label: "R&D" },
     ],
   },
   {

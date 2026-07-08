@@ -16,6 +16,7 @@ const staticRoutes: { path: string; priority: number; changeFrequency: MetadataR
   { path: "/automation", priority: 0.7, changeFrequency: "monthly" },
   { path: "/custom-development", priority: 0.7, changeFrequency: "monthly" },
   { path: "/saas", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/rnd", priority: 0.7, changeFrequency: "monthly" },
   { path: "/components", priority: 0.5, changeFrequency: "monthly" },
 ];
 
