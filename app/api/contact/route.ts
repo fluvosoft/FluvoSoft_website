@@ -82,19 +82,23 @@ export async function POST(req: NextRequest) {
       status: "new",
     };
 
-    await Promise.all([
-      addDoc(collection(db, "contactMessages"), {
-        ...payload,
-        createdAt: serverTimestamp(),
-      }),
-      push(ref(rtdb, "contactMessages"), {
+    await addDoc(collection(db, "contactMessages"), {
+      ...payload,
+      createdAt: serverTimestamp(),
+    });
+
+    try {
+      await push(ref(rtdb, "contactMessages"), {
         ...payload,
         createdAt: rtdbServerTimestamp(),
-      }),
-    ]);
+      });
+    } catch (rtdbError) {
+      console.error("RTDB contact message write failed:", rtdbError);
+    }
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("Contact form write failed:", error);
     return NextResponse.json({ ok: false, message: "Request failed." }, { status: 500 });
   }
 }

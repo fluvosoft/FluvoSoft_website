@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 function ChevronDownIcon({ className, open }: { className?: string; open?: boolean }) {
   return (
@@ -60,6 +60,8 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const router = useRouter();
+  const pathname = usePathname();
+  const isRnd = pathname?.startsWith("/rnd") ?? false;
 
   const closeMenus = useCallback(() => {
     setOpenDropdown(null);
@@ -101,7 +103,7 @@ export default function Navbar() {
           aria-label="FluvoSoft home"
         >
           <Image
-            src="/images/fluvo_logo.png"
+            src={isRnd ? "/fluvosoft_r%26d/r%26d%20logo.png" : "/images/fluvo_logo.png"}
             alt=""
             width={140}
             height={40}
@@ -109,7 +111,13 @@ export default function Navbar() {
             priority
           />
           <span className="hidden text-lg font-medium tracking-tight lg:inline">
-            FluvoSoft
+            {isRnd ? (
+              <>
+                FluvoSoft <span className="rnd-logo-text font-semibold">R&amp;D</span>
+              </>
+            ) : (
+              "FluvoSoft"
+            )}
           </span>
         </Link>
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import EasyInvoiceCounterStats from "./EasyInvoiceCounterStats";
-import { DownloadApkButton, TrustBadge, WebVersionButton } from "./EasyInvoiceCTAs";
+import { TrustBadge, WebVersionButton } from "./EasyInvoiceCTAs";
 import { GooglePlayButton } from "./GooglePlayButton";
 
 const HERO_LOGO = "/images/easy_invoice_logo_fluvosoft.svg";
@@ -36,7 +36,6 @@ export default function EasyInvoiceHero() {
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <GooglePlayButton size="large" />
-              <DownloadApkButton size="large" />
               <WebVersionButton size="large" />
             </div>
 

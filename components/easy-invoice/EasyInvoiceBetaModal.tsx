@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { DownloadApkButton } from "./EasyInvoiceCTAs";
+import { GooglePlayButton } from "./GooglePlayButton";
 
 interface EasyInvoiceBetaModalProps {
   isOpen: boolean;
@@ -67,13 +67,13 @@ export default function EasyInvoiceBetaModal({ isOpen, onClose }: EasyInvoiceBet
             We&apos;re in beta testing
           </h2>
           <p id="ei-beta-modal-desc" className="mt-3 text-sm leading-relaxed text-ei-muted sm:text-base">
-            Easy Invoice isn&apos;t on Google Play yet. For now, please download the APK to try the app on
-            your Android phone.
+            Easy Invoice is available on Google Play. Get the app on your Android phone or try the web
+            version from your browser.
           </p>
         </div>
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <DownloadApkButton className="w-full justify-center sm:flex-1" />
+          <GooglePlayButton className="w-full justify-center sm:flex-1" size="default" />
           <button
             type="button"
             onClick={onClose}

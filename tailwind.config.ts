@@ -31,6 +31,8 @@ const config: Config = {
         cta: "#FF6B3E",
         positive: "#4CAF50",
         border: "rgba(250, 250, 250, 0.1)",
+        cream: "#EFF4FF",
+        neon: "#6FFF00",
         ei: {
           forest: "#1A3C2E",
           lime: "#8CC63F",
@@ -66,6 +68,8 @@ const config: Config = {
         sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
         "ei-heading": ["var(--font-ei-heading)", "ui-sans-serif", "system-ui", "sans-serif"],
         "ei-body": ["var(--font-ei-body)", "ui-sans-serif", "system-ui", "sans-serif"],
+        grotesk: ["Anton", "ui-sans-serif", "system-ui", "sans-serif"],
+        condiment: ["Condiment", "cursive"],
       },
       maxWidth: {
         container: "1312px",

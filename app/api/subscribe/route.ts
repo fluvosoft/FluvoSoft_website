@@ -46,19 +46,23 @@ export async function POST(req: NextRequest) {
       ipHashHint: ip.slice(0, 6),
     };
 
-    await Promise.all([
-      addDoc(collection(db, "subscribers"), {
-        ...payload,
-        createdAt: serverTimestamp(),
-      }),
-      push(ref(rtdb, "subscribers"), {
+    await addDoc(collection(db, "subscribers"), {
+      ...payload,
+      createdAt: serverTimestamp(),
+    });
+
+    try {
+      await push(ref(rtdb, "subscribers"), {
         ...payload,
         createdAt: rtdbServerTimestamp(),
-      }),
-    ]);
+      });
+    } catch (rtdbError) {
+      console.error("RTDB subscriber write failed:", rtdbError);
+    }
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("Subscribe write failed:", error);
     return NextResponse.json({ ok: false, message: "Request failed." }, { status: 500 });
   }
 }
