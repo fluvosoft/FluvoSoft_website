@@ -1,29 +1,19 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ResourcePage from "@/components/resources/ResourcePage";
-import { careersPage } from "@/data/resourcesPages";
+import CareersExperience from "@/components/careers/CareersExperience";
+import CareersJsonLd from "@/components/seo/CareersJsonLd";
+import { careersMetadata } from "@/lib/careersSeo";
 
-export const metadata: Metadata = {
-  title: "Careers | FluvoSoft",
-  description: careersPage.metaDescription,
-  keywords: careersPage.keywords,
-  openGraph: {
-    title: "Careers | FluvoSoft",
-    description: careersPage.metaDescription,
-    url: "/careers",
-  },
-  alternates: {
-    canonical: "/careers",
-  },
-};
+export const metadata: Metadata = careersMetadata;
 
 export default function CareersPage() {
   return (
     <>
+      <CareersJsonLd />
       <Navbar />
-      <main className="min-h-screen bg-background" role="main">
-        <ResourcePage data={careersPage} />
+      <main className="careers-page min-h-screen" role="main">
+        <CareersExperience />
       </main>
       <Footer />
     </>

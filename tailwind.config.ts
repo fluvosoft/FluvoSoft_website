@@ -33,6 +33,16 @@ const config: Config = {
         border: "rgba(250, 250, 250, 0.1)",
         cream: "#EFF4FF",
         neon: "#6FFF00",
+        "careers-primary": "#DEDBC8",
+        "careers-text": "#E1E0CC",
+        "careers-card": "#101010",
+        "careers-feature": "#212121",
+        swiss: {
+          bg: "#FFFFFF",
+          fg: "#000000",
+          muted: "#F2F2F2",
+          accent: "#FF3000",
+        },
         ei: {
           forest: "#1A3C2E",
           lime: "#8CC63F",
@@ -70,6 +80,9 @@ const config: Config = {
         "ei-body": ["var(--font-ei-body)", "ui-sans-serif", "system-ui", "sans-serif"],
         grotesk: ["Anton", "ui-sans-serif", "system-ui", "sans-serif"],
         condiment: ["Condiment", "cursive"],
+        almarai: ["Almarai", "ui-sans-serif", "system-ui", "sans-serif"],
+        "instrument-serif": ['"Instrument Serif"', "serif"],
+        inter: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       maxWidth: {
         container: "1312px",

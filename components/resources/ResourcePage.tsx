@@ -14,7 +14,7 @@ function CtaLink({
   className: string;
   children: React.ReactNode;
 }) {
-  if (href.startsWith("http")) {
+  if (href.startsWith("http") || href.startsWith("mailto:")) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
         {children}
@@ -88,6 +88,14 @@ export default function ResourcePage({ data }: ResourcePageProps) {
                       ) : null}
                       <h3 className="mt-3 text-lg font-medium text-foreground">{card.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-accent">{card.description}</p>
+                      {card.applyHref ? (
+                        <a
+                          href={card.applyHref}
+                          className="mt-5 inline-flex rounded-full bg-cta px-5 py-2 text-sm font-medium text-white no-underline transition hover:bg-cta/90"
+                        >
+                          {card.applyLabel ?? "Apply"}
+                        </a>
+                      ) : null}
                     </>
                   );
 

@@ -59,52 +59,53 @@ function MailIcon({ className }: { className?: string }) {
   );
 }
 
-function TwitterIcon({ className }: { className?: string }) {
+function LinkedInIcon({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
     </svg>
   );
 }
 
-function GithubIcon({ className }: { className?: string }) {
+function FacebookIcon({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-      <path d="M9 18c-4.51 2-5-2-7-2" />
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
     </svg>
   );
 }
 
-const SOCIAL_ICONS = [MailIcon, TwitterIcon, GithubIcon];
+const RND_SOCIAL_LINKS = [
+  {
+    label: "FluvoSoft on LinkedIn",
+    href: "https://www.linkedin.com/company/fluvo-soft",
+    external: true,
+    icon: LinkedInIcon,
+  },
+  {
+    label: "FluvoSoft on Facebook",
+    href: "https://www.facebook.com/profile.php?id=61586723829777",
+    external: true,
+    icon: FacebookIcon,
+  },
+  {
+    label: "Email FluvoSoft support",
+    href: "mailto:support@fluvosoft.com",
+    external: false,
+    icon: MailIcon,
+  },
+] as const;
 
 export default function RnDPage() {
   return (
     <div className="min-h-screen bg-[#010828] font-mono text-cream">
-      {/* Texture overlay */}
+      {/* Texture overlay — inline SVG noise (no external asset; public/texture.png was never added) */}
       <div
         className="pointer-events-none fixed inset-0 z-50"
         aria-hidden
         style={{
-          backgroundImage: "url(/texture.png)",
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
           backgroundSize: "cover",
           mixBlendMode: "lighten",
           opacity: 0.6,
@@ -129,16 +130,20 @@ export default function RnDPage() {
         <div className="relative z-10 mx-auto flex min-h-screen max-w-[1831px] flex-col px-4 py-6 sm:px-6 lg:px-10 lg:py-8">
           {/* Social icons — desktop (top-right) */}
           <div className="absolute right-4 top-10 z-20 hidden flex-col gap-3 sm:right-6 lg:right-10 lg:flex">
-            {SOCIAL_ICONS.map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="liquid-glass flex h-14 w-14 items-center justify-center rounded-[1rem] text-cream transition-colors hover:bg-white/10"
-                aria-label="social link"
-              >
-                <Icon className="h-5 w-5" />
-              </a>
-            ))}
+            {RND_SOCIAL_LINKS.map((link) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="liquid-glass flex h-14 w-14 items-center justify-center rounded-[1rem] text-cream transition-colors hover:bg-white/10"
+                  aria-label={link.label}
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              );
+            })}
           </div>
 
           {/* Hero content */}
@@ -154,16 +159,20 @@ export default function RnDPage() {
 
             {/* Social icons — mobile */}
             <div className="mt-10 flex justify-center gap-3 lg:hidden">
-              {SOCIAL_ICONS.map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="liquid-glass flex h-14 w-14 items-center justify-center rounded-[1rem] text-cream transition-colors hover:bg-white/10"
-                  aria-label="social link"
-                >
-                  <Icon className="h-5 w-5" />
-                </a>
-              ))}
+              {RND_SOCIAL_LINKS.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="liquid-glass flex h-14 w-14 items-center justify-center rounded-[1rem] text-cream transition-colors hover:bg-white/10"
+                    aria-label={link.label}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -331,18 +340,22 @@ export default function RnDPage() {
         {/* Social icons — bottom-left */}
         <div className="absolute bottom-[12%] left-[8%] z-10 sm:bottom-[16%] lg:bottom-[20%]">
           <div className="liquid-glass flex flex-col overflow-hidden rounded-[0.5rem] sm:rounded-[0.875rem] lg:rounded-[1.25rem]">
-            {SOCIAL_ICONS.map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className={`flex w-[14vw] items-center justify-center py-4 text-cream transition-colors hover:bg-white/10 sm:w-[14.375rem] md:w-[10.78125rem] lg:w-[16.77rem] ${
-                  i < SOCIAL_ICONS.length - 1 ? "border-b border-white/10" : ""
-                }`}
-                aria-label="social link"
-              >
-                <Icon className="h-5 w-5" />
-              </a>
-            ))}
+            {RND_SOCIAL_LINKS.map((link, i) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className={`flex w-[14vw] items-center justify-center py-4 text-cream transition-colors hover:bg-white/10 sm:w-[14.375rem] md:w-[10.78125rem] lg:w-[16.77rem] ${
+                    i < RND_SOCIAL_LINKS.length - 1 ? "border-b border-white/10" : ""
+                  }`}
+                  aria-label={link.label}
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>

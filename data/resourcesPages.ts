@@ -4,6 +4,8 @@ export interface ResourceCard {
   href?: string;
   tag?: string;
   external?: boolean;
+  applyHref?: string;
+  applyLabel?: string;
 }
 
 export interface ResourceSection {
@@ -112,26 +114,46 @@ export const securityPage: ResourcePageData = {
   },
 };
 
+const CAREERS_APPLY_EMAIL = "ceo@fluvosoft.com";
+
+export { CAREERS_APPLY_EMAIL };
+
+export function careersApplyMailto(role: string) {
+  return `mailto:${CAREERS_APPLY_EMAIL}?subject=${encodeURIComponent(`Intern Application — ${role}`)}`;
+}
+
 export const careersPage: ResourcePageData = {
   slug: "careers",
   title: "Careers",
   description:
-    "Join FluvoSoft and help build blockchain, automation, and software products used by businesses worldwide.",
+    "Join FluvoSoft as an intern. Gain hands-on experience building blockchain, automation, and software products used by businesses worldwide.",
   metaDescription:
-    "Careers at FluvoSoft: open roles in engineering, product, and operations. Remote-friendly team based in Dhaka, Bangladesh.",
+    "FluvoSoft intern program: unpaid, task-based roles for 6 months with a completion certificate. Apply for engineering internships.",
   keywords: [
     "FluvoSoft careers",
-    "software jobs Dhaka",
-    "blockchain jobs",
-    "remote engineering jobs",
+    "FluvoSoft internship",
+    "software engineering intern",
+    "remote software internship",
+    "tech intern certificate",
   ],
   sections: [
     {
       id: "culture",
-      title: "Work with us",
+      title: "Intern with us",
       paragraphs: [
-        "FluvoSoft is a venture catalysts studio—we ship our own products and partner with clients on ambitious technology work. You will work across SaaS, mobile, blockchain, and automation with a team that values craft, ownership, and clear communication.",
-        "We are based in Dhaka and collaborate with clients and teammates globally. Whether you prefer deep individual work or cross-functional delivery, there is room to grow your scope as the company grows.",
+        "FluvoSoft is a venture catalysts studio—we ship our own products and partner with clients on ambitious technology work. Our intern program is designed for learners who want real project exposure across SaaS, mobile, blockchain, and automation.",
+        "Interns work on defined tasks with mentor support, build portfolio-ready outcomes, and learn how a product studio ships software from idea to delivery.",
+      ],
+    },
+    {
+      id: "program",
+      title: "Program details",
+      list: [
+        "All open roles are intern positions",
+        "Unpaid, task-based work with clear deliverables",
+        "6-month duration",
+        "Certificate provided upon successful completion",
+        "Remote-friendly collaboration with teams in the United States and Bangladesh",
       ],
     },
     {
@@ -139,51 +161,70 @@ export const careersPage: ResourcePageData = {
       title: "What we look for",
       list: [
         "Strong fundamentals and curiosity about new tools and domains",
-        "Ownership from idea through delivery, including documentation and handoff",
-        "Clear written and spoken communication with teammates and clients",
+        "Willingness to take ownership of assigned tasks through delivery",
+        "Clear written communication with teammates",
         "Respect for security, reliability, and maintainable code",
-        "Bias toward shipping useful outcomes, not perfect abstractions",
+        "Bias toward learning by building useful outcomes",
       ],
     },
     {
       id: "openings",
-      title: "Open roles",
-      subtitle: "We are growing across engineering and operations",
+      title: "Open intern roles",
+      subtitle: "Unpaid · Task-based · 6 months · Certificate on completion",
       cards: [
         {
-          title: "Full-Stack Engineer",
+          title: "Full-Stack Engineer Intern",
           description:
-            "Build and maintain web and API features for SaaS products and client projects using React, Next.js, Node.js, and modern cloud tooling.",
-          tag: "Engineering",
+            "Support web and API features for SaaS products and client projects using React, Next.js, Node.js, and modern cloud tooling.",
+          tag: "Intern · Engineering",
+          applyHref: careersApplyMailto("Full-Stack Engineer Intern"),
         },
         {
-          title: "Mobile Developer (Flutter)",
+          title: "Mobile Developer Intern (Flutter)",
           description:
-            "Ship and improve Easy Invoice and Inventory Stock Tracker on Android with polished UX and reliable offline-first patterns.",
-          tag: "Engineering",
+            "Contribute to Easy Invoice and Inventory Stock Tracker on Android with polished UX and reliable offline-first patterns.",
+          tag: "Intern · Engineering",
+          applyHref: careersApplyMailto("Mobile Developer Intern (Flutter)"),
         },
         {
-          title: "Blockchain Developer",
+          title: "Blockchain Developer Intern",
           description:
-            "Design smart contracts, integrations, and distributed systems for enterprise and Web3 engagements.",
-          tag: "Engineering",
+            "Assist with smart contracts, integrations, and distributed systems for enterprise and Web3 engagements.",
+          tag: "Intern · Engineering",
+          applyHref: careersApplyMailto("Blockchain Developer Intern"),
         },
         {
-          title: "DevOps / Cloud Engineer",
+          title: "DevOps / Cloud Engineer Intern",
           description:
-            "Own CI/CD, observability, and secure infrastructure for products and client deployments.",
-          tag: "Infrastructure",
+            "Help with CI/CD, observability, and secure infrastructure for products and client deployments.",
+          tag: "Intern · Infrastructure",
+          applyHref: careersApplyMailto("DevOps / Cloud Engineer Intern"),
         },
       ],
     },
   ],
   cta: {
-    title: "Interested in joining FluvoSoft?",
-    description: "Send your resume, portfolio, or GitHub profile. We review every application and respond when there is a strong fit.",
-    primary: { label: "Apply via email", href: "mailto:support@fluvosoft.com?subject=Careers%20at%20FluvoSoft" },
+    title: "Ready to apply?",
+    description:
+      "Send your resume, portfolio, or GitHub profile to our CEO. Mention the intern role you are applying for and we will review your application.",
+    primary: {
+      label: "Apply via email",
+      href: careersApplyMailto("FluvoSoft Intern Program"),
+    },
     secondary: { label: "Learn about us", href: "/about" },
   },
 };
+
+export const careersInternRoles =
+  careersPage.sections.find((section) => section.id === "openings")?.cards ?? [];
+
+export const careersProgramDetails =
+  careersPage.sections.find((section) => section.id === "program")?.list ?? [];
+
+export const careersCultureParagraphs =
+  careersPage.sections.find((section) => section.id === "culture")?.paragraphs ?? [];
+
+export const careersApplyHref = careersApplyMailto("FluvoSoft Intern Program");
 
 export const researchPage: ResourcePageData = {
   slug: "research",
@@ -287,42 +328,42 @@ export const blogPage: ResourcePageData = {
           title: "Introducing Inventory Stock Tracker on Google Play",
           description:
             "Our new Android app helps small businesses track stock, movements, and alerts—built with the same care as Easy Invoice.",
-          href: "/inventory-stock-tracker",
+          href: "/blog/inventory-stock-tracker-google-play",
           tag: "Product",
         },
         {
           title: "Easy Invoice: free invoicing for mobile teams",
           description:
             "Why we built a simple, offline-friendly invoice app and what is next on the roadmap.",
-          href: "/easy-invoice",
+          href: "/blog/easy-invoice-free-mobile-invoicing",
           tag: "Product",
         },
         {
           title: "Five signs your workflow is ready for automation",
           description:
             "Repetitive steps, manual handoffs, and error-prone data entry are signals—not every process needs a bot on day one.",
-          href: "/automation",
+          href: "/blog/five-signs-workflow-ready-for-automation",
           tag: "Automation",
         },
         {
           title: "What we mean by venture catalysts studio",
           description:
             "How FluvoSoft combines product building, client delivery, and long-term technology partnerships.",
-          href: "/about",
+          href: "/blog/what-we-mean-by-venture-catalysts-studio",
           tag: "Company",
         },
         {
           title: "Privacy Policy refresh: clearer language, same commitments",
           description:
             "We updated our policy overview to make data practices easier to understand across web and mobile products.",
-          href: "/privacy",
+          href: "/blog/privacy-policy-refresh",
           tag: "Legal",
         },
         {
           title: "Building secure APIs for SaaS and client platforms",
           description:
             "Authentication, validation, rate limits, and observability patterns we use across engagements.",
-          href: "/security",
+          href: "/blog/building-secure-apis-saas-client-platforms",
           tag: "Engineering",
         },
       ],
