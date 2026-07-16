@@ -18,7 +18,7 @@ const nextConfig = {
     ];
   },
   images: {
-    // Vercel image optimization quota exceeded (402) — serve originals directly
+    // Vercel image optimization quota exceeded (402) — serve originals directlyaaaa
     unoptimized: true,
     remotePatterns: [
       {
@@ -35,3 +35,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+//ok
