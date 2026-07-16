@@ -64,7 +64,7 @@ export default function AutomationPage() {
               <div className="relative order-1 w-full min-w-0 max-w-full overflow-hidden rounded-xl border border-white/10 bg-dashboard-card sm:mx-auto sm:max-w-md lg:order-2 lg:mx-0 lg:max-w-xl">
                 <div className="relative flex min-h-[200px] w-full items-center justify-center sm:min-h-[220px]">
                   <img
-                    src="/images/automation.png"
+                    src="/images/automation.webp"
                     alt="Automation solutions"
                     className="block h-auto w-full max-w-full object-contain object-center max-h-[min(320px,60vw)] sm:max-h-[380px] lg:max-h-[480px]"
                     width={560}

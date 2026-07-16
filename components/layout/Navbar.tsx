@@ -104,7 +104,7 @@ export default function Navbar() {
           aria-label="FluvoSoft home"
         >
           <Image
-            src={isRnd ? "/fluvosoft_r%26d/r%26d%20logo.png" : "/images/fluvo_logo.png"}
+            src={isRnd ? "/fluvosoft_r%26d/r%26d%20logo.webp" : "/images/fluvo_logo.webp"}
             alt=""
             width={140}
             height={40}

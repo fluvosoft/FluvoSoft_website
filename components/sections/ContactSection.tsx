@@ -176,7 +176,7 @@ export default function ContactSection() {
                   aria-hidden
                 >
                   <Image
-                    src="/images/fluvo_logo.png"
+                    src="/images/fluvo_logo.webp"
                     alt=""
                     width={40}
                     height={40}

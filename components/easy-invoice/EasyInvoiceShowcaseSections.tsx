@@ -1,10 +1,10 @@
 import EasyInvoicePhoneMockup from "./EasyInvoicePhoneMockup";
 
 const MOCKUP_IMAGES = {
-  dashboard: "/images/easy invoice mocup-1.jpeg",
-  template: "/images/easy invoice mocup-2.jpeg",
-  createInvoice: "/images/easy invoice mocup-3.jpeg",
-  invoiceList: "/images/easy invoice mocup-4.jpeg",
+  dashboard: "/images/easy invoice mocup-1.webp",
+  template: "/images/easy invoice mocup-2.webp",
+  createInvoice: "/images/easy invoice mocup-3.webp",
+  invoiceList: "/images/easy invoice mocup-4.webp",
 } as const;
 
 type PhoneImage = { src: string; alt: string; caption: string };

@@ -1,10 +1,10 @@
 import ResumeBuilderPhoneMockup from "./ResumeBuilderPhoneMockup";
 
 const MOCKUP_IMAGES = {
-  home: "/images/resume-builder/resume_builder_fluvosoft_3.jpeg",
-  editor: "/images/resume-builder/resume_builder_fluvosoft_2.jpeg",
-  templates: "/images/resume-builder/resume_builder_fluvosoft.jpeg",
-  atsTips: "/images/resume-builder/resume_builder_fluvosoft_4.jpeg",
+  home: "/images/resume-builder/resume_builder_fluvosoft_3.webp",
+  editor: "/images/resume-builder/resume_builder_fluvosoft_2.webp",
+  templates: "/images/resume-builder/resume_builder_fluvosoft.webp",
+  atsTips: "/images/resume-builder/resume_builder_fluvosoft_4.webp",
 } as const;
 
 type PhoneImage = { src: string; alt: string; caption: string };

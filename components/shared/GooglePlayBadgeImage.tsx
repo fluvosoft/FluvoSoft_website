@@ -1,6 +1,6 @@
 "use client";
 
-export const GOOGLE_PLAY_BADGE_SRC = "/images/google-play-badge.png";
+export const GOOGLE_PLAY_BADGE_SRC = "/images/google-play-badge.webp";
 
 export function GooglePlayBadgeImage({
   size = "large",

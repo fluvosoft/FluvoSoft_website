@@ -3,7 +3,7 @@ import ResumeBuilderCounterStats from "./ResumeBuilderCounterStats";
 import { TrustBadge } from "./ResumeBuilderCTAs";
 import ResumeBuilderWishlistForm from "./ResumeBuilderWishlistForm";
 
-const HERO_LOGO = "/images/resume-builder/resume_builder_logo.png";
+const HERO_LOGO = "/images/resume-builder/resume_builder_logo.webp";
 
 export default function ResumeBuilderHero() {
   return (

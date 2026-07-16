@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="min-w-[140px]">
             <Link href="/" className="flex items-center gap-2 text-foreground no-underline hover:opacity-90" aria-label="FluvoSoft home">
               <Image
-                src="/images/fluvo_logo.png"
+                src="/images/fluvo_logo.webp"
                 alt="FluvoSoft logo"
                 width={120}
                 height={34}

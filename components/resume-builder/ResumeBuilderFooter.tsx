@@ -13,7 +13,7 @@ export default function ResumeBuilderFooter() {
               aria-label="FluvoSoft home"
             >
               <Image
-                src="/images/fluvo_logo.png"
+                src="/images/fluvo_logo.webp"
                 alt="FluvoSoft logo"
                 width={120}
                 height={34}

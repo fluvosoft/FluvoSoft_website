@@ -8,12 +8,12 @@ export interface ContributionPartner {
 export const contributionPartners: ContributionPartner[] = [
   {
     name: "ROCKSTREAMER",
-    logo: "/images/contributions/rockstreamer.png",
+    logo: "/images/contributions/rockstreamer.webp",
     logoAlt: "Rockstreamer logo",
   },
   {
     name: "Kite Games Studio",
-    logo: "/images/contributions/kite-games-studio.png",
+    logo: "/images/contributions/kite-games-studio.webp",
     logoAlt: "Kite Games Studio logo",
   },
   { name: "Dreamerz Lab Ltd." },
@@ -22,27 +22,27 @@ export const contributionPartners: ContributionPartner[] = [
   },
   {
     name: "CSL Software Resources Ltd",
-    logo: "/images/contributions/csl-software-resources.png",
+    logo: "/images/contributions/csl-software-resources.webp",
     logoAlt: "CSL Software Resources Ltd logo",
   },
   {
     name: "BDCalling IT LTD.",
-    logo: "/images/contributions/bdcalling.png",
+    logo: "/images/contributions/bdcalling.webp",
     logoAlt: "BDCalling IT LTD logo",
   },
   {
     name: "r3",
-    logo: "/images/contributions/r3.png",
+    logo: "/images/contributions/r3.webp",
     logoAlt: "R3 logo",
   },
   {
     name: "Htperlink infosystem",
-    logo: "/images/contributions/hyperlink-infosystem.png",
+    logo: "/images/contributions/hyperlink-infosystem.webp",
     logoAlt: "Hyperlink Infosystem logo",
   },
   {
     name: "Shohoz skill",
-    logo: "/images/contributions/shohoz-skill.png",
+    logo: "/images/contributions/shohoz-skill.webp",
     logoAlt: "Shohoz Skill logo",
   },
 ];
