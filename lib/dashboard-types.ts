@@ -18,3 +18,11 @@ export type ContactMessage = {
   handledBy?: string | null;
   adminNote?: string | null;
 };
+
+export type ResumeBuilderWishlistEntry = {
+  id: string;
+  email: string;
+  product: string;
+  source: string;
+  createdAt: Date | null;
+};

@@ -1,0 +1,155 @@
+/* Resume Builder landing — scoped styles */
+
+.rb-page {
+  background-color: #f5f9fc;
+  color: #0d2847;
+}
+
+.font-rb-heading {
+  font-family: var(--font-rb-heading), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-rb-body {
+  font-family: var(--font-rb-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.rb-hero-mesh {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rb-hero-mesh::before,
+.rb-hero-mesh::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  animation: rb-mesh-drift 18s ease-in-out infinite alternate;
+}
+
+.rb-hero-mesh::before {
+  width: 55%;
+  height: 55%;
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, #6bb4f0 0%, transparent 70%);
+}
+
+.rb-hero-mesh::after {
+  width: 50%;
+  height: 50%;
+  bottom: -15%;
+  right: -5%;
+  background: radial-gradient(circle, #2b79c2 0%, transparent 70%);
+  animation-delay: -9s;
+}
+
+@keyframes rb-mesh-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(4%, 6%) scale(1.08);
+  }
+}
+
+.rb-hero-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.rb-nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.rb-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #2b79c2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.rb-nav-link:hover::after,
+.rb-nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.rb-cta-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rb-cta-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px -8px rgba(13, 40, 71, 0.45);
+}
+
+.rb-cta-ghost {
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.rb-cta-ghost:hover {
+  transform: scale(1.02);
+}
+
+.rb-card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rb-card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -12px rgba(13, 40, 71, 0.18);
+}
+
+@keyframes rb-phone-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.rb-phone-enter {
+  animation: rb-phone-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.rb-phone-shadow {
+  filter: drop-shadow(0 32px 48px rgba(13, 40, 71, 0.22));
+}
+
+.rb-faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.rb-faq-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.rb-faq-panel-inner {
+  overflow: hidden;
+}
+
+.rb-pricing-glow {
+  box-shadow:
+    0 0 0 1px rgba(43, 121, 194, 0.35),
+    0 0 40px -8px rgba(43, 121, 194, 0.35),
+    0 20px 50px -20px rgba(13, 40, 71, 0.2);
+}

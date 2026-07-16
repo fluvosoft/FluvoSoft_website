@@ -14,10 +14,16 @@ import {
   serverTimestamp,
   updateDoc,
 } from "firebase/firestore";
+import { get, ref } from "firebase/database";
 import { isDashboardAdmin } from "@/lib/dashboard-access";
-import type { ContactMessage, ContactMessageStatus } from "@/lib/dashboard-types";
+import type {
+  ContactMessage,
+  ContactMessageStatus,
+  ResumeBuilderWishlistEntry,
+} from "@/lib/dashboard-types";
 import {
   getClientFirestore,
+  getClientRtdb,
   hasFirebaseConfig,
   signInWithGoogle,
   signOutDashboard,
@@ -81,6 +87,11 @@ function matchesDateFilter(date: Date | null, filter: DateFilter): boolean {
   return date >= cutoff;
 }
 
+function toWishlistDate(value: unknown): Date | null {
+  if (typeof value === "number") return new Date(value);
+  return toDate(value);
+}
+
 function SearchIcon() {
   return (
     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
@@ -96,6 +107,7 @@ export default function DashboardApp() {
   const [authError, setAuthError] = useState("");
   const [signingIn, setSigningIn] = useState(false);
   const [messages, setMessages] = useState<ContactMessage[]>([]);
+  const [wishlistEntries, setWishlistEntries] = useState<ResumeBuilderWishlistEntry[]>([]);
   const [loadingMessages, setLoadingMessages] = useState(false);
   const [loadError, setLoadError] = useState("");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
@@ -164,9 +176,42 @@ export default function DashboardApp() {
           return acc;
         }, {})
       );
+
+      const rtdb = getClientRtdb();
+      if (rtdb) {
+        const wishlistSnapshot = await get(ref(rtdb, "resumeBuilderWishlist"));
+        const wishlistData = wishlistSnapshot.val() as
+          | Record<
+              string,
+              {
+                email?: string;
+                product?: string;
+                source?: string;
+                createdAt?: number | { toDate?: () => Date };
+              }
+            >
+          | null;
+
+        const wishlistRows: ResumeBuilderWishlistEntry[] = wishlistData
+          ? Object.entries(wishlistData).map(([id, data]) => ({
+              id,
+              email: String(data.email || ""),
+              product: String(data.product || "Resume Builder"),
+              source: String(data.source || "resume-builder-wishlist"),
+              createdAt: toWishlistDate(data.createdAt),
+            }))
+          : [];
+
+        wishlistRows.sort(
+          (a, b) => (b.createdAt?.getTime() ?? 0) - (a.createdAt?.getTime() ?? 0)
+        );
+        setWishlistEntries(wishlistRows);
+      } else {
+        setWishlistEntries([]);
+      }
     } catch {
       setLoadError(
-        "Could not load messages. Enable Google sign-in and Firestore rules for admin emails."
+        "Could not load dashboard data. Enable Google sign-in and publish the Firestore rules for admin emails."
       );
     } finally {
       setLoadingMessages(false);
@@ -379,7 +424,8 @@ export default function DashboardApp() {
           <p className="text-xs font-medium uppercase tracking-wider text-cta">FluvoSoft</p>
           <h1 className="mt-2 text-2xl font-semibold text-foreground">Admin dashboard</h1>
           <p className="mt-3 text-sm leading-relaxed text-accent">
-            Sign in with an authorized Google account to manage Talk with our team submissions.
+            Sign in with an authorized Google account to manage contact submissions and product
+            wishlists.
           </p>
           {authError ? <p className="mt-4 text-sm text-red-400">{authError}</p> : null}
           <button
@@ -401,7 +447,7 @@ export default function DashboardApp() {
         <div>
           <p className="text-xs font-medium uppercase tracking-wider text-cta">FluvoSoft admin</p>
           <h1 className="mt-1 text-2xl font-semibold text-foreground sm:text-3xl">
-            Talk with our team
+            Submissions dashboard
           </h1>
           <p className="mt-1 text-sm text-accent">Signed in as {user.email}</p>
         </div>
@@ -424,13 +470,18 @@ export default function DashboardApp() {
         </div>
       </header>
 
-      <section className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {(
           [
             { label: "Total", value: counts.all, tone: "text-foreground" },
             { label: "New", value: counts.new, tone: "text-cta" },
             { label: "Read", value: counts.read, tone: "text-foreground" },
             { label: "Handled", value: counts.handled, tone: "text-emerald-300" },
+            {
+              label: "Resume wishlist",
+              value: wishlistEntries.length,
+              tone: "text-sky-300",
+            },
           ] as const
         ).map((stat) => (
           <div
@@ -441,6 +492,58 @@ export default function DashboardApp() {
             <p className={`mt-1 text-2xl font-semibold tabular-nums ${stat.tone}`}>{stat.value}</p>
           </div>
         ))}
+      </section>
+
+      <section className="mt-6 rounded-2xl border border-sky-500/20 bg-sky-500/[0.05] p-4 sm:p-5">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-wider text-sky-300">
+              Resume Builder
+            </p>
+            <h2 className="mt-1 text-xl font-semibold text-foreground">Wishlist</h2>
+            <p className="mt-1 text-sm text-accent">
+              {wishlistEntries.length} Gmail {wishlistEntries.length === 1 ? "address" : "addresses"}
+            </p>
+          </div>
+          {wishlistEntries.length ? (
+            <a
+              href={`mailto:?bcc=${encodeURIComponent(
+                wishlistEntries.map((entry) => entry.email).join(",")
+              )}`}
+              className="w-fit rounded-lg border border-sky-500/30 bg-sky-500/10 px-4 py-2 text-sm font-medium text-sky-300 no-underline transition hover:bg-sky-500/15"
+            >
+              Email wishlist
+            </a>
+          ) : null}
+        </div>
+
+        {wishlistEntries.length ? (
+          <div className="mt-4 max-h-72 overflow-auto rounded-xl border border-white/10 bg-black/20">
+            <ul className="divide-y divide-white/10">
+              {wishlistEntries.map((entry, index) => (
+                <li
+                  key={entry.id}
+                  className="flex flex-col gap-1 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="text-xs tabular-nums text-accent">{index + 1}</span>
+                    <a
+                      href={`mailto:${entry.email}`}
+                      className="truncate text-sm font-medium text-foreground no-underline hover:text-sky-300"
+                    >
+                      {entry.email}
+                    </a>
+                  </div>
+                  <span className="text-xs text-accent">{formatWhen(entry.createdAt)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <p className="mt-4 rounded-xl border border-dashed border-white/15 px-4 py-6 text-center text-sm text-accent">
+            No wishlist signups yet.
+          </p>
+        )}
       </section>
 
       <section className="sticky top-0 z-10 mt-6 rounded-2xl border border-white/10 bg-[#0A0A0A]/95 p-4 backdrop-blur-md sm:p-5">
