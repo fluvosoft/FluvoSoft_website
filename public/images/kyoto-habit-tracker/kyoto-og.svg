@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="KYOTO Habit Tracker">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5F0"/>
+      <stop offset="100%" stop-color="#FFE8DE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="220" fill="#FF6B45" opacity="0.28"/>
+  <circle cx="160" cy="520" r="180" fill="#FFB8A3" opacity="0.55"/>
+  <text x="80" y="280" font-family="Arial, sans-serif" font-size="96" font-weight="700" fill="#1A1A1A">KYOTO</text>
+  <text x="80" y="360" font-family="Arial, sans-serif" font-size="42" fill="#FF6B45">Habit Tracker</text>
+  <text x="80" y="430" font-family="Arial, sans-serif" font-size="28" fill="#6B6560">Build good habits. Stick with them. Grow with others.</text>
+</svg>

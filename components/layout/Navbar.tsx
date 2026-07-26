@@ -30,6 +30,7 @@ const navLinks = [
       { href: "/easy-invoice", label: "Easy Invoice" },
       { href: "/inventory-stock-tracker", label: "Inventory Stock Tracker" },
       { href: "/resume-builder", label: "Resume Builder" },
+      { href: "/kyoto-habit-tracker", label: "KYOTO Habit Tracker" },
     ],
   },
   {

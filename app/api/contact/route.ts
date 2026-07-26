@@ -15,8 +15,14 @@ function getIp(req: NextRequest): string {
 export async function POST(req: NextRequest) {
   try {
     const ip = getIp(req);
-    const allowed = checkRateLimit(`contact:${ip}`, 5, 60_000);
+    const allowed = checkRateLimit(`contact:${ip}`, 3, 60_000);
     if (!allowed) {
+      return NextResponse.json({ ok: false, message: "Too many requests. Please try again later." }, { status: 429 });
+    }
+
+    // Extra daily cap per IP to reduce harassment spam
+    const dailyAllowed = checkRateLimit(`contact-day:${ip}`, 15, 24 * 60 * 60 * 1000);
+    if (!dailyAllowed) {
       return NextResponse.json({ ok: false, message: "Too many requests. Please try again later." }, { status: 429 });
     }
 
@@ -77,6 +83,7 @@ export async function POST(req: NextRequest) {
       location: location || null,
       budget: budget || null,
       meetingSlot: meetingSlot || null,
+      ipAddress: ip,
       ipHashHint: ip.slice(0, 6),
       source: "talk-with-team",
       status: "new",

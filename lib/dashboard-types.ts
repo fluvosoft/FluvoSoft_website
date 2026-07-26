@@ -10,6 +10,8 @@ export type ContactMessage = {
   location: string | null;
   budget: string | null;
   meetingSlot: string | null;
+  /** Full client IP captured server-side for abuse investigation (admin only). */
+  ipAddress?: string;
   ipHashHint?: string;
   source?: string;
   status: ContactMessageStatus;
@@ -26,3 +28,5 @@ export type ResumeBuilderWishlistEntry = {
   source: string;
   createdAt: Date | null;
 };
+
+export type KyotoHabitTrackerWishlistEntry = ResumeBuilderWishlistEntry;

@@ -14,7 +14,7 @@ export type PrivacyDocChapter = {
 
 export const fluvoSoftPrivacyMeta = {
   effectiveDate: "May 27, 2026",
-  lastUpdated: "July 17, 2026",
+  lastUpdated: "July 24, 2026",
   contactEmail: "support@fluvosoft.com",
   companyName: "FluvoSoft Ltd.",
   companyLocation: "Dhaka, Bangladesh",
@@ -67,7 +67,7 @@ export const privacyScopeItems = [
     icon: "apps" as PrivacyScopeIcon,
     label: "Mobile apps",
     description:
-      "Our mobile applications, including Resume Builder, Easy Invoice, and Inventory Stock Tracker.",
+      "Our mobile applications, including KYOTO Habit Tracker, Resume Builder, Easy Invoice, and Inventory Stock Tracker.",
   },
   {
     id: "services",
@@ -115,7 +115,7 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
         bullets: [
           "Account and profile details: name, email, phone number, company name, country, and profile preferences when you register or update your account.",
           "Contact and inquiry information: messages, support tickets, demo requests, and details you submit through forms or email.",
-          "Business and product data: information you enter into our apps (such as resumes, profile details, invoices, inventory records, clients, and settings).",
+          "Business and product data: information you enter into our apps (such as habits, check-ins, mood logs, resumes, profile details, invoices, inventory records, clients, and settings).",
           "Payment-related information: billing contact details and transaction references. We do not store full payment card numbers on our servers when payments are handled by a secure payment provider.",
           "Usage and device information: pages viewed, features used, approximate location derived from IP address, browser or device type, operating system, crash or diagnostic logs (where enabled), and data needed to keep services reliable.",
           "Marketing preferences: whether you subscribed to updates and how you interact with our communications.",
@@ -220,6 +220,7 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
           "If a FluvoSoft app lets you create an account, you must also be able to delete that account and associated personal data, as required by Apple and Google app store policies.",
         ],
         bullets: [
+          "KYOTO Habit Tracker: request account deletion by emailing support@fluvosoft.com from the address linked to your account. If your app version includes Delete account in Settings, you may use that instead.",
           "Resume Builder: request account deletion by emailing support@fluvosoft.com from the address linked to your account. If your app version includes Delete account in Settings, you may use that instead.",
           "Inventory Stock Tracker: open Settings and choose Delete account. Deletion removes your account and associated cloud data from active systems.",
           "Easy Invoice: request account deletion by emailing support@fluvosoft.com. If your app version includes an in-app delete option in Settings, you may use that instead.",
@@ -236,9 +237,10 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
         bullets: [
           "Camera (Inventory Stock Tracker): used to scan product barcodes when you open the barcode scanner. Camera access is requested at the time of use.",
           "Photos / camera / storage (Resume Builder): used when you add a profile photo or import a resume PDF. We access only the files you select.",
+          "Photos / camera (KYOTO Habit Tracker): used when you add a profile photo. We access only the files you select.",
           "Photos / storage (Easy Invoice and Inventory Stock Tracker): used when you attach images to invoices, products, or related records. We access only the files you select.",
           "Contacts (Inventory Stock Tracker Pro): used only if you choose to import customers or vendors from your device contact list.",
-          "Notifications: optional push alerts for service-related messages. You can disable notifications in device or app settings.",
+          "Notifications: optional push alerts for service-related messages, including habit reminders in KYOTO. You can disable notifications in device or app settings.",
         ],
       },
       {

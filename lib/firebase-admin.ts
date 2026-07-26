@@ -23,7 +23,7 @@ export function getFirebaseAdminApp(): App | null {
     const serviceAccount: ServiceAccount = {
       projectId: parsed.project_id ?? parsed.projectId,
       clientEmail: parsed.client_email ?? parsed.clientEmail,
-      privateKey: parsed.private_key ?? parsed.privateKey,
+      privateKey: (parsed.private_key ?? parsed.privateKey)?.replace(/\\n/g, "\n"),
     };
 
     if (!serviceAccount.projectId || !serviceAccount.clientEmail || !serviceAccount.privateKey) {

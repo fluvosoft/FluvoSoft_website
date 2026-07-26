@@ -19,6 +19,7 @@ import { isDashboardAdmin } from "@/lib/dashboard-access";
 import type {
   ContactMessage,
   ContactMessageStatus,
+  KyotoHabitTrackerWishlistEntry,
   ResumeBuilderWishlistEntry,
 } from "@/lib/dashboard-types";
 import {
@@ -108,6 +109,9 @@ export default function DashboardApp() {
   const [signingIn, setSigningIn] = useState(false);
   const [messages, setMessages] = useState<ContactMessage[]>([]);
   const [wishlistEntries, setWishlistEntries] = useState<ResumeBuilderWishlistEntry[]>([]);
+  const [kyotoWishlistEntries, setKyotoWishlistEntries] = useState<
+    KyotoHabitTrackerWishlistEntry[]
+  >([]);
   const [loadingMessages, setLoadingMessages] = useState(false);
   const [loadError, setLoadError] = useState("");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
@@ -159,6 +163,7 @@ export default function DashboardApp() {
           location: data.location ? String(data.location) : null,
           budget: data.budget ? String(data.budget) : null,
           meetingSlot: data.meetingSlot ? String(data.meetingSlot) : null,
+          ipAddress: data.ipAddress ? String(data.ipAddress) : undefined,
           ipHashHint: data.ipHashHint ? String(data.ipHashHint) : undefined,
           source: data.source ? String(data.source) : undefined,
           status: (data.status as ContactMessageStatus) || "new",
@@ -206,8 +211,37 @@ export default function DashboardApp() {
           (a, b) => (b.createdAt?.getTime() ?? 0) - (a.createdAt?.getTime() ?? 0)
         );
         setWishlistEntries(wishlistRows);
+
+        const kyotoWishlistSnapshot = await get(ref(rtdb, "kyotoHabitTrackerWishlist"));
+        const kyotoWishlistData = kyotoWishlistSnapshot.val() as
+          | Record<
+              string,
+              {
+                email?: string;
+                product?: string;
+                source?: string;
+                createdAt?: number | { toDate?: () => Date };
+              }
+            >
+          | null;
+
+        const kyotoWishlistRows: KyotoHabitTrackerWishlistEntry[] = kyotoWishlistData
+          ? Object.entries(kyotoWishlistData).map(([id, data]) => ({
+              id,
+              email: String(data.email || ""),
+              product: String(data.product || "KYOTO Habit Tracker"),
+              source: String(data.source || "kyoto-habit-tracker-wishlist"),
+              createdAt: toWishlistDate(data.createdAt),
+            }))
+          : [];
+
+        kyotoWishlistRows.sort(
+          (a, b) => (b.createdAt?.getTime() ?? 0) - (a.createdAt?.getTime() ?? 0)
+        );
+        setKyotoWishlistEntries(kyotoWishlistRows);
       } else {
         setWishlistEntries([]);
+        setKyotoWishlistEntries([]);
       }
     } catch {
       setLoadError(
@@ -317,32 +351,7 @@ export default function DashboardApp() {
     setDeletingId(id);
     setLoadError("");
 
-    try {
-      const token = await user.getIdToken();
-      const response = await fetch(`/api/admin/messages/${id}`, {
-        method: "DELETE",
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const data = (await response.json()) as { ok?: boolean; message?: string };
-
-      if (!response.ok || !data.ok) {
-        const db = getClientFirestore();
-        if (!db) {
-          throw new Error(data.message || "Delete failed.");
-        }
-
-        try {
-          await deleteDoc(doc(db, "contactMessages", id));
-        } catch (clientError) {
-          const code =
-            clientError instanceof FirebaseError ? clientError.code : "unknown";
-          throw new Error(
-            data.message ||
-              `Delete failed (${code}). Publish Firestore delete rules for admin emails.`
-          );
-        }
-      }
-
+    const removeFromUi = () => {
       setMessages((prev) => prev.filter((message) => message.id !== id));
       setNotes((prev) => {
         const next = { ...prev };
@@ -350,6 +359,48 @@ export default function DashboardApp() {
         return next;
       });
       if (expandedId === id) setExpandedId(null);
+    };
+
+    try {
+      // Prefer client delete — Firestore rules already allow dashboard admins.
+      const db = getClientFirestore();
+      if (db) {
+        try {
+          await deleteDoc(doc(db, "contactMessages", id));
+          removeFromUi();
+          return;
+        } catch (clientError) {
+          const code =
+            clientError instanceof FirebaseError ? clientError.code : "unknown";
+          // Fall through to server delete if client rules block it
+          console.warn("Client delete failed, trying admin API:", code);
+        }
+      }
+
+      const token = await user.getIdToken();
+      const response = await fetch(`/api/admin/messages/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      const raw = await response.text();
+      let data: { ok?: boolean; message?: string } = {};
+      try {
+        data = raw ? (JSON.parse(raw) as { ok?: boolean; message?: string }) : {};
+      } catch {
+        throw new Error(
+          "Delete API returned an unexpected response. Confirm FIREBASE_SERVICE_ACCOUNT_JSON is set, or publish Firestore delete rules for admin emails."
+        );
+      }
+
+      if (!response.ok || !data.ok) {
+        throw new Error(
+          data.message ||
+            `Delete failed (${response.status}). Publish Firestore delete rules for admin emails.`
+        );
+      }
+
+      removeFromUi();
     } catch (error) {
       setLoadError(error instanceof Error ? error.message : "Could not delete message.");
     } finally {
@@ -470,7 +521,7 @@ export default function DashboardApp() {
         </div>
       </header>
 
-      <section className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      <section className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
         {(
           [
             { label: "Total", value: counts.all, tone: "text-foreground" },
@@ -481,6 +532,11 @@ export default function DashboardApp() {
               label: "Resume wishlist",
               value: wishlistEntries.length,
               tone: "text-sky-300",
+            },
+            {
+              label: "KYOTO wishlist",
+              value: kyotoWishlistEntries.length,
+              tone: "text-orange-300",
             },
           ] as const
         ).map((stat) => (
@@ -530,6 +586,59 @@ export default function DashboardApp() {
                     <a
                       href={`mailto:${entry.email}`}
                       className="truncate text-sm font-medium text-foreground no-underline hover:text-sky-300"
+                    >
+                      {entry.email}
+                    </a>
+                  </div>
+                  <span className="text-xs text-accent">{formatWhen(entry.createdAt)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <p className="mt-4 rounded-xl border border-dashed border-white/15 px-4 py-6 text-center text-sm text-accent">
+            No wishlist signups yet.
+          </p>
+        )}
+      </section>
+
+      <section className="mt-6 rounded-2xl border border-orange-500/20 bg-orange-500/[0.05] p-4 sm:p-5">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-wider text-orange-300">
+              KYOTO Habit Tracker
+            </p>
+            <h2 className="mt-1 text-xl font-semibold text-foreground">Wishlist</h2>
+            <p className="mt-1 text-sm text-accent">
+              {kyotoWishlistEntries.length} Gmail{" "}
+              {kyotoWishlistEntries.length === 1 ? "address" : "addresses"}
+            </p>
+          </div>
+          {kyotoWishlistEntries.length ? (
+            <a
+              href={`mailto:?bcc=${encodeURIComponent(
+                kyotoWishlistEntries.map((entry) => entry.email).join(",")
+              )}`}
+              className="w-fit rounded-lg border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-300 no-underline transition hover:bg-orange-500/15"
+            >
+              Email wishlist
+            </a>
+          ) : null}
+        </div>
+
+        {kyotoWishlistEntries.length ? (
+          <div className="mt-4 max-h-72 overflow-auto rounded-xl border border-white/10 bg-black/20">
+            <ul className="divide-y divide-white/10">
+              {kyotoWishlistEntries.map((entry, index) => (
+                <li
+                  key={entry.id}
+                  className="flex flex-col gap-1 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="text-xs tabular-nums text-accent">{index + 1}</span>
+                    <a
+                      href={`mailto:${entry.email}`}
+                      className="truncate text-sm font-medium text-foreground no-underline hover:text-orange-300"
                     >
                       {entry.email}
                     </a>
@@ -788,6 +897,12 @@ export default function DashboardApp() {
                           <dd className="mt-1 text-foreground">{message.meetingSlot}</dd>
                         </div>
                       ) : null}
+                      <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+                        <dt className="text-xs uppercase tracking-wider text-accent">IP address</dt>
+                        <dd className="mt-1 font-mono text-sm text-foreground">
+                          {message.ipAddress || message.ipHashHint || "Not recorded"}
+                        </dd>
+                      </div>
                     </dl>
 
                     <div className="mt-4 rounded-xl border border-white/10 bg-black/20 p-4">

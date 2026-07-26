@@ -1,0 +1,176 @@
+/* KYOTO Habit Tracker — warm coral wellness brand */
+
+.ky-page {
+  background-color: #fff5f0;
+  color: #1a1a1a;
+}
+
+.font-ky-heading {
+  font-family: var(--font-ky-heading), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-ky-body {
+  font-family: var(--font-ky-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.ky-hero-mesh {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ky-hero-mesh::before,
+.ky-hero-mesh::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  animation: ky-mesh-drift 18s ease-in-out infinite alternate;
+}
+
+.ky-hero-mesh::before {
+  width: 55%;
+  height: 55%;
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, #ffb8a3 0%, transparent 70%);
+}
+
+.ky-hero-mesh::after {
+  width: 50%;
+  height: 50%;
+  bottom: -15%;
+  right: -5%;
+  background: radial-gradient(circle, #ff6b45 0%, transparent 70%);
+  animation-delay: -9s;
+}
+
+@keyframes ky-mesh-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(4%, 6%) scale(1.08);
+  }
+}
+
+.ky-hero-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.ky-nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.ky-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #ff6b45;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.ky-nav-link:hover::after,
+.ky-nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.ky-cta-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ky-cta-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px -8px rgba(255, 107, 69, 0.5);
+}
+
+.ky-card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ky-card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -12px rgba(255, 107, 69, 0.18);
+}
+
+@keyframes ky-phone-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ky-phone-enter {
+  animation: ky-phone-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.ky-phone-shadow {
+  filter: drop-shadow(0 32px 48px rgba(255, 107, 69, 0.22));
+}
+
+@keyframes ky-ring-draw {
+  0% {
+    stroke-dashoffset: 280;
+  }
+  100% {
+    stroke-dashoffset: 70;
+  }
+}
+
+.ky-progress-ring {
+  stroke-dasharray: 280;
+  stroke-dashoffset: 280;
+  animation: ky-ring-draw 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+@keyframes ky-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.ky-float {
+  animation: ky-float 5s ease-in-out infinite;
+}
+
+.ky-faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.ky-faq-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.ky-faq-panel-inner {
+  overflow: hidden;
+}
+
+.ky-pricing-glow {
+  box-shadow:
+    0 0 0 1px rgba(255, 107, 69, 0.35),
+    0 0 40px -8px rgba(255, 107, 69, 0.3),
+    0 20px 50px -20px rgba(26, 26, 26, 0.12);
+}

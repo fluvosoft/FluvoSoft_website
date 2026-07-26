@@ -7,6 +7,7 @@ const staticRoutes: { path: string; priority: number; changeFrequency: MetadataR
   { path: "/easy-invoice", priority: 0.9, changeFrequency: "weekly" },
   { path: "/inventory-stock-tracker", priority: 0.9, changeFrequency: "weekly" },
   { path: "/resume-builder", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/kyoto-habit-tracker", priority: 0.9, changeFrequency: "weekly" },
   { path: "/about", priority: 0.8, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.8, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
