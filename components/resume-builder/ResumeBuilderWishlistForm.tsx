@@ -16,12 +16,20 @@ export default function ResumeBuilderWishlistForm({ className = "" }: { classNam
     setIsSubmitting(true);
     setFeedback("");
 
+    const normalizedEmail = email.trim().toLowerCase();
+    if (!/^[a-z0-9._%+-]+@gmail\.com$/i.test(normalizedEmail)) {
+      setIsSubmitting(false);
+      setIsSuccess(false);
+      setFeedback("Please enter a valid Gmail address.");
+      return;
+    }
+
     try {
       const response = await fetch("/api/resume-builder/wishlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email,
+          email: normalizedEmail,
           website,
           elapsedMs: Date.now() - startedAt,
         }),
@@ -66,7 +74,6 @@ export default function ResumeBuilderWishlistForm({ className = "" }: { classNam
           inputMode="email"
           autoComplete="email"
           placeholder="Enter your Gmail address"
-          pattern="[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@gmail\.com"
           title="Please enter a Gmail address ending in @gmail.com"
           required
           value={email}

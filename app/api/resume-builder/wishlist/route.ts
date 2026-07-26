@@ -4,7 +4,7 @@ import { ref, serverTimestamp, set } from "firebase/database";
 import { checkRateLimit } from "@/lib/rateLimit";
 import { hasAllFirebaseValues, rtdb } from "@/lib/firebase";
 
-const GMAIL_REGEX = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@gmail\.com$/i;
+const GMAIL_REGEX = /^[a-z0-9._%+-]+@gmail\.com$/i;
 
 function getIp(req: NextRequest): string {
   const forwardedFor = req.headers.get("x-forwarded-for");

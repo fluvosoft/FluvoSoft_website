@@ -8,13 +8,38 @@
         ".write": "newData.exists() && (!data.exists() || data.child('email').val() == newData.child('email').val())",
         ".validate": "newData.hasChildren(['email', 'product', 'source', 'createdAt'])",
         "email": {
-          ".validate": "newData.isString() && newData.val().length <= 254 && newData.val().matches(/^[a-z0-9.!#$%&'*+\\/=?^_`{|}~-]+@gmail\\.com$/)"
+          ".validate": "newData.isString() && newData.val().length <= 254 && newData.val().matches(/^[a-z0-9._%+\\-]+@gmail\\.com$/)"
         },
         "product": {
           ".validate": "newData.val() == 'Resume Builder'"
         },
         "source": {
           ".validate": "newData.val() == 'resume-builder-wishlist'"
+        },
+        "ipHashHint": {
+          ".validate": "newData.isString() && newData.val().length <= 12"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber()"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "kyotoHabitTrackerWishlist": {
+      ".read": "auth != null && (auth.token.email == 'alisifat061@gmail.com' || auth.token.email == 'sifatali008@gmail.com' || auth.token.email == 'codewithsifat4@gmail.com')",
+      "$entryId": {
+        ".write": "newData.exists() && (!data.exists() || data.child('email').val() == newData.child('email').val())",
+        ".validate": "newData.hasChildren(['email', 'product', 'source', 'createdAt'])",
+        "email": {
+          ".validate": "newData.isString() && newData.val().length <= 254 && newData.val().matches(/^[a-z0-9._%+\\-]+@gmail\\.com$/)"
+        },
+        "product": {
+          ".validate": "newData.val() == 'KYOTO Habit Tracker'"
+        },
+        "source": {
+          ".validate": "newData.val() == 'kyoto-habit-tracker-wishlist'"
         },
         "ipHashHint": {
           ".validate": "newData.isString() && newData.val().length <= 12"
