@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "data protection",
     "personal information",
     "FluvoSoft Ltd",
-    "Dhaka Bangladesh",
+    "Delaware United States",
   ],
   openGraph: {
     title: "Privacy Policy | FluvoSoft",

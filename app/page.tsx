@@ -21,7 +21,7 @@ import FAQSchema from "@/components/seo/FAQSchema";
 export const metadata: Metadata = {
   title: `${siteConfig.name} - ${siteConfig.tagline} | Blockchain, Automation & Custom Software`,
   description:
-    "FluvoSoft venture catalysts studio. Blockchain development, AI automation, custom software, and SaaS solutions. Transform your business with secure, scalable technology. Dhaka, Bangladesh.",
+    "FluvoSoft venture catalysts studio. Blockchain development, AI automation, custom software, and SaaS solutions. Transform your business with secure, scalable technology. Delaware C-Corp, United States.",
   openGraph: {
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,

@@ -22,6 +22,8 @@ export const kyotoConfig: ProductSeoConfig = {
     "habit challenges",
     "mood tracker",
     "accountability app",
+    "habit tracker USA",
+    "habit tracker app United States",
     "FluvoSoft KYOTO",
     "build good habits",
     "quit bad habits",

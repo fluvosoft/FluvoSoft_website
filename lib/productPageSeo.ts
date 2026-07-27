@@ -99,6 +99,9 @@ export function buildProductPageMetadata(config: ProductSeoConfig): Metadata {
     other: {
       "application-name": config.name,
       "og:see_also": siteConfig.url,
+      "geo.region": siteConfig.geo.region,
+      "geo.placename": siteConfig.geo.placename,
+      "geo.country": siteConfig.geo.country,
     },
   };
 }
@@ -151,8 +154,8 @@ export function buildProductPageJsonLdGraph(config: ProductSeoConfig) {
         },
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Dhaka",
-          addressCountry: "BD",
+          addressRegion: "DE",
+          addressCountry: "US",
         },
       },
       {
@@ -187,7 +190,7 @@ export function buildProductPageJsonLdGraph(config: ProductSeoConfig) {
         url: pageUrl,
         name: `${config.name} – ${config.tagline}`,
         description: config.description,
-        inLanguage: "en",
+        inLanguage: siteConfig.locale,
         isPartOf: { "@id": websiteId },
         about: { "@id": appId },
         breadcrumb: { "@id": breadcrumbId },
@@ -224,8 +227,8 @@ export function buildProductPageJsonLdGraph(config: ProductSeoConfig) {
           "@type": "Brand",
           name: siteConfig.name,
         },
-        countriesSupported: "BD",
-        inLanguage: "en",
+        countriesSupported: "US",
+        inLanguage: siteConfig.locale,
       },
       {
         "@type": "FAQPage",

@@ -31,7 +31,7 @@ export default function EasyInvoiceHero() {
             <p className="mt-5 max-w-lg text-base leading-relaxed text-ei-muted md:text-lg">
               Create professional invoices, track payments, and export PDFs — free on Android and
               web. Easy Invoice by FluvoSoft is built for small businesses and freelancers in
-              Bangladesh and worldwide.
+              USA and worldwide.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">

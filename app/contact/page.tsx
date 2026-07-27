@@ -12,7 +12,8 @@ export const metadata: Metadata = {
     "book a demo",
     "FluvoSoft support",
     "software consulting",
-    "Dhaka Bangladesh",
+    "software company USA",
+    "Delaware United States",
   ],
   openGraph: {
     title: "Contact Us | FluvoSoft",

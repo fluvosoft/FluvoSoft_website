@@ -59,6 +59,11 @@ export const metadata: Metadata = {
     apple: "/images/fluvo_logo.png",
   },
   category: "technology",
+  other: {
+    "geo.region": siteConfig.geo.region,
+    "geo.placename": siteConfig.geo.placename,
+    "geo.country": siteConfig.geo.country,
+  },
 };
 
 export default function RootLayout({

@@ -65,7 +65,7 @@ export default function Footer() {
             <p className="mt-3 text-sm text-accent">
               FluvoSoft Ltd.
               <br />
-              Dhaka, Bangladesh
+              Delaware, United States
             </p>
             <div className="mt-4 flex gap-3">
               <Link href="#" className="text-sm text-accent hover:text-foreground" aria-label="Connect">

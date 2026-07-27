@@ -27,7 +27,7 @@ export default function ResumeBuilderFooter() {
             <p className="mt-3 text-sm text-white/75">
               FluvoSoft Ltd.
               <br />
-              Dhaka, Bangladesh
+              Delaware, United States
             </p>
           </div>
 

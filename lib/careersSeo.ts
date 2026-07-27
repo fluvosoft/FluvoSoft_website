@@ -156,10 +156,6 @@ export function buildCareersJsonLdGraph() {
         "@type": "Country",
         name: "United States",
       },
-      {
-        "@type": "Country",
-        name: "Bangladesh",
-      },
     ],
     hiringOrganization: { "@id": employerId },
     identifier: {
