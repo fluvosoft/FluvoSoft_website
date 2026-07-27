@@ -8,9 +8,10 @@ import { siteConfig } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Privacy Policy | FluvoSoft",
   description:
-    "Read FluvoSoft's Privacy Policy to learn what information we collect, how we use and protect it, your rights, and how to contact us.",
+    "Read FluvoSoft's Privacy Policy for our website and apps, including KYOTO Habit Tracker, Easy Invoice, Resume Builder, and Inventory Stock Tracker.",
   keywords: [
     "FluvoSoft privacy policy",
+    "KYOTO Habit Tracker privacy",
     "data protection",
     "personal information",
     "FluvoSoft Ltd",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Privacy Policy | FluvoSoft",
     description:
-      "How FluvoSoft collects, uses, stores, and protects your information across our website and products.",
+      "How FluvoSoft collects, uses, stores, and protects your information across our website and products, including KYOTO Habit Tracker.",
     url: "/privacy",
   },
   alternates: {

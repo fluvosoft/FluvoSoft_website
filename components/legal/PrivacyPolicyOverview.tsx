@@ -151,7 +151,14 @@ export function PrivacyWhatThisCovers() {
               <p className="text-sm leading-relaxed text-accent">
                 <span className="font-medium text-foreground">Note:</span> Some apps include their
                 own in-product privacy sections. Where those exist, they supplement this policy for
-                that product.
+                that product. See the dedicated{" "}
+                <Link
+                  href="#kyoto-habit-tracker"
+                  className="font-medium text-cta no-underline hover:underline"
+                >
+                  KYOTO Habit Tracker
+                </Link>{" "}
+                chapter in the full policy below.
               </p>
             </div>
           </div>

@@ -103,7 +103,7 @@ export default function KyotoPrivacySection() {
             <p className="mt-3 text-sm text-ky-muted">
               These providers process information under their own privacy policies. See our{" "}
               <a
-                href="/privacy#mobile-third-parties"
+                href="/privacy#kyoto-third-parties"
                 className="font-medium text-ky-ink underline decoration-ky-coral/60 underline-offset-2 hover:decoration-ky-coral"
               >
                 full privacy policy

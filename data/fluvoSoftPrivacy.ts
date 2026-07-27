@@ -1,3 +1,5 @@
+import { kyotoPrivacySections } from "@/data/kyotoPrivacy";
+
 export type PrivacyDocArticle = {
   id: string;
   title: string;
@@ -14,7 +16,7 @@ export type PrivacyDocChapter = {
 
 export const fluvoSoftPrivacyMeta = {
   effectiveDate: "May 27, 2026",
-  lastUpdated: "July 24, 2026",
+  lastUpdated: "July 27, 2026",
   contactEmail: "support@fluvosoft.com",
   companyName: "FluvoSoft Ltd.",
   companyLocation: "Dhaka, Bangladesh",
@@ -259,6 +261,21 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
         ],
       },
     ],
+  },
+  {
+    id: "kyoto-habit-tracker",
+    title: "KYOTO Habit Tracker",
+    description:
+      "Product-specific privacy details for KYOTO Habit Tracker. This section supplements the general policy above.",
+    articles: kyotoPrivacySections.map((section) => ({
+      id: section.id,
+      title: section.title,
+      paragraphs: [
+        ...(section.paragraphs ?? []),
+        ...(section.closingParagraphs ?? []),
+      ],
+      bullets: section.bullets,
+    })),
   },
   {
     id: "your-rights",
