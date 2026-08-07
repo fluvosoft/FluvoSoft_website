@@ -1,4 +1,5 @@
 import { kyotoPrivacySections } from "@/data/kyotoPrivacy";
+import { teenyPdfPrivacySections } from "@/data/teenyPdfPrivacy";
 
 export type PrivacyDocArticle = {
   id: string;
@@ -16,7 +17,7 @@ export type PrivacyDocChapter = {
 
 export const fluvoSoftPrivacyMeta = {
   effectiveDate: "May 27, 2026",
-  lastUpdated: "July 27, 2026",
+  lastUpdated: "August 7, 2026",
   contactEmail: "support@fluvosoft.com",
   companyName: "FluvoSoft Ltd.",
   companyLocation: "Dhaka, Bangladesh",
@@ -69,7 +70,7 @@ export const privacyScopeItems = [
     icon: "apps" as PrivacyScopeIcon,
     label: "Mobile apps",
     description:
-      "Our mobile applications, including KYOTO Habit Tracker, Resume Builder, Easy Invoice, and Inventory Stock Tracker.",
+      "Our mobile applications, including KYOTO Habit Tracker, Resume Builder, Easy Invoice, Inventory Stock Tracker, and TeenyPDF.",
   },
   {
     id: "services",
@@ -117,7 +118,7 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
         bullets: [
           "Account and profile details: name, email, phone number, company name, country, and profile preferences when you register or update your account.",
           "Contact and inquiry information: messages, support tickets, demo requests, and details you submit through forms or email.",
-          "Business and product data: information you enter into our apps (such as habits, check-ins, mood logs, resumes, profile details, invoices, inventory records, clients, and settings).",
+          "Business and product data: information you enter into our apps (such as habits, check-ins, mood logs, resumes, profile details, invoices, inventory records, clients, PDFs or documents you process locally, and settings).",
           "Payment-related information: billing contact details and transaction references. We do not store full payment card numbers on our servers when payments are handled by a secure payment provider.",
           "Usage and device information: pages viewed, features used, approximate location derived from IP address, browser or device type, operating system, crash or diagnostic logs (where enabled), and data needed to keep services reliable.",
           "Marketing preferences: whether you subscribed to updates and how you interact with our communications.",
@@ -226,7 +227,8 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
           "Resume Builder: request account deletion by emailing support@fluvosoft.com from the address linked to your account. If your app version includes Delete account in Settings, you may use that instead.",
           "Inventory Stock Tracker: open Settings and choose Delete account. Deletion removes your account and associated cloud data from active systems.",
           "Easy Invoice: request account deletion by emailing support@fluvosoft.com. If your app version includes an in-app delete option in Settings, you may use that instead.",
-          "After a deletion request, we remove personal data from production systems within a reasonable period, typically within 30 days. Backup copies may persist for up to 90 days before automatic purge.",
+          "TeenyPDF: no FluvoSoft account is required for core features. Remove files from Recent / Files history in the App, delete local exports on your device, or clear app data in device settings.",
+          "After a deletion request for account-based apps, we remove personal data from production systems within a reasonable period, typically within 30 days. Backup copies may persist for up to 90 days before automatic purge.",
           "You may also contact us if you need help completing deletion or confirming that your data was removed.",
         ],
       },
@@ -238,8 +240,10 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
         ],
         bullets: [
           "Camera (Inventory Stock Tracker): used to scan product barcodes when you open the barcode scanner. Camera access is requested at the time of use.",
+          "Camera (TeenyPDF): used for the document scanner when you capture pages. Access is requested when you use Scan.",
           "Photos / camera / storage (Resume Builder): used when you add a profile photo or import a resume PDF. We access only the files you select.",
           "Photos / camera (KYOTO Habit Tracker): used when you add a profile photo. We access only the files you select.",
+          "Photos / gallery / storage (TeenyPDF): used to import images and documents, save PDF and scan exports, manage your Files library, and write to a custom save directory you set in Settings. We access only the files you select.",
           "Photos / storage (Easy Invoice and Inventory Stock Tracker): used when you attach images to invoices, products, or related records. We access only the files you select.",
           "Contacts (Inventory Stock Tracker Pro): used only if you choose to import customers or vendors from your device contact list.",
           "Notifications: optional push alerts for service-related messages, including habit reminders in KYOTO. You can disable notifications in device or app settings.",
@@ -255,7 +259,7 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
           "Identity and sign-in services (email/password and third-party login where offered).",
           "Cloud hosting, database sync, and file storage for your business records and attachments.",
           "Analytics and crash or diagnostic reporting to improve app stability (where enabled in your app or settings).",
-          "Advertising services in apps that display ads (for example, optional ads in the Easy Invoice native app).",
+          "Advertising services in apps that display ads (for example, optional ads in the Easy Invoice native app, and banner or interstitial ads in TeenyPDF).",
           "Push notification delivery when you enable notifications.",
           "Services used to generate resume or invoice previews, PDFs, and secure download links.",
         ],
@@ -268,6 +272,21 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
     description:
       "Product-specific privacy details for KYOTO Habit Tracker. This section supplements the general policy above.",
     articles: kyotoPrivacySections.map((section) => ({
+      id: section.id,
+      title: section.title,
+      paragraphs: [
+        ...(section.paragraphs ?? []),
+        ...(section.closingParagraphs ?? []),
+      ],
+      bullets: section.bullets,
+    })),
+  },
+  {
+    id: "teenypdf",
+    title: "TeenyPDF",
+    description:
+      "Product-specific privacy details for TeenyPDF. This section supplements the general policy above.",
+    articles: teenyPdfPrivacySections.map((section) => ({
       id: section.id,
       title: section.title,
       paragraphs: [
