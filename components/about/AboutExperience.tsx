@@ -51,25 +51,6 @@ const leadership = [
     imageAlt: "Shouvick Monzur, CTO of FluvoSoft",
     bio: "Lead software engineer with 10+ years building backends, cloud systems, and SaaS platforms. Leads FluvoSoft's technical direction.",
   },
-  {
-    name: "Sifat ALI",
-    role: "Chief Operating Officer",
-    title: "COO",
-    image: "/images/team/sifat-ali.webp",
-    imageAlt: "Sifat ALI, COO of FluvoSoft",
-    bio: "2× national hackathon winner and full-stack engineer. Runs day-to-day operations and keeps projects moving from build to delivery.",
-  },
-];
-
-const advisors = [
-  {
-    name: "Sahid Hossain Ratul",
-    role: "Business Advisor",
-    title: "Advisor",
-    image: "/images/team/sahid-hossain-ratul.webp",
-    imageAlt: "Sahid Hossain Ratul, Business Advisor at FluvoSoft",
-    bio: "Advises FluvoSoft on business strategy and growth.",
-  },
 ];
 
 const technologies = [
@@ -307,7 +288,7 @@ export default function AboutExperience() {
               Meet the visionaries leading FluvoSoft forward
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-2">
             {leadership.map((leader, index) => (
               <article
                 key={leader.title}
@@ -320,7 +301,7 @@ export default function AboutExperience() {
                     src={leader.image}
                     alt={leader.imageAlt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-top grayscale transition duration-150 group-hover:grayscale-0"
                   />
                 </div>
@@ -342,58 +323,11 @@ export default function AboutExperience() {
         </div>
       </section>
 
-      {/* 07 Advisor */}
-      <section className="relative z-10 border-b-4 border-black">
-        <div className="mx-auto grid max-w-[1400px] lg:grid-cols-[5fr_7fr]">
-          <div className="swiss-diagonal border-b-4 border-black bg-swiss-muted px-6 py-12 sm:px-10 lg:border-b-0 lg:border-r-4 lg:px-12 lg:py-16">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-swiss-accent sm:text-sm">
-              07. Advisors
-            </p>
-            <h2 className="mt-4 text-3xl font-black uppercase tracking-tighter sm:text-4xl">
-              Advisor panel
-            </h2>
-            <p className="mt-3 text-sm font-medium uppercase tracking-wide text-black/55">
-              Experienced advisors supporting our strategic direction
-            </p>
-          </div>
-          <div className="grid">
-            {advisors.map((advisor) => (
-              <article
-                key={advisor.name}
-                className="group grid border-black bg-white sm:grid-cols-[240px_1fr]"
-              >
-                <div className="relative aspect-square w-full overflow-hidden border-b-2 border-black bg-swiss-muted sm:aspect-auto sm:min-h-[280px] sm:border-b-0 sm:border-r-2">
-                  <Image
-                    src={advisor.image}
-                    alt={advisor.imageAlt}
-                    fill
-                    sizes="240px"
-                    className="object-cover object-top grayscale transition duration-150 group-hover:grayscale-0"
-                  />
-                </div>
-                <div className="flex flex-col justify-center p-8 transition-colors duration-150 group-hover:bg-cta group-hover:text-white sm:p-10">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-swiss-accent group-hover:text-white">
-                    {advisor.title}
-                  </p>
-                  <h3 className="mt-2 text-2xl font-black uppercase tracking-tight">{advisor.name}</h3>
-                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-black/50 group-hover:text-white/80">
-                    {advisor.role}
-                  </p>
-                  <p className="mt-4 max-w-md text-sm leading-relaxed text-black/65 group-hover:text-white/90">
-                    {advisor.bio}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 08 Technology */}
+      {/* 07 Technology */}
       <section className="relative z-10 border-b-4 border-black">
         <div className="mx-auto max-w-[1400px] px-6 py-12 sm:px-10 lg:px-12 lg:py-16">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-swiss-accent sm:text-sm">
-            08. Stack
+            07. Stack
           </p>
           <h2 className="mt-3 text-3xl font-black uppercase tracking-tighter sm:text-4xl md:text-5xl">
             Our technology expertise
@@ -422,12 +356,12 @@ export default function AboutExperience() {
         </div>
       </section>
 
-      {/* 09 CTA */}
+      {/* 08 CTA */}
       <section className="relative z-10">
         <div className="mx-auto grid max-w-[1400px] lg:grid-cols-[5fr_7fr]">
           <div className="swiss-diagonal border-b-4 border-black bg-swiss-muted px-6 py-14 sm:px-10 lg:border-b-0 lg:border-r-4 lg:px-12 lg:py-20">
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-swiss-accent sm:text-sm">
-              09. Contact
+              08. Contact
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-tighter sm:text-4xl">
               Ready to work together?
