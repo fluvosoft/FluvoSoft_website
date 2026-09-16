@@ -50,7 +50,7 @@ export default function LatestReleasesGrid() {
             ))}
           </ul>
 
-          <div className="mt-auto pt-6">
+          <div className="mt-auto flex flex-wrap gap-3 pt-6">
             {product.external ? (
               <a
                 href={product.href}
@@ -65,6 +65,22 @@ export default function LatestReleasesGrid() {
                 {product.cta}
               </Link>
             )}
+            {product.secondaryCta ? (
+              product.secondaryCta.external ? (
+                <a
+                  href={product.secondaryCta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={ctaClassName}
+                >
+                  {product.secondaryCta.label}
+                </a>
+              ) : (
+                <Link href={product.secondaryCta.href} className={ctaClassName}>
+                  {product.secondaryCta.label}
+                </Link>
+              )
+            ) : null}
           </div>
         </article>
       ))}

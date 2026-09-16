@@ -13,22 +13,35 @@ export interface LatestRelease {
   cta: string;
   logoClassName?: string;
   external?: boolean;
+  secondaryCta?: {
+    label: string;
+    href: string;
+    external?: boolean;
+  };
 }
 
 export const latestReleases: LatestRelease[] = [
   {
-    id: "inventory-stock-tracker",
-    name: "Inventory Stock Tracker",
+    id: "teenypdf",
+    name: "TeenyPDF",
     tag: "New release",
-    headline: "Track Stock. Grow Your Business.",
+    headline: "Free Private PDF Tools. No Upload.",
     description:
-      "Android inventory app with barcode scan, stock in/out, cloud sync, and offline mode for shops and warehouses.",
-    bullets: ["Barcode scan", "Cloud + offline", "Live dashboard"],
-    href: "/inventory-stock-tracker",
-    logo: "/images/inventory_stock_tracker_logo.webp",
-    logoAlt: "Inventory Stock Tracker app logo",
-    cta: "View product",
+      "Browser-based PDF toolkit to convert, edit, compress, and merge documents. Files stay on your device—100% private.",
+    bullets: ["No upload", "Edit & convert", "Mobile + web"],
+    href: "https://www.teenypdf.com/",
+    logo: "/teenypdf/teenypdf_logo.png",
+    logoAlt: "TeenyPDF logo",
+    logoWidth: 1024,
+    logoHeight: 1024,
+    cta: "Try TeenyPDF",
+    external: true,
     logoClassName: "h-24 w-24 md:h-28 md:w-28",
+    secondaryCta: {
+      label: "Try Mobile App",
+      href: "https://play.google.com/store/apps/details?id=com.teenypdf.www",
+      external: true,
+    },
   },
   {
     id: "easy-invoice-mobile",
@@ -62,22 +75,5 @@ export const latestReleases: LatestRelease[] = [
     cta: "Try web version",
     external: true,
     logoClassName: "h-16 w-auto md:h-20",
-  },
-  {
-    id: "sandbox",
-    name: "SANDBOX",
-    tag: "Web app",
-    headline: "Honest Startup Feedback. No Sugar-Coating.",
-    description:
-      "Paste your website or app store URL and get blunt, useful feedback from founders who have been there.",
-    bullets: ["Startup reviews", "URL feedback", "Open source"],
-    href: "https://www.sandboxbd.com/",
-    logo: "/images/sandbox_logo.webp",
-    logoAlt: "SANDBOXBD logo",
-    logoWidth: 446,
-    logoHeight: 146,
-    cta: "Try SANDBOX",
-    external: true,
-    logoClassName: "h-14 w-auto md:h-16",
   },
 ];
