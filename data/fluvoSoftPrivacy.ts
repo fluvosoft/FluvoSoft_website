@@ -1,11 +1,18 @@
 import { kyotoPrivacySections } from "@/data/kyotoPrivacy";
 import { teenyPdfPrivacySections } from "@/data/teenyPdfPrivacy";
 
+export type LegalDocLink = {
+  href: string;
+  label: string;
+  external?: boolean;
+};
+
 export type PrivacyDocArticle = {
   id: string;
   title: string;
   paragraphs?: string[];
   bullets?: string[];
+  links?: LegalDocLink[];
 };
 
 export type PrivacyDocChapter = {
@@ -351,7 +358,9 @@ export const privacyDocChapters: PrivacyDocChapter[] = [
         paragraphs: [
           `For privacy questions, data requests, or concerns, contact ${fluvoSoftPrivacyMeta.companyName} at ${fluvoSoftPrivacyMeta.contactEmail}.`,
           `${fluvoSoftPrivacyMeta.companyName}, ${fluvoSoftPrivacyMeta.companyLocation}.`,
+          "Use of our apps and paid features is also covered by our Terms of Use.",
         ],
+        links: [{ href: "/terms", label: "Read the Terms of Use" }],
       },
     ],
   },

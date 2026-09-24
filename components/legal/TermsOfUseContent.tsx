@@ -1,27 +1,22 @@
 import Link from "next/link";
-import { fluvoSoftPrivacyMeta } from "@/data/fluvoSoftPrivacy";
-import PrivacyPolicyDoc from "@/components/legal/PrivacyPolicyDoc";
-import {
-  PrivacyAtAGlance,
-  PrivacyWhatThisCovers,
-} from "@/components/legal/PrivacyPolicyOverview";
+import { fluvoSoftTermsMeta, termsDocArticleIds, termsDocChapters } from "@/data/fluvoSoftTerms";
+import LegalPolicyDoc from "@/components/legal/LegalPolicyDoc";
+import { TermsAtAGlance, TermsWhatThisCovers } from "@/components/legal/TermsOfUseOverview";
 
-export default function PrivacyPolicyContent() {
+export default function TermsOfUseContent() {
   return (
     <>
-      {/* Hero */}
       <section className="px-6 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-container text-center">
           <h1 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-            Privacy Policy
+            Terms of Use
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-accent lg:text-xl">
-            Plain-language overview of how {fluvoSoftPrivacyMeta.companyName} handles your
-            information across our website, apps, and services.
+            Plain-language terms for FluvoSoft apps and services, including subscriptions and
+            purchases.
           </p>
           <p className="mt-4 text-sm text-accent">
-            Effective {fluvoSoftPrivacyMeta.effectiveDate} · Last updated{" "}
-            {fluvoSoftPrivacyMeta.lastUpdated}
+            Last updated: {fluvoSoftTermsMeta.lastUpdated}
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
@@ -31,52 +26,55 @@ export default function PrivacyPolicyContent() {
               At a glance
             </Link>
             <Link
-              href="#full-policy"
+              href="#full-terms"
               className="inline-flex items-center justify-center rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-white no-underline transition hover:bg-cta/90"
             >
-              Full policy
+              Full terms
             </Link>
             <Link
-              href="/terms"
+              href="/privacy"
               className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-foreground no-underline transition hover:border-cta/50 hover:text-cta"
             >
-              Terms of Use
+              Privacy Policy
             </Link>
           </div>
         </div>
       </section>
 
-      <PrivacyAtAGlance />
-      <PrivacyWhatThisCovers />
+      <TermsAtAGlance />
+      <TermsWhatThisCovers />
 
-      {/* Documentation-style full policy */}
       <section
-        id="full-policy"
+        id="full-terms"
         className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20"
-        aria-labelledby="privacy-doc-heading"
+        aria-labelledby="terms-doc-heading"
       >
-        <h2 id="privacy-doc-heading" className="sr-only">
-          Full privacy policy
+        <h2 id="terms-doc-heading" className="sr-only">
+          Full terms of use
         </h2>
-        <PrivacyPolicyDoc />
+        <LegalPolicyDoc
+          chapters={termsDocChapters}
+          articleIds={termsDocArticleIds}
+          heading="Full terms"
+          intro="Structured like product documentation — use the table of contents to jump to any section, or read straight through."
+          navLabel="Terms of Use sections"
+        />
       </section>
 
-      {/* Contact */}
       <section className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-container text-center">
           <h2 className="text-2xl font-medium text-foreground md:text-3xl">
-            Questions about privacy?
+            Questions about these terms?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-accent">
-            Reach out for access requests, corrections, account deletion, or general privacy
-            inquiries.
+            Reach out about subscriptions, purchases, or anything else in these Terms of Use.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
-              href={`mailto:${fluvoSoftPrivacyMeta.contactEmail}`}
+              href={`mailto:${fluvoSoftTermsMeta.contactEmail}`}
               className="inline-flex items-center justify-center rounded-full bg-cta px-8 py-3.5 text-sm font-medium text-white no-underline transition hover:bg-cta/90"
             >
-              {fluvoSoftPrivacyMeta.contactEmail}
+              {fluvoSoftTermsMeta.contactEmail}
             </a>
             <Link
               href="/"
@@ -85,10 +83,10 @@ export default function PrivacyPolicyContent() {
               Back to home
             </Link>
             <Link
-              href="/terms"
+              href="/privacy"
               className="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-3.5 text-sm font-medium text-foreground no-underline transition hover:border-cta/50 hover:text-cta"
             >
-              Terms of Use
+              Privacy Policy
             </Link>
           </div>
         </div>

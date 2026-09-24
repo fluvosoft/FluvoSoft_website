@@ -10,6 +10,7 @@ const staticRoutes: { path: string; priority: number; changeFrequency: MetadataR
   { path: "/kyoto-habit-tracker", priority: 0.9, changeFrequency: "weekly" },
   { path: "/about", priority: 0.8, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/terms", priority: 0.8, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
   { path: "/security", priority: 0.7, changeFrequency: "monthly" },
   { path: "/careers", priority: 0.7, changeFrequency: "monthly" },

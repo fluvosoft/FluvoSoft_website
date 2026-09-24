@@ -134,10 +134,10 @@ export default function Footer() {
             <Link href="/privacy" className="text-sm text-accent hover:text-foreground">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-sm text-accent hover:text-foreground">
+            <Link href="/terms" className="text-sm text-accent hover:text-foreground">
               Terms of Use
             </Link>
-            <Link href="#" className="text-sm text-accent hover:text-foreground">
+            <Link href="/terms" className="text-sm text-accent hover:text-foreground">
               User Agreement
             </Link>
           </div>

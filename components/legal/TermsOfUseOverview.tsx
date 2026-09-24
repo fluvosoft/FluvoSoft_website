@@ -1,10 +1,9 @@
 import Link from "next/link";
 import {
-  privacyHighlights,
-  privacyScopeItems,
-  type PrivacyHighlightIcon,
-  type PrivacyScopeIcon,
-} from "@/data/fluvoSoftPrivacy";
+  termsHighlights,
+  termsScopeItems,
+} from "@/data/fluvoSoftTerms";
+import type { PrivacyHighlightIcon, PrivacyScopeIcon } from "@/data/fluvoSoftPrivacy";
 
 function HighlightIcon({ icon }: { icon: PrivacyHighlightIcon }) {
   const className = "h-5 w-5 text-cta";
@@ -71,32 +70,32 @@ function ScopeIcon({ icon }: { icon: PrivacyScopeIcon }) {
   }
 }
 
-export function PrivacyAtAGlance() {
+export function TermsAtAGlance() {
   return (
     <section
       id="at-a-glance"
       className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20"
-      aria-labelledby="privacy-glance-heading"
+      aria-labelledby="terms-glance-heading"
     >
       <div className="mx-auto max-w-container">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-cta">Summary</p>
             <h2
-              id="privacy-glance-heading"
+              id="terms-glance-heading"
               className="mt-2 text-2xl font-medium text-foreground md:text-3xl"
             >
               At a glance
             </h2>
             <p className="mt-3 max-w-xl text-accent">
-              Four principles that guide how we handle your information.
+              Four points that sum up how these terms work.
             </p>
           </div>
           <Link
-            href="#full-policy"
+            href="#full-terms"
             className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-cta no-underline transition hover:text-cta/80"
           >
-            Read full policy
+            Read full terms
             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -105,7 +104,7 @@ export function PrivacyAtAGlance() {
 
         <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent">
           <div className="grid divide-white/10 sm:grid-cols-2 sm:divide-x sm:divide-y lg:grid-cols-4 lg:divide-y-0">
-            {privacyHighlights.map((item) => (
+            {termsHighlights.map((item) => (
               <div
                 key={item.id}
                 className="group flex flex-col border-b border-white/10 p-6 transition last:border-b-0 hover:bg-white/[0.02] sm:border-b-0 lg:border-r lg:last:border-r-0"
@@ -126,42 +125,33 @@ export function PrivacyAtAGlance() {
   );
 }
 
-export function PrivacyWhatThisCovers() {
+export function TermsWhatThisCovers() {
   return (
     <section
       id="what-this-covers"
       className="border-t border-white/10 px-6 py-16 lg:px-8 lg:py-20"
-      aria-labelledby="privacy-scope-heading"
+      aria-labelledby="terms-scope-heading"
     >
       <div className="mx-auto max-w-container">
         <div className="lg:grid lg:grid-cols-[minmax(0,340px)_1fr] lg:gap-12 xl:gap-16">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <p className="text-xs font-semibold uppercase tracking-wider text-cta">Scope</p>
             <h2
-              id="privacy-scope-heading"
+              id="terms-scope-heading"
               className="mt-2 text-2xl font-medium text-foreground md:text-3xl"
             >
               What this covers
             </h2>
             <p className="mt-4 leading-relaxed text-accent">
-              This Privacy Policy applies whenever you interact with FluvoSoft online or through
-              our products and services.
+              These Terms of Use apply whenever you use FluvoSoft apps, websites, or paid
+              features.
             </p>
             <div className="mt-6 rounded-xl border border-cta/20 bg-cta/5 px-4 py-4">
               <p className="text-sm leading-relaxed text-accent">
-                <span className="font-medium text-foreground">Note:</span> Some apps include their
-                own in-product privacy sections. Where those exist, they supplement this policy for
-                that product. See the dedicated{" "}
-                <Link
-                  href="#kyoto-habit-tracker"
-                  className="font-medium text-cta no-underline hover:underline"
-                >
-                  KYOTO Habit Tracker
-                </Link>{" "}
-                chapter in the full policy below. Use of our apps and purchases is also covered by
-                our{" "}
-                <Link href="/terms" className="font-medium text-cta no-underline hover:underline">
-                  Terms of Use
+                <span className="font-medium text-foreground">Note:</span> How we collect and
+                use information is explained in our{" "}
+                <Link href="/privacy" className="font-medium text-cta no-underline hover:underline">
+                  Privacy Policy
                 </Link>
                 .
               </p>
@@ -169,7 +159,7 @@ export function PrivacyWhatThisCovers() {
           </div>
 
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-0">
-            {privacyScopeItems.map((item) => (
+            {termsScopeItems.map((item) => (
               <li key={item.id}>
                 <article className="flex h-full gap-4 rounded-xl border border-white/10 bg-dashboard-card p-5 transition hover:border-cta/25 hover:bg-white/[0.02]">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-cta/10 ring-1 ring-cta/20">

@@ -88,13 +88,13 @@ export default function EasyInvoiceFooter() {
               Privacy Policy
             </Link>
             <Link
-              href="/"
+              href="/terms"
               className="text-sm text-white/75 no-underline transition hover:text-ei-lime"
             >
               Terms of Use
             </Link>
             <Link
-              href="/"
+              href="/terms"
               className="text-sm text-white/75 no-underline transition hover:text-ei-lime"
             >
               User Agreement

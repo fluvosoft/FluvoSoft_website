@@ -88,13 +88,13 @@ export default function ResumeBuilderFooter() {
               Privacy Policy
             </Link>
             <Link
-              href="/"
+              href="/terms"
               className="text-sm text-white/75 no-underline transition hover:text-rb-sky"
             >
               Terms of Use
             </Link>
             <Link
-              href="/"
+              href="/terms"
               className="text-sm text-white/75 no-underline transition hover:text-rb-sky"
             >
               User Agreement
