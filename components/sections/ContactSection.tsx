@@ -10,21 +10,12 @@ import BookingCalendar, {
 } from "@/components/contact/BookingCalendar";
 
 const SERVICES = [
-  "Custom Software Development",
-  "Mobile App Development",
-  "Blockchain Solutions",
-  "AI & Automation",
-  "SaaS Product Development",
-  "Consulting / Discovery Call",
+  "Feedback or bug report",
+  "Feature request",
+  "Partnership",
+  "Press & media",
+  "Careers",
   "Other",
-];
-
-const BUDGETS = [
-  "Under $5,000",
-  "$5,000 – $15,000",
-  "$15,000 – $50,000",
-  "$50,000+",
-  "Not sure yet",
 ];
 
 const selectClassName =
@@ -110,7 +101,7 @@ export default function ContactSection() {
     const meetingSlot = formatBookingSlot(booking);
     const message = [
       `Preferred call: ${meetingSlot}`,
-      formData.service ? `Service: ${formData.service}` : null,
+      formData.service ? `Topic: ${formData.service}` : null,
       formData.location ? `Location: ${formData.location}` : null,
       formData.budget ? `Budget: ${formData.budget}` : null,
       "",
@@ -126,7 +117,7 @@ export default function ContactSection() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          subject: `Project inquiry${formData.service ? `: ${formData.service}` : ""}`,
+          subject: `Website message${formData.service ? `: ${formData.service}` : ""}`,
           message,
           service: formData.service,
           location: formData.location,
@@ -141,7 +132,7 @@ export default function ContactSection() {
         throw new Error(data?.message || "Failed");
       }
 
-      setFeedback("Project details sent. We will confirm your call time by email soon.");
+      setFeedback("Message sent. We will get back to you by email soon.");
       setFormData({
         name: "",
         email: "",
@@ -230,9 +221,9 @@ export default function ContactSection() {
 
             {/* Project form */}
             <div className="p-6 md:p-8">
-              <p className="text-xs font-medium uppercase tracking-wider text-cta">Tell me about your project</p>
+              <p className="text-xs font-medium uppercase tracking-wider text-cta">Get in touch</p>
               <h3 className="mt-2 text-2xl font-medium tracking-tight text-foreground md:text-3xl">
-                Have a project idea in mind?
+                Questions, feedback or ideas?
               </h3>
 
               {booking ? (
@@ -313,7 +304,7 @@ export default function ContactSection() {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="service" className="block text-xs font-medium uppercase tracking-wider text-foreground">
-                      Service <span className="text-cta">*</span>
+                      Topic <span className="text-cta">*</span>
                     </label>
                     <select
                       id="service"
@@ -323,7 +314,7 @@ export default function ContactSection() {
                       value={formData.service}
                       onChange={(e) => setFormData((prev) => ({ ...prev, service: e.target.value }))}
                     >
-                      <option value="">Select a service</option>
+                      <option value="">Select a topic</option>
                       {SERVICES.map((service) => (
                         <option key={service} value={service}>
                           {service}
@@ -349,29 +340,8 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label htmlFor="budget" className="block text-xs font-medium uppercase tracking-wider text-foreground">
-                    Budget (USD) <span className="text-cta">*</span>
-                  </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    className={selectClassName}
-                    required
-                    value={formData.budget}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, budget: e.target.value }))}
-                  >
-                    <option value="">Select a budget range</option>
-                    {BUDGETS.map((budget) => (
-                      <option key={budget} value={budget}>
-                        {budget}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
                   <label htmlFor="about" className="block text-xs font-medium uppercase tracking-wider text-foreground">
-                    About the project <span className="text-cta">*</span>
+                    Message <span className="text-cta">*</span>
                   </label>
                   <textarea
                     id="about"
@@ -387,7 +357,7 @@ export default function ContactSection() {
                 {feedback ? <p className="text-sm text-accent">{feedback}</p> : null}
 
                 <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send project details"}
+                  {isSubmitting ? "Sending..." : "Send message"}
                 </Button>
               </form>
             </div>

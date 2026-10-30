@@ -5,7 +5,7 @@ import BlogExperience from "@/components/blog/BlogExperience";
 import { blogPage } from "@/data/resourcesPages";
 
 export const metadata: Metadata = {
-  title: "Blog | FluvoSoft",
+  title: "Blog",
   description: blogPage.metaDescription,
   keywords: blogPage.keywords,
   openGraph: {

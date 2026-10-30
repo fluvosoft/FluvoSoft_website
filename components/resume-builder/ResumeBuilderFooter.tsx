@@ -22,12 +22,12 @@ export default function ResumeBuilderFooter() {
               <span className="font-rb-heading text-lg font-semibold">FluvoSoft</span>
             </Link>
             <p className="mt-2 text-xs font-medium uppercase tracking-wider text-rb-sky">
-              Venture catalysts studio
+              Apps &amp; automation venture studio
             </p>
             <p className="mt-3 text-sm text-white/75">
               FluvoSoft Ltd.
               <br />
-              Delaware, United States
+              Dhaka, Bangladesh
             </p>
           </div>
 

@@ -23,8 +23,8 @@ const pillars = [
   {
     num: "01",
     title: "Product",
-    body: "Launches and roadmap notes for Easy Invoice and Inventory Stock Tracker.",
-    href: "/blog/easy-invoice-free-mobile-invoicing",
+    body: "Launches and notes for OneThing, Easy Invoice and Inventory Stock Tracker.",
+    href: "/blog/onething-sticky-note-widget-android",
   },
   {
     num: "02",
@@ -34,15 +34,15 @@ const pillars = [
   },
   {
     num: "03",
-    title: "Engineering",
-    body: "Secure APIs, validation, rate limits, and observability in practice.",
-    href: "/blog/building-secure-apis-saas-client-platforms",
+    title: "Guides",
+    body: "Convert JPG to PDF privately, without uploading your files.",
+    href: "/blog/convert-jpg-to-pdf-without-uploading",
   },
   {
     num: "04",
     title: "Company",
-    body: "How FluvoSoft operates as a venture catalysts studio.",
-    href: "/blog/what-we-mean-by-venture-catalysts-studio",
+    body: "What an app venture studio is and how FluvoSoft builds products.",
+    href: "/blog/what-is-an-app-venture-studio",
   },
 ];
 

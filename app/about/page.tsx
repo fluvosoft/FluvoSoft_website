@@ -4,21 +4,21 @@ import Footer from "@/components/layout/Footer";
 import AboutExperience from "@/components/about/AboutExperience";
 
 export const metadata: Metadata = {
-  title: "About FluvoSoft - Venture Catalysts Studio | Our Story, Mission & Values",
+  title: "About FluvoSoft - Apps & Automation Venture Studio | Our Story, Mission & Values",
   description:
-    "About FluvoSoft venture catalysts studio. Our story, mission, vision, and values. Building smart, safe, and reliable software. 50+ projects, 95% client retention. Delaware C-Corp, United States.",
+    "FluvoSoft is an apps and automation venture studio that builds its own products, including TeenyPDF, OneThing and Easy Invoice. 500+ app downloads and 7,000+ website visitors. Our story, mission and values.",
   keywords: [
     "About FluvoSoft",
     "FluvoSoft story",
     "technology company",
     "software company USA",
-    "Delaware C-Corp software company",
+    "app venture studio",
     "mission vision values",
   ],
   openGraph: {
-    title: "About FluvoSoft - Venture Catalysts Studio",
+    title: "About FluvoSoft - Apps & Automation Venture Studio",
     description:
-      "Our story, mission, vision, and values. Building smart, safe, and reliable software that helps businesses everywhere.",
+      "An apps and automation venture studio building its own products: TeenyPDF, OneThing, Easy Invoice and more.",
     url: "/about",
   },
   alternates: {

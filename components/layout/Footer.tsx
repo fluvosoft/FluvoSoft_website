@@ -60,23 +60,32 @@ export default function Footer() {
               <span className="text-lg font-medium">FluvoSoft</span>
             </Link>
             <p className="mt-2 text-xs font-medium uppercase tracking-wider text-cta">
-              Venture catalysts studio
+              Apps &amp; automation venture studio
             </p>
             <p className="mt-3 text-sm text-accent">
               FluvoSoft Ltd.
               <br />
-              Delaware, United States
+              Dhaka, Bangladesh
             </p>
             <div className="mt-4 flex gap-3">
-              <Link href="#" className="text-sm text-accent hover:text-foreground" aria-label="Connect">
-                Connect with us
-              </Link>
+              <a href="https://www.linkedin.com/company/fluvo-soft" target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:text-foreground">
+                LinkedIn
+              </a>
+              <a href="https://www.crunchbase.com/organization/fluvosoft" target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:text-foreground">
+                Crunchbase
+              </a>
+              <a href="https://play.google.com/store/apps/dev?id=8673019455685564114" target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:text-foreground">
+                Google Play
+              </a>
             </div>
           </div>
           <div className="flex min-w-[120px] flex-col gap-3">
             <h4 className="text-sm font-medium text-foreground">Company</h4>
             <Link href="/about" className="text-sm text-accent hover:text-foreground">
               About us
+            </Link>
+            <Link href="/investors" className="text-sm text-accent hover:text-foreground">
+              Investors
             </Link>
             <Link href="/contact" className="text-sm text-accent hover:text-foreground">
               Contact us

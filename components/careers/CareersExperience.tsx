@@ -177,7 +177,7 @@ export default function CareersExperience() {
             segments={[
               { text: "We are FluvoSoft,", className: "font-normal text-careers-text" },
               {
-                text: "a venture catalysts studio.",
+                text: "an apps & automation venture studio.",
                 className: "font-instrument-serif italic text-careers-text",
               },
               {

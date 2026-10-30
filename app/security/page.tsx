@@ -5,7 +5,7 @@ import ResourcePage from "@/components/resources/ResourcePage";
 import { securityPage } from "@/data/resourcesPages";
 
 export const metadata: Metadata = {
-  title: "Security | FluvoSoft",
+  title: "Security",
   description: securityPage.metaDescription,
   keywords: securityPage.keywords,
   openGraph: {

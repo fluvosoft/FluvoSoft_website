@@ -145,8 +145,8 @@ export const blogPosts: BlogPost[] = [
       "process improvement software",
       "reduce manual work",
     ],
-    relatedHref: "/automation",
-    relatedLabel: "Explore Automation",
+    relatedHref: "/",
+    relatedLabel: "See our products",
     sections: [
       {
         heading: "Automation is a diagnosis, not a trend",
@@ -187,60 +187,44 @@ export const blogPosts: BlogPost[] = [
         heading: "5. Growth makes the current process break",
         paragraphs: [
           "A process that works at ten orders a day may collapse at fifty. If hiring is the only way you scale a workflow, ask whether parts of the work are rules-based. Automation is often cheaper than another headcount for pure throughput tasks—and it frees people for judgment-heavy work.",
-          "Ready does not mean automate everything. It means pick one high-friction path, measure baseline time and error, implement a controlled change, and expand. FluvoSoft’s automation practice focuses on that discipline: discovery, prioritization, implementation, and handoff so your team owns the system after go-live.",
+          "Ready does not mean automate everything. It means pick one high-friction path, measure baseline time and error, implement a controlled change, and expand. That is the same discipline we apply inside our own products: Easy Invoice, for example, automates the follow-through of invoicing so small businesses don't have to.",
         ],
       },
     ],
   },
   {
-    slug: "what-we-mean-by-venture-catalysts-studio",
-    title: "What we mean by venture catalysts studio",
+    slug: "what-is-an-app-venture-studio",
+    title: "What is an app venture studio? How FluvoSoft builds products",
     description:
-      "How FluvoSoft combines product building, client delivery, and long-term technology partnerships.",
+      "Why we build and run our own apps instead of taking client projects, and how a small studio ships six products.",
     tag: "Company",
-    publishedAt: "2026-03-18",
-    readingTime: "8 min read",
+    publishedAt: "2026-10-30",
+    readingTime: "6 min read",
     metaDescription:
-      "FluvoSoft is a venture catalysts studio: we ship SaaS products like Easy Invoice, deliver custom software and blockchain solutions, and partner with businesses for long-term technology growth.",
-    keywords: [
-      "venture catalysts studio",
-      "FluvoSoft",
-      "software studio",
-      "product studio",
-      "custom software development company",
-      "SaaS product studio",
-      "blockchain development partner",
-      "technology consulting studio",
-    ],
+      "FluvoSoft is an app venture studio: we design, launch and run our own apps like TeenyPDF, OneThing and Easy Invoice. Learn how the studio model works and why it matters.",
+    keywords: ["app venture studio", "what is a venture studio", "indie app studio", "bootstrapped app studio", "product studio", "FluvoSoft"],
     relatedHref: "/about",
     relatedLabel: "About FluvoSoft",
     sections: [
       {
-        heading: "Not only an agency. Not only a product company.",
+        heading: "A studio that builds its own products",
         paragraphs: [
-          "FluvoSoft describes itself as a venture catalysts studio because the work spans both sides of modern software: we build and ship our own products, and we partner with clients on ambitious delivery. Agencies often stop at project handoff. Pure product companies often ignore bespoke enterprise needs. We sit in the middle on purpose.",
-          "That dual motion shapes culture and hiring. Engineers learn from real users of Easy Invoice and Inventory Stock Tracker while also solving client constraints in blockchain, automation, SaaS, and custom development. The result is a studio that stays sharp on craft and grounded in commercial outcomes.",
+          "A venture studio is a company that repeatedly creates new products in-house, using one shared team, process and infrastructure. Instead of taking client projects, the studio picks problems, builds products to solve them, and keeps the ones that work.",
+          "FluvoSoft works this way. From Dhaka, our team designs, ships and maintains a family of apps: TeenyPDF for private PDF tools, OneThing for single-note focus, Easy Invoice for small-business invoicing, plus Inventory Stock Tracker, KYOTO Habit Tracker and Resume Builder."
         ],
       },
       {
-        heading: "Products as proof, services as partnership",
+        heading: "Why small, focused apps",
         paragraphs: [
-          "Shipping products forces accountability: release quality, support, privacy, store listings, and roadmap honesty. Those muscles transfer to client work. When we propose an architecture or a delivery plan, it is informed by systems we operate ourselves—not only slide decks.",
-          "Client engagements, in turn, expose new domains and scale problems that feed product insight. A warehouse automation conversation may sharpen how we think about inventory UX. A SaaS security review may harden defaults across our stack. Catalyst means we accelerate both the client’s venture and our own.",
+          "Each product does one job well. Small scope means we can launch quickly, learn from real users and improve every month. It also keeps the apps fast, private and easy to understand.",
+          "Shared building blocks, such as our design system, analytics and release process, mean every new product starts further ahead than the last."
         ],
       },
       {
-        heading: "How we work with teams",
+        heading: "Traction so far",
         paragraphs: [
-          "Partnerships start with clarity: goals, constraints, success metrics, and what “done” means for the first milestone. We favor shipping working software in iterations over multi-month big bangs. Documentation, security practices, and maintainable code are part of delivery—not optional extras.",
-          "Whether you need a mobile invoice app recommendation, a blockchain proof of concept, or a custom platform, the studio model means you get a team that thinks in products and systems. Explore About FluvoSoft for mission, leadership, and values—and Contact us when you are ready to start a conversation.",
-        ],
-      },
-      {
-        heading: "Where we are headed",
-        paragraphs: [
-          "We continue investing in FluvoSoft Lab and R&D so experiments can become products. We continue serving clients who need reliable engineering partners. And we keep the bar high on communication: clear writing, honest estimates, and outcomes you can measure.",
-          "Venture catalysts is not a slogan. It is how we choose work, how we structure teams, and how we decide what to build next.",
+          "Our apps have passed 500 downloads on Google Play, and our websites have welcomed more than 7,000 visitors, most of them from the United States. We publish on the web and Android, and every product is built and run by our own team.",
+          "If you're a user, partner or investor interested in what we're building, explore our products or get in touch through the contact form."
         ],
       },
     ],
@@ -299,61 +283,73 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "building-secure-apis-saas-client-platforms",
-    title: "Building secure APIs for SaaS and client platforms",
+    slug: "onething-sticky-note-widget-android",
+    title: "OneThing: a sticky note widget for your Android home and lock screen",
     description:
-      "Authentication, validation, rate limits, and observability patterns we use across engagements.",
-    tag: "Engineering",
-    publishedAt: "2026-01-22",
-    readingTime: "12 min read",
+      "Meet OneThing, the Android app that keeps a single note on your home and lock screen so you focus on one task at a time.",
+    tag: "Product",
+    publishedAt: "2026-10-29",
+    readingTime: "5 min read",
     metaDescription:
-      "Engineering guide from FluvoSoft: secure API design for SaaS and client platforms—authentication, input validation, rate limiting, observability, and secure development practices.",
-    keywords: [
-      "secure API design",
-      "SaaS API security",
-      "API authentication best practices",
-      "rate limiting APIs",
-      "API validation",
-      "observability for APIs",
-      "FluvoSoft engineering",
-      "secure software development",
-    ],
-    relatedHref: "/security",
-    relatedLabel: "Read Security practices",
+      "OneThing is a free sticky note widget for Android. Keep one note on your home screen and lock screen, style it your way and archive it when done. No account, no tracking.",
+    keywords: ["sticky note widget android", "home screen notes widget", "lock screen notes app", "one task at a time app", "minimalist notes app", "OneThing app"],
+    relatedHref: "https://play.google.com/store/apps/details?id=com.fluvosoft.onething",
+    relatedLabel: "Get OneThing on Google Play",
     sections: [
       {
-        heading: "APIs are the attack surface and the product",
+        heading: "Why one note?",
         paragraphs: [
-          "Modern SaaS and client platforms expose value through APIs: mobile apps, partner integrations, web dashboards, and background jobs all depend on them. That makes API security inseparable from product quality. A broken auth check is a data breach; a missing rate limit is an outage; silent failures without logs are unsolvable incidents.",
-          "At FluvoSoft we treat secure API design as a default for Easy Invoice backends, Inventory Stock Tracker services, and client platforms. Below are patterns we reuse: authentication, validation, rate limiting, and observability—paired with process habits from our Security page.",
+          "To-do lists grow until they stop being useful. OneThing does the opposite: you can only have one active note. It sits on your home screen widget and your lock screen, so the most important task is always in front of you.",
+          "When you finish, archive the note and the slot is free for the next one."
         ],
       },
       {
-        heading: "Authentication and authorization",
+        heading: "Style your widget",
         paragraphs: [
-          "Prefer proven providers and protocols over homemade crypto. Use short-lived tokens where appropriate, enforce HTTPS, and separate authentication (who you are) from authorization (what you can do). Role-based checks belong on the server—never only in the client UI.",
-          "For user-facing apps, session persistence must still revoke correctly on password reset or account deletion. For service-to-service calls, use scoped credentials and rotate secrets. Least privilege is not optional when one compromised key can read an entire collection.",
+          "Pick backgrounds, fonts, text size and color, with a live preview while you edit. Choose sans, serif, mono, rounded or handwritten styles so the widget fits your home screen."
         ],
       },
       {
-        heading: "Validation and abuse resistance",
+        heading: "Private by design",
         paragraphs: [
-          "Validate every input at the boundary: types, lengths, enums, and business rules. Reject early with clear errors that do not leak internals. Honeypot fields and minimum form timing can reduce obvious bot noise on public endpoints without harming real users.",
-          "Rate limits per IP and per user protect expensive operations—login, password reset, contact forms, and report generation. Combine limits with monitoring so you see spikes before users feel them. Idempotency keys help when clients retry payments or create resources under flaky networks.",
+          "OneThing needs no account and has no cloud sync or tracking. Your notes stay on your device, and archived notes keep their dates so you can look back at what you finished.",
+          "OneThing is available now on Google Play for Android."
+        ],
+      },
+    ],
+  },
+  {
+    slug: "convert-jpg-to-pdf-without-uploading",
+    title: "How to convert JPG to PDF without uploading your files",
+    description:
+      "Most online converters upload your photos to a server. Here's how to turn images into a PDF privately with TeenyPDF.",
+    tag: "Guide",
+    publishedAt: "2026-10-28",
+    readingTime: "5 min read",
+    metaDescription:
+      "Convert JPG and images to PDF for free without uploading files to a server. TeenyPDF processes everything on your device, on the web and Android.",
+    keywords: ["jpg to pdf", "image to pdf converter", "convert jpg to pdf free", "pdf converter without upload", "private pdf tools", "TeenyPDF"],
+    relatedHref: "https://www.teenypdf.com/",
+    relatedLabel: "Try TeenyPDF",
+    sections: [
+      {
+        heading: "The problem with most online converters",
+        paragraphs: [
+          "Many free JPG-to-PDF sites upload your files to their servers before converting them. For receipts, IDs, contracts or personal photos, that's a privacy risk you don't need to take."
         ],
       },
       {
-        heading: "Observability and incident readiness",
+        heading: "Convert on your device with TeenyPDF",
         paragraphs: [
-          "Logs, metrics, and traces turn “it feels slow” into actionable signals. Correlate request IDs across services. Alert on error rates and latency, not only on absolute downtime. Document how to rotate keys, revoke sessions, and communicate during an incident.",
-          "Secure development lifecycle habits—code review, dependency monitoring, environment separation—reduce the chance that a vulnerable library or a debug endpoint reaches production. Security is continuous, not a one-time audit.",
+          "TeenyPDF runs the conversion on your own device, so your files never leave it. Open teenypdf.com or the Android app, choose your images, set their order and export a single PDF.",
+          "The same toolkit can merge, compress, edit and convert PDFs, all without uploading."
         ],
       },
       {
-        heading: "Apply this to your next SaaS milestone",
+        heading: "Tips for a clean PDF",
         paragraphs: [
-          "If you are shipping a new API surface, checklist auth, validation, rate limits, and observability before marketing launch. If you already have traffic, start with the highest-risk endpoints: authentication, file upload, admin actions, and anything that touches PII or payments.",
-          "FluvoSoft can help design and implement these patterns as part of custom development or SaaS engagements. Read our Security overview for company practices, then contact us if you want a concrete review of your API surface.",
+          "Crop and straighten photos first, keep them in the order you want the pages to appear, and compress the final PDF if you need to email it.",
+          "TeenyPDF is free to try on the web and on Google Play."
         ],
       },
     ],

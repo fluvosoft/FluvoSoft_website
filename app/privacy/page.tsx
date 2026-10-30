@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PrivacyPolicyContent from "@/components/legal/PrivacyPolicyContent";
+import OurAppsStrip from "@/components/product/OurAppsStrip";
 import { fluvoSoftPrivacyMeta } from "@/data/fluvoSoftPrivacy";
 import { siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | FluvoSoft",
+  title: "Privacy Policy – TeenyPDF, OneThing, Easy Invoice & More",
   description:
     "Read FluvoSoft's Privacy Policy for our website and apps, including KYOTO Habit Tracker, Easy Invoice, Resume Builder, Inventory Stock Tracker, and TeenyPDF.",
   keywords: [
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
     "data protection",
     "personal information",
     "FluvoSoft Ltd",
-    "Delaware United States",
+    "OneThing privacy",
+    "Easy Invoice privacy",
   ],
   openGraph: {
     title: "Privacy Policy | FluvoSoft",
@@ -53,6 +55,7 @@ export default function PrivacyPolicyPage() {
       />
       <Navbar />
       <main className="min-h-screen bg-background" role="main" id="main-content">
+        <OurAppsStrip />
         <PrivacyPolicyContent />
       </main>
       <div id="resources">

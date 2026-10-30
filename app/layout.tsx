@@ -15,7 +15,7 @@ const siteVerification = buildSiteVerificationMetadata();
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} - ${siteConfig.tagline} | AI, Blockchain & Custom Software`,
+    default: `${siteConfig.name} - ${siteConfig.tagline} | TeenyPDF, OneThing, Easy Invoice`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

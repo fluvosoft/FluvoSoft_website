@@ -19,17 +19,17 @@ export default function ContributionsSection() {
       <div className="mx-auto max-w-container">
         <header className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-cta">
-            Contributions
+            Team experience
           </p>
           <h2
             id="contributions-heading"
             className="mt-3 text-3xl font-medium tracking-tight text-foreground md:text-4xl lg:text-5xl"
           >
-            Contributions
+            Where our team has worked
           </h2>
           <p className="mt-4 text-base leading-relaxed text-accent md:text-lg">
-            Organizations and teams our founders have built with and contributed to
-            across products, platforms, and client work.
+            Before building FluvoSoft products, our founders shipped software with
+            these companies. That experience goes into every app we make.
           </p>
         </header>
 

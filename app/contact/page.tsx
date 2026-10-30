@@ -4,16 +4,15 @@ import Footer from "@/components/layout/Footer";
 import ContactSection from "@/components/sections/ContactSection";
 
 export const metadata: Metadata = {
-  title: "Contact Us | FluvoSoft",
+  title: "Contact Us",
   description:
     "Contact FluvoSoft for demos, consulting, support, careers, and partnerships. Email support@fluvosoft.com or send a message through our contact form.",
   keywords: [
     "contact FluvoSoft",
-    "book a demo",
+    "FluvoSoft feedback",
     "FluvoSoft support",
-    "software consulting",
+    "FluvoSoft partnership",
     "software company USA",
-    "Delaware United States",
   ],
   openGraph: {
     title: "Contact Us | FluvoSoft",

@@ -4,26 +4,20 @@ import { CAREERS_APPLY_EMAIL, careersInternRoles } from "@/data/resourcesPages";
 
 const CAREERS_PATH = "/careers";
 
-/** Target keyword clusters for FluvoSoft as a Delaware C-Corp hiring in the USA */
+/** Target keyword clusters for FluvoSoft careers (remote-friendly, US + worldwide) */
 export const careersSeoKeywords = [
   // Brand + entity
   "FluvoSoft careers",
   "FluvoSoft internship",
   "FluvoSoft intern program",
-  "FluvoSoft Delaware C-Corp",
-  "FluvoSoft software company USA",
-  // Delaware incorporation / trust signals
-  "Delaware C-Corp software company",
-  "Delaware software company careers",
-  "Delaware tech startup internship",
-  "Delaware incorporated software company",
-  "USA software company Delaware",
+  "FluvoSoft app studio careers",
+  "app studio internship",
+  "product studio jobs remote",
   // Internship intent (remote / USA)
   "remote software engineering internship USA",
   "software engineer intern remote United States",
   "full stack developer intern remote",
   "Flutter mobile developer intern",
-  "blockchain developer internship remote",
   "DevOps cloud engineering intern",
   "SaaS engineering internship",
   "unpaid software internship certificate",
@@ -35,9 +29,9 @@ export const careersSeoKeywords = [
 
 export const careersFaqs = [
   {
-    question: "Is FluvoSoft a Delaware company?",
+    question: "What does FluvoSoft do?",
     answer:
-      "Yes. FluvoSoft is incorporated as a Delaware C-Corporation in the United States. We operate as a venture catalysts studio building SaaS, mobile, blockchain, and automation products for clients worldwide.",
+      "FluvoSoft is an apps and automation venture studio based in Dhaka, Bangladesh. We build and run our own products, including TeenyPDF, OneThing and Easy Invoice, used by people in the United States and worldwide.",
   },
   {
     question: "Are FluvoSoft internships paid?",
@@ -62,13 +56,13 @@ export const careersFaqs = [
 ];
 
 const careersTitle =
-  "Careers & Internships | FluvoSoft – Delaware C-Corp Software Studio";
+  "Careers & Internships | FluvoSoft – Apps & Automation Venture Studio";
 
 const careersDescription =
-  "Join FluvoSoft, a Delaware C-Corporation and venture catalysts studio. Remote-friendly software internships in full-stack, Flutter mobile, blockchain, and DevOps. Six-month, task-based program with certificate. Apply at ceo@fluvosoft.com.";
+  "Join FluvoSoft, an apps and automation venture studio. Remote-friendly software internships in full-stack, Flutter mobile and DevOps, working on real products. Six-month, task-based program with certificate. Apply at ceo@fluvosoft.com.";
 
 const careersShortDescription =
-  "Delaware C-Corp software internships — remote-friendly roles in engineering, mobile, blockchain, and cloud.";
+  "Remote-friendly internships at an app venture studio: engineering, mobile and cloud.";
 
 function absoluteUrl(path: string) {
   return `${siteConfig.url}${path.startsWith("/") ? path : `/${path}`}`;
@@ -109,7 +103,7 @@ export function buildCareersMetadata(): Metadata {
           url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: "FluvoSoft careers — Delaware C-Corp software internships",
+          alt: "FluvoSoft careers — app studio internships",
         },
       ],
     },
@@ -123,8 +117,8 @@ export function buildCareersMetadata(): Metadata {
       canonical: pageUrl,
     },
     other: {
-      "geo.region": "US-DE",
-      "geo.placename": "Delaware, United States",
+      "geo.region": "BD-13",
+      "geo.placename": "Dhaka, Bangladesh",
     },
   };
 }
@@ -189,17 +183,17 @@ export function buildCareersJsonLdGraph() {
         "@type": "Organization",
         "@id": employerId,
         name: "FluvoSoft",
-        legalName: "FluvoSoft, Inc.",
+        legalName: "FluvoSoft Ltd.",
         url: siteConfig.url,
         logo: logoUrl,
         description:
-          "FluvoSoft is a Delaware C-Corporation and venture catalysts studio building SaaS, mobile, blockchain, and automation software.",
+          "FluvoSoft is an apps and automation venture studio building its own mobile and web products.",
         foundingLocation: {
           "@type": "Place",
-          name: "Delaware, United States",
+          name: "Dhaka, Bangladesh",
         },
         areaServed: ["United States", "Worldwide"],
-        sameAs: [siteConfig.url],
+        sameAs: [siteConfig.url, ...siteConfig.sameAs],
         parentOrganization: { "@id": orgId },
       },
       {

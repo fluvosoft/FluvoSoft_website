@@ -1,40 +1,30 @@
 /**
- * Shared SEO config for FluvoSoft (USA-centric)
+ * Shared SEO config for FluvoSoft (US + worldwide audience, based in Dhaka)
  */
 export const siteConfig = {
   name: "FluvoSoft",
-  tagline: "Venture catalysts studio",
+  tagline: "Apps & Automation Venture Studio",
   description:
-    "FluvoSoft is a Delaware C-Corp venture catalysts studio. Transform your business with cutting-edge blockchain solutions, AI automation, and custom software. Blockchain development, automation, SaaS, and enterprise solutions for teams across the United States.",
+    "FluvoSoft is an apps and automation venture studio based in Dhaka, Bangladesh. We build and run our own products, including TeenyPDF, OneThing, Easy Invoice, Inventory Stock Tracker, KYOTO Habit Tracker and Resume Builder, used by people in the United States and worldwide.",
   url: "https://www.fluvosoft.com",
   locale: "en-US",
   keywords: [
     "FluvoSoft",
-    "venture catalysts",
-    "blockchain development",
-    "AI automation",
-    "custom software",
-    "SaaS",
-    "smart contracts",
-    "enterprise solutions",
-    "technology solutions",
-    "Delaware C-Corp",
-    "software company USA",
-    "United States",
+    "FluvoSoft apps",
+    "app venture studio",
+    "indie app studio",
+    "bootstrapped app studio",
+    "product studio",
+    "mobile app company",
+    "automation tools",
+    "productivity apps",
+    "TeenyPDF",
+    "OneThing sticky notes widget",
     "Easy Invoice",
     "free invoice app",
-    "mobile invoicing",
     "Inventory Stock Tracker",
-    "inventory app",
-    "stock management app",
-    "OneThing",
-    "OneThing sticky notes",
-    "sticky notes widget",
-    "home screen note widget",
-    "lock screen notes app",
-    "focus notes app",
-    "Zoho Corporation",
-    "Zoho",
+    "KYOTO Habit Tracker",
+    "Resume Builder app",
   ],
   openGraph: {
     type: "website",
@@ -45,10 +35,16 @@ export const siteConfig = {
     card: "summary_large_image",
   },
   geo: {
-    region: "US-DE",
-    placename: "Delaware, United States",
-    country: "US",
+    region: "BD-13",
+    placename: "Dhaka, Bangladesh",
+    country: "BD",
   },
+  sameAs: [
+    "https://www.linkedin.com/company/fluvo-soft",
+    "https://www.crunchbase.com/organization/fluvosoft",
+    "https://play.google.com/store/apps/dev?id=8673019455685564114",
+  ],
+  playDeveloperUrl: "https://play.google.com/store/apps/dev?id=8673019455685564114",
 };
 
 export function buildJsonLdOrganization() {
@@ -69,9 +65,15 @@ export function buildJsonLdOrganization() {
     image: logoUrl,
     address: {
       "@type": "PostalAddress",
-      addressRegion: "DE",
-      addressCountry: "US",
+      addressLocality: "Dhaka",
+      addressCountry: "BD",
     },
+    sameAs: siteConfig.sameAs,
+    founders: [
+      { "@type": "Person", name: "Md Sifat Bin Jibon", jobTitle: "CEO" },
+      { "@type": "Person", name: "Shouvick Monzur", jobTitle: "CTO" },
+    ],
+    knowsAbout: ["mobile apps", "productivity software", "workflow automation", "PDF tools", "invoicing software"],
     contactPoint: {
       "@type": "ContactPoint",
       email: "support@fluvosoft.com",

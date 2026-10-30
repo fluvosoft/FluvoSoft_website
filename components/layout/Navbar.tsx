@@ -27,20 +27,12 @@ const navLinks = [
   {
     label: "Brands",
     dropdown: [
+      { href: "/teenypdf", label: "TeenyPDF" },
+      { href: "/onething", label: "OneThing" },
       { href: "/easy-invoice", label: "Easy Invoice" },
       { href: "/inventory-stock-tracker", label: "Inventory Stock Tracker" },
       { href: "/resume-builder", label: "Resume Builder" },
       { href: "/kyoto-habit-tracker", label: "KYOTO Habit Tracker" },
-    ],
-  },
-  {
-    label: "Solutions",
-    dropdown: [
-      { href: "/blockchain", label: "Blockchain" },
-      { href: "/automation", label: "Automation" },
-      { href: "/custom-development", label: "Custom Development" },
-      { href: "/saas", label: "SaaS" },
-      { href: "/rnd", label: "R&D" },
     ],
   },
   {
@@ -50,12 +42,12 @@ const navLinks = [
       { href: "/terms", label: "Terms of Use" },
       { href: "/security", label: "Security" },
       { href: "/careers", label: "Careers" },
-      { href: "/research", label: "Research" },
       { href: "/contact", label: "Contact Us" },
       { href: "/blog", label: "Blog" },
     ],
   },
   { href: "/about", label: "About" },
+  { href: "/investors", label: "Investors" },
 ];
 
 export default function Navbar() {
@@ -64,7 +56,6 @@ export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const router = useRouter();
   const pathname = usePathname();
-  const isRnd = pathname?.startsWith("/rnd") ?? false;
 
   const closeMenus = useCallback(() => {
     setOpenDropdown(null);
@@ -106,7 +97,7 @@ export default function Navbar() {
           aria-label="FluvoSoft home"
         >
           <Image
-            src={isRnd ? "/fluvosoft_r%26d/r%26d%20logo.webp" : "/images/fluvo_logo.webp"}
+            src="/images/fluvo_logo.webp"
             alt=""
             width={140}
             height={40}
@@ -114,13 +105,7 @@ export default function Navbar() {
             priority
           />
           <span className="hidden text-lg font-medium tracking-tight lg:inline">
-            {isRnd ? (
-              <>
-                FluvoSoft <span className="rnd-logo-text font-semibold">R&amp;D</span>
-              </>
-            ) : (
-              "FluvoSoft"
-            )}
+            FluvoSoft
           </span>
         </Link>
 

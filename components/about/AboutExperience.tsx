@@ -6,32 +6,32 @@ import { ArrowUpRight } from "lucide-react";
 
 const values = [
   {
-    title: "Innovation First",
+    title: "One job, done well",
     description:
-      "We keep up with the latest technology and always look for new ways to build better solutions.",
+      "Every product solves one clear problem. We would rather ship a small tool that works than a big one that doesn't.",
   },
   {
-    title: "Client Success",
+    title: "Users first",
     description:
-      "When you succeed, we succeed. We know we did a good job when our clients are happy and growing.",
+      "We build for the people who download our apps. Reviews and feedback emails decide what we fix and build next.",
   },
   {
-    title: "Excellence",
+    title: "Ship, then improve",
     description:
-      "We do our best work every time. From writing clean code to talking with clients, we keep our standards high.",
+      "We launch early, listen closely and keep updating. A product is never finished while people are still using it.",
   },
   {
-    title: "Security & Trust",
+    title: "Private by default",
     description:
-      "We keep your data safe and build trust by being honest about how we work and building reliable software.",
+      "No forced sign-ups and no selling data. Wherever we can, your files and notes stay on your own device.",
   },
 ];
 
 const impact = [
-  { value: "50+", label: "Projects Delivered", sub: "Successfully completed projects" },
-  { value: "95%", label: "Client Retention", sub: "Long-term partnerships" },
-  { value: "10+", label: "Years Experience", sub: "Industry expertise" },
-  { value: "25+", label: "Team Members", sub: "Expert professionals" },
+  { value: "7,000+", label: "Website visitors", sub: "Across fluvosoft.com and our product sites" },
+  { value: "500+", label: "App downloads", sub: "On Google Play" },
+  { value: "6", label: "Products shipped", sub: "Built and run in-house" },
+  { value: "2", label: "Platforms", sub: "Web and Android" },
 ];
 
 const leadership = [
@@ -41,7 +41,7 @@ const leadership = [
     title: "CEO",
     image: "/images/team/md-sifat-bin-jibon.webp",
     imageAlt: "Md Sifat Bin Jibon, CEO of FluvoSoft",
-    bio: "Co-founder of FluvoSoft. Blockchain developer at R3, with experience across SaaS, Web3, and custom software. Based in Dhaka.",
+    bio: "Co-founder of FluvoSoft. Leads product and strategy across the studio. Previously a blockchain developer at R3, with experience across SaaS and mobile apps. Based in Dhaka.",
   },
   {
     name: "Shouvick Monzur",
@@ -49,7 +49,7 @@ const leadership = [
     title: "CTO",
     image: "/images/team/shouvick-monzur.webp",
     imageAlt: "Shouvick Monzur, CTO of FluvoSoft",
-    bio: "Lead software engineer with 10+ years building backends, cloud systems, and SaaS platforms. Leads FluvoSoft's technical direction.",
+    bio: "Lead software engineer with 10+ years building backends, cloud systems, and SaaS platforms. Leads engineering across FluvoSoft's apps.",
   },
 ];
 
@@ -74,18 +74,7 @@ const technologies = [
   "PostgreSQL",
   "MySQL",
   "Redis",
-  "Solidity",
-  "Web3.js",
-  "Ethers.js",
-  "Ethereum",
-  "Solana",
-  "Hyperledger",
-  "Corda",
   "Rust",
-  "Truffle",
-  "Hardhat",
-  "IPFS",
-  "MetaMask",
   "AWS",
   "Firebase",
   "Docker",
@@ -130,7 +119,7 @@ export default function AboutExperience() {
               FluvoSoft
             </h1>
             <p className="mt-8 max-w-xl text-left text-base font-medium leading-relaxed text-black/70 sm:text-lg">
-              Building smart, safe, and reliable software that helps businesses everywhere
+              A venture studio that builds and ships its own apps and automation tools, simple products that take busywork off people's plates.
             </p>
           </div>
           <div className="border-t-4 border-black bg-swiss-muted p-8 lg:border-t-0 lg:p-10">
@@ -139,7 +128,7 @@ export default function AboutExperience() {
               <div className="h-16 w-16 border-4 border-black bg-swiss-accent" />
               <div className="h-3 w-full bg-black" />
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-black/50">
-                Venture catalysts studio
+                Apps &amp; automation venture studio
               </p>
             </div>
           </div>
@@ -159,15 +148,14 @@ export default function AboutExperience() {
           </div>
           <div className="swiss-grid-pattern space-y-6 px-6 py-12 sm:px-10 lg:px-12 lg:py-16">
             <p className="max-w-2xl text-left text-base font-medium leading-relaxed text-black/75 sm:text-lg">
-              We started as a small team who love technology. Today, we work with over 50 companies
-              around the world. We build AI tools, blockchain apps, and custom software. Our focus
-              on doing great work and helping clients succeed makes us a trusted choice for
-              businesses looking for technology solutions.
+              FluvoSoft started in Dhaka as a small team of engineers who had spent years shipping
+              software for other companies. We wanted to build our own products, so we turned the
+              studio into a place where we design, launch and run our own apps.
             </p>
             <p className="max-w-2xl text-left text-base font-medium leading-relaxed text-black/75 sm:text-lg">
-              From startups to enterprise companies, we&apos;ve helped businesses transform their
-              operations with innovative technology solutions. Our commitment to excellence and
-              client success drives everything we do.
+              Today we run six products, including TeenyPDF, OneThing and Easy Invoice. Together they
+              have been downloaded 500+ times on Google Play, and our websites have welcomed more than
+              7,000 visitors. Every product is built, launched and maintained by our own team.
             </p>
           </div>
         </div>
@@ -184,8 +172,8 @@ export default function AboutExperience() {
               Our mission
             </h2>
             <p className="mt-6 text-base leading-relaxed text-black/70 sm:text-lg">
-              To build smart, safe, and reliable software that helps businesses everywhere. We make
-              new technology easy to use and affordable for companies big and small.
+              To build simple, focused apps and automation tools that take busywork off people&apos;s
+              plates, so they can spend their time on work that matters.
             </p>
           </div>
           <div className="swiss-dots bg-swiss-muted p-8 sm:p-10 lg:p-14">
@@ -196,9 +184,8 @@ export default function AboutExperience() {
               Our vision
             </h2>
             <p className="mt-6 text-base leading-relaxed text-black/70 sm:text-lg">
-              To be a world leader in helping businesses use technology better. We want to set the
-              standard for great ideas and reliable work. We see a future where every business can
-              use technology to grow and succeed.
+              A growing family of small, trusted products, each one doing a single job really well,
+              used by people and small businesses around the world.
             </p>
           </div>
         </div>
@@ -252,7 +239,7 @@ export default function AboutExperience() {
               Our impact
             </h2>
             <p className="mt-2 text-sm font-medium uppercase tracking-wide text-white/55">
-              Numbers that reflect our commitment to excellence
+              Real people using our products
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4">
@@ -285,7 +272,7 @@ export default function AboutExperience() {
               Leadership team
             </h2>
             <p className="mt-2 text-sm font-medium uppercase tracking-wide text-black/55">
-              Meet the visionaries leading FluvoSoft forward
+              The people building FluvoSoft&apos;s products
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2">
@@ -330,10 +317,10 @@ export default function AboutExperience() {
             07. Stack
           </p>
           <h2 className="mt-3 text-3xl font-black uppercase tracking-tighter sm:text-4xl md:text-5xl">
-            Our technology expertise
+            What we build with
           </h2>
           <p className="mt-2 max-w-2xl text-sm font-medium uppercase tracking-wide text-black/55">
-            We work with cutting-edge technologies to deliver the best solutions for our clients
+            The tools behind our web and mobile apps
           </p>
           <div className="mt-10 grid grid-cols-2 border-2 border-black sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {technologies.map((tech, index) => (
@@ -364,27 +351,27 @@ export default function AboutExperience() {
               08. Contact
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-tighter sm:text-4xl">
-              Ready to work together?
+              Try what we build
             </h2>
           </div>
           <div className="swiss-grid-pattern px-6 py-14 sm:px-10 lg:px-12 lg:py-20">
             <p className="max-w-xl text-left text-sm font-medium leading-relaxed text-black/70 sm:text-base">
-              Let&apos;s discuss how we can help transform your business with innovative technology
-              solutions.
+              Browse our apps, or send us feedback, ideas and partnership requests. We read every
+              message.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row">
               <Link
-                href="/#book-a-demo"
+                href="/#showcase-heading"
                 className="inline-flex h-14 items-center justify-center gap-2 border-2 border-black bg-black px-8 text-sm font-bold uppercase tracking-widest text-white no-underline transition-colors duration-150 hover:border-cta hover:bg-cta sm:h-16"
               >
-                Get in touch
+                Our products
                 <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} aria-hidden />
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex h-14 items-center justify-center border-2 border-t-0 border-black bg-white px-8 text-sm font-bold uppercase tracking-widest text-black no-underline transition-colors duration-150 hover:border-cta hover:bg-cta hover:text-white sm:h-16 sm:border-l-0 sm:border-t-2"
               >
-                Contact page
+                Contact us
               </Link>
             </div>
           </div>

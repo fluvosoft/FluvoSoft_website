@@ -3,15 +3,12 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import LaunchFeaturesSection from "@/components/sections/LaunchFeaturesSection";
-import SolutionsSection from "@/components/sections/SolutionsSection";
-import LatestReleasesSection from "@/components/sections/LatestReleasesSection";
+import WhatWeBuildSection from "@/components/sections/WhatWeBuildSection";
 import LabSection from "@/components/sections/LabSection";
-import DashboardPreview from "@/components/sections/DashboardPreview";
-import EverythingYouNeedSection from "@/components/sections/EverythingYouNeedSection";
-import QualitySection from "@/components/sections/QualitySection";
+import ProductShowcase from "@/components/sections/ProductShowcase";
+import ImpactSection from "@/components/sections/ImpactSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContributionsSection from "@/components/sections/ContributionsSection";
-import PricingSection from "@/components/sections/PricingSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 import CTASection from "@/components/sections/CTASection";
@@ -20,9 +17,9 @@ import FAQSchema from "@/components/seo/FAQSchema";
 import OneThingJsonLd from "@/components/seo/OneThingJsonLd";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} - ${siteConfig.tagline} | Blockchain, Automation & Custom Software`,
+  title: { absolute: `${siteConfig.name} – Apps & Automation Venture Studio | TeenyPDF, OneThing, Easy Invoice` },
   description:
-    "FluvoSoft venture catalysts studio. Blockchain development, AI automation, custom software, and SaaS solutions. Transform your business with secure, scalable technology. Delaware C-Corp, United States.",
+    "FluvoSoft is an apps and automation venture studio. We build and run our own products: TeenyPDF, OneThing, Easy Invoice and more. 500+ app downloads and 7,000+ website visitors.",
   openGraph: {
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,
@@ -56,16 +53,13 @@ export default function Home() {
         />
         <div className="relative z-10">
           <HeroSection />
-          <DashboardPreview />
+          <ProductShowcase />
           <LaunchFeaturesSection />
-          <SolutionsSection />
-          <LatestReleasesSection />
+          <WhatWeBuildSection />
           <LabSection />
-          <EverythingYouNeedSection />
-          <QualitySection />
+          <ImpactSection />
           <TestimonialsSection />
           <ContributionsSection />
-          <PricingSection />
           <FAQSection />
           <ContactSection />
           <CTASection />

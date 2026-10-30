@@ -27,28 +27,36 @@ export default function HeroSection() {
             </p>
             
             <h1 className="text-4xl font-bold uppercase leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl xl:text-7xl">
-              Blockchain Consulting &<br />
-              Automation Partner
+              Apps & Automation<br />
+              Venture Studio
             </h1>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-accent md:text-lg">
+              We're a venture studio that builds and ships our own apps and automation tools,
+              simple products that take busywork off your plate so you can focus on what matters.
+            </p>
           </div>
 
           {/* Vertical divider */}
           <div className="hidden h-24 w-px bg-white/10 lg:block" />
 
-          {/* Right section - Buttons (1/3 width) */}
+          {/* Right section - CTAs (1/3 width) */}
           <div className="flex flex-col gap-4 lg:w-1/3 lg:items-center lg:pl-8">
             <Link
-              href="#book-a-demo"
-              className="inline-flex w-full items-center justify-center rounded-md bg-cta px-8 py-3.5 text-sm font-medium text-white shadow-lg shadow-cta/25 transition hover:bg-cta/90 focus-visible:ring-2 focus-visible:ring-cta/50"
+              href="#latest-releases"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-md bg-cta px-8 py-3.5 text-sm font-medium text-white shadow-lg shadow-cta/25 transition hover:bg-cta/90 focus-visible:ring-2 focus-visible:ring-cta/50"
             >
-              Get Pricing
+              Explore Our Products
+              <span aria-hidden className="transition-transform group-hover:translate-y-0.5">↓</span>
             </Link>
-            <Link
-              href="#book-a-demo"
-              className="inline-flex w-full items-center justify-center rounded-md bg-cta px-8 py-3.5 text-sm font-medium text-white shadow-lg shadow-cta/25 transition hover:bg-cta/90 focus-visible:ring-2 focus-visible:ring-cta/50"
+            <a
+              href="https://play.google.com/store/apps/dev?id=8673019455685564114"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-foreground/15 px-8 py-3.5 text-sm font-medium text-foreground transition hover:border-cta hover:text-cta focus-visible:ring-2 focus-visible:ring-cta/50"
             >
-              Schedule a Consultation
-            </Link>
+              See Our Apps on Google Play
+              <span aria-hidden>↗</span>
+            </a>
           </div>
         </div>
       </div>

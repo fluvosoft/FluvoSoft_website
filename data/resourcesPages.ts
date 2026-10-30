@@ -141,7 +141,7 @@ export const careersPage: ResourcePageData = {
       id: "culture",
       title: "Intern with us",
       paragraphs: [
-        "FluvoSoft is a venture catalysts studio—we ship our own products and partner with clients on ambitious technology work. Our intern program is designed for learners who want real project exposure across SaaS, mobile, blockchain, and automation.",
+        "FluvoSoft is an apps and automation venture studio—we design, ship and run our own products. Our intern program is designed for learners who want real product experience across web, mobile and automation.",
         "Interns work on defined tasks with mentor support, build portfolio-ready outcomes, and learn how a product studio ships software from idea to delivery.",
       ],
     },
@@ -226,91 +226,6 @@ export const careersCultureParagraphs =
 
 export const careersApplyHref = careersApplyMailto("FluvoSoft Intern Program");
 
-export const researchPage: ResourcePageData = {
-  slug: "research",
-  title: "Research",
-  description:
-    "Insights from FluvoSoft on blockchain, automation, SaaS architecture, and building reliable software at scale.",
-  metaDescription:
-    "FluvoSoft research and insights on blockchain adoption, workflow automation, SaaS product design, and software engineering practices.",
-  keywords: [
-    "FluvoSoft research",
-    "blockchain insights",
-    "automation research",
-    "software engineering",
-  ],
-  sections: [
-    {
-      id: "focus",
-      title: "Research focus areas",
-      paragraphs: [
-        "We publish practical research drawn from client work and internal product development—not abstract theory. Our notes help teams evaluate technology choices, estimate effort, and avoid common pitfalls.",
-      ],
-      cards: [
-        {
-          title: "Enterprise blockchain readiness",
-          description:
-            "When consortium chains, public networks, or hybrid models make sense for supply chain, finance, and identity use cases.",
-          href: "/blockchain",
-          tag: "Blockchain",
-        },
-        {
-          title: "Automation ROI modeling",
-          description:
-            "How to quantify time saved, error reduction, and throughput gains before investing in RPA or AI-assisted workflows.",
-          href: "/automation",
-          tag: "Automation",
-        },
-        {
-          title: "SaaS multi-tenancy patterns",
-          description:
-            "Trade-offs between shared schema, isolated tenants, and per-customer deployments for B2B products.",
-          href: "/saas",
-          tag: "SaaS",
-        },
-        {
-          title: "Mobile offline-first design",
-          description:
-            "Sync strategies, conflict resolution, and UX patterns for field teams using invoicing and inventory apps.",
-          tag: "Mobile",
-        },
-      ],
-    },
-    {
-      id: "publications",
-      title: "Recent publications",
-      cards: [
-        {
-          title: "From hackathon prototype to production SaaS",
-          description:
-            "Lessons from shipping Easy Invoice and Inventory Stock Tracker—from MVP scope to store launch and user feedback loops.",
-          tag: "Case study",
-        },
-        {
-          title: "Security checklist for early-stage products",
-          description:
-            "Minimum viable controls for startups and internal tools before a full compliance program is in place.",
-          href: "/security",
-          tag: "Security",
-        },
-        {
-          title: "Custom vs. configurable software",
-          description:
-            "A decision matrix for teams choosing between bespoke builds, low-code, and packaged platforms.",
-          href: "/custom-development",
-          tag: "Strategy",
-        },
-      ],
-    },
-  ],
-  cta: {
-    title: "Collaborate on research",
-    description: "Partners and clients can co-author case studies or request deep dives on specific technology decisions.",
-    primary: { label: "Get in touch", href: "/contact" },
-    secondary: { label: "Read our blog", href: "/blog" },
-  },
-};
-
 export const blogPage: ResourcePageData = {
   slug: "blog",
   title: "Blog",
@@ -346,10 +261,10 @@ export const blogPage: ResourcePageData = {
           tag: "Automation",
         },
         {
-          title: "What we mean by venture catalysts studio",
+          title: "What is an app venture studio?",
           description:
-            "How FluvoSoft combines product building, client delivery, and long-term technology partnerships.",
-          href: "/blog/what-we-mean-by-venture-catalysts-studio",
+            "Why FluvoSoft builds and runs its own apps, and how a small studio ships six products.",
+          href: "/blog/what-is-an-app-venture-studio",
           tag: "Company",
         },
         {
@@ -360,11 +275,18 @@ export const blogPage: ResourcePageData = {
           tag: "Legal",
         },
         {
-          title: "Building secure APIs for SaaS and client platforms",
+          title: "OneThing: a sticky note widget for Android",
           description:
-            "Authentication, validation, rate limits, and observability patterns we use across engagements.",
-          href: "/blog/building-secure-apis-saas-client-platforms",
-          tag: "Engineering",
+            "Keep one note on your home and lock screen and focus on one task at a time.",
+          href: "/blog/onething-sticky-note-widget-android",
+          tag: "Product",
+        },
+        {
+          title: "How to convert JPG to PDF without uploading",
+          description:
+            "Turn images into a PDF privately with TeenyPDF, on the web or Android.",
+          href: "/blog/convert-jpg-to-pdf-without-uploading",
+          tag: "Guide",
         },
       ],
     },
@@ -378,16 +300,15 @@ export const blogPage: ResourcePageData = {
   ],
   cta: {
     title: "Have a story idea or guest post?",
-    description: "We welcome perspectives from partners, clients, and builders in our ecosystem.",
+    description: "We welcome perspectives from users, partners and builders in our ecosystem.",
     primary: { label: "Contact us", href: "/contact" },
-    secondary: { label: "Read research", href: "/research" },
+    secondary: { label: "See our products", href: "/#showcase-heading" },
   },
 };
 
 export const resourcePages = {
   security: securityPage,
   careers: careersPage,
-  research: researchPage,
   blog: blogPage,
 } as const;
 
