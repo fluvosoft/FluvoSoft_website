@@ -28,7 +28,7 @@ const values = [
 ];
 
 const impact = [
-  { value: "7,000+", label: "Website visitors", sub: "Across fluvosoft.com and our product sites" },
+  { value: "7,000+", label: "Web app users", sub: "On TeenyPDF and Easy Invoice web" },
   { value: "500+", label: "App downloads", sub: "On Google Play" },
   { value: "6", label: "Products shipped", sub: "Built and run in-house" },
   { value: "2", label: "Platforms", sub: "Web and Android" },
@@ -154,8 +154,8 @@ export default function AboutExperience() {
             </p>
             <p className="max-w-2xl text-left text-base font-medium leading-relaxed text-black/75 sm:text-lg">
               Today we run six products, including TeenyPDF, OneThing and Easy Invoice. Together they
-              have been downloaded 500+ times on Google Play, and our websites have welcomed more than
-              7,000 visitors. Every product is built, launched and maintained by our own team.
+              have been downloaded 500+ times on Google Play, and more than 7,000 people use our web
+              apps. Every product is built, launched and maintained by our own team.
             </p>
           </div>
         </div>

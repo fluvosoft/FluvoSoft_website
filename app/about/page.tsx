@@ -6,7 +6,7 @@ import AboutExperience from "@/components/about/AboutExperience";
 export const metadata: Metadata = {
   title: "About FluvoSoft - Apps & Automation Venture Studio | Our Story, Mission & Values",
   description:
-    "FluvoSoft is an apps and automation venture studio that builds its own products, including TeenyPDF, OneThing and Easy Invoice. 500+ app downloads and 7,000+ website visitors. Our story, mission and values.",
+    "FluvoSoft is an apps and automation venture studio that builds its own products, including TeenyPDF, OneThing and Easy Invoice. 500+ app downloads and 7,000+ web app users. Our story, mission and values.",
   keywords: [
     "About FluvoSoft",
     "FluvoSoft story",

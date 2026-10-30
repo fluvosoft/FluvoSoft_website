@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const stats = [
-  { value: "7,000+", label: "Website visitors", note: "across fluvosoft.com and our product sites" },
+  { value: "7,000+", label: "Web app users", note: "on TeenyPDF and Easy Invoice web" },
   { value: "500+", label: "App downloads", note: "on Google Play" },
   { value: "6", label: "Products shipped", note: "built and run in-house" },
   { value: "2", label: "Platforms", note: "Web and Android" },

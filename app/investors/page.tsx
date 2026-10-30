@@ -8,7 +8,7 @@ import { STUDIO_PRODUCTS } from "@/data/studioProducts";
 
 const title = "Investors – FluvoSoft, an Apps & Automation Venture Studio";
 const description =
-  "FluvoSoft is a bootstrapped apps and automation venture studio. Six products live, 500+ app downloads and 7,000+ website visitors. Learn about our model, traction and team.";
+  "FluvoSoft is a bootstrapped apps and automation venture studio. Six products live, 500+ app downloads and 7,000+ web app users. Learn about our model, traction and team.";
 
 export const metadata: Metadata = {
   title: { absolute: `${title}` },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const traction = [
   { v: "6", l: "Products live" },
   { v: "500+", l: "App downloads" },
-  { v: "7,000+", l: "Website visitors" },
+  { v: "7,000+", l: "Web app users" },
   { v: "2", l: "Platforms: web & Android" },
 ];
 

@@ -19,7 +19,7 @@ import OneThingJsonLd from "@/components/seo/OneThingJsonLd";
 export const metadata: Metadata = {
   title: { absolute: `${siteConfig.name} – Apps & Automation Venture Studio | TeenyPDF, OneThing, Easy Invoice` },
   description:
-    "FluvoSoft is an apps and automation venture studio. We build and run our own products: TeenyPDF, OneThing, Easy Invoice and more. 500+ app downloads and 7,000+ website visitors.",
+    "FluvoSoft is an apps and automation venture studio. We build and run our own products: TeenyPDF, OneThing, Easy Invoice and more. 500+ app downloads and 7,000+ web app users.",
   openGraph: {
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,

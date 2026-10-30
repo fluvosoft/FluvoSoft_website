@@ -223,7 +223,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Traction so far",
         paragraphs: [
-          "Our apps have passed 500 downloads on Google Play, and our websites have welcomed more than 7,000 visitors, most of them from the United States. We publish on the web and Android, and every product is built and run by our own team.",
+          "Our apps have passed 500 downloads on Google Play, and more than 7,000 people use our web apps, most of them in the United States. We publish on the web and Android, and every product is built and run by our own team.",
           "If you're a user, partner or investor interested in what we're building, explore our products or get in touch through the contact form."
         ],
       },
