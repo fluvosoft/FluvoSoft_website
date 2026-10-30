@@ -17,6 +17,7 @@ import ContactSection from "@/components/sections/ContactSection";
 import CTASection from "@/components/sections/CTASection";
 import { siteConfig } from "@/lib/seo";
 import FAQSchema from "@/components/seo/FAQSchema";
+import OneThingJsonLd from "@/components/seo/OneThingJsonLd";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} - ${siteConfig.tagline} | Blockchain, Automation & Custom Software`,
@@ -71,6 +72,7 @@ export default function Home() {
         </div>
       </main>
       <FAQSchema />
+      <OneThingJsonLd />
       <Footer />
     </>
   );

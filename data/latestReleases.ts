@@ -22,6 +22,23 @@ export interface LatestRelease {
 
 export const latestReleases: LatestRelease[] = [
   {
+    id: "onething",
+    name: "OneThing",
+    tag: "New release",
+    headline: "One Note. One Focus. Right on Your Home Screen.",
+    description:
+      "Sticky note widget for your home and lock screen. Keep one active note in view, archive it when done, then move on. No account, no tracking.",
+    bullets: ["Home & lock screen widget", "One note at a time", "No account needed"],
+    href: "https://play.google.com/store/apps/details?id=com.fluvosoft.onething",
+    logo: "/OneThing/logo.png",
+    logoAlt: "OneThing sticky notes widget app logo",
+    logoWidth: 1254,
+    logoHeight: 1254,
+    cta: "Get it on Google Play",
+    external: true,
+    logoClassName: "h-24 w-24 md:h-28 md:w-28 rounded-2xl bg-white p-2 shadow-sm",
+  },
+  {
     id: "teenypdf",
     name: "TeenyPDF",
     tag: "New release",
